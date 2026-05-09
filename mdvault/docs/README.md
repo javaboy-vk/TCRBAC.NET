@@ -1,20 +1,21 @@
-# Tomcat User RBAC Port – Documentation v1.1
+# TCRBAC.NET Documentation
 
 ## Purpose
 
-This package contains a small C# port inspired by Apache Tomcat's XML-backed user, credential, and RBAC model.
+This documentation describes the TCRBAC.NET C# port inspired by Apache Tomcat's XML-backed user, credential, realm, and RBAC model.
 
 It includes:
 
-- C# source files under `com.mag.dapi.*` style namespaces.
-- UML diagrams for the original Java concept map and the C# port.
-- Markdown API documentation.
-- A DocFX starter configuration.
+- API reference material generated from the `src` project.
+- Command-oriented developer setup and build instructions.
+- Testing and debugging guidance.
+- SVG diagrams under `docs/assets/`.
+- Example documentation for `examples/TomcatUserValidator`.
 - Notes on C# XML documentation comments, the closest equivalent to Java Javadoc.
 
-## C# equivalent of Javadoc
+## C# Equivalent Of Javadoc
 
-The closest C# equivalent to Java Javadoc is **XML documentation comments**.
+The closest C# equivalent to Java Javadoc is XML documentation comments.
 
 Example:
 
@@ -24,35 +25,42 @@ Example:
 /// </summary>
 /// <param name="userName">The supplied user name.</param>
 /// <returns>A principal when authentication succeeds; otherwise null.</returns>
-public DapiPrincipal? Authenticate(string userName, string password)
+public Principal? Authenticate(string userName, string password)
 ```
 
-The C# compiler can emit these comments into an `.xml` documentation file. Tools such as **DocFX** can then generate readable API documentation from the XML comments and source metadata.
+The C# compiler emits these comments into an XML documentation file. DocFX then combines those comments with source metadata to generate readable HTML API documentation.
 
-## Recommended documentation generation
+## Documentation Generation
 
-For a .NET project file, enable XML documentation output:
+Generate the full documentation site from the repository root:
 
-```xml
-<PropertyGroup>
-  <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  <NoWarn>$(NoWarn);1591</NoWarn>
-</PropertyGroup>
+```powershell
+docfx build
+docfx serve site
 ```
 
-Then use DocFX with the included `docfx.json` as a starting point.
+Generate only the standalone docs site:
 
-## Included UML diagrams
+```powershell
+docfx docs\docfx.json
+docfx serve docs\site
+```
 
-- `docs/diagrams/Tomcat-Java-UML-Portrait-BlueLines-v1.2.png`
-- `docs/diagrams/Tomcat-CSharp-UML-Portrait-BlueLines-v1.2.png`
+Generate only the standalone examples site:
+
+```powershell
+docfx examples\docfx.json
+docfx serve examples\site
+```
+
+## Current Diagram Assets
+
+- `docs/assets/api-flow-diagram.svg`
+- `docs/assets/example-flow-diagram.svg`
+- `docs/assets/src-class-diagram.svg`
+- `docs/assets/pygount-summary.svg`
 
 ## Version
 
-Artifact: `Tomcat User RBAC Port – Documentation Package – v1.1`  
-Author: `vasilis`
-
-
-## v1.2 Example Configuration
-
-The package now includes `examples/tomcat/tomcat-users.xml`, a default-style Tomcat users XML file. The file keeps sample users commented out, matching Tomcat's secure default behavior.
+Artifact: TCRBAC.NET documentation package  
+Author: vasilis

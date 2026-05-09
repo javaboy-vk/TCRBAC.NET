@@ -22,10 +22,6 @@ items:
   nameWithType: MemoryUserDatabase
   fullName: com.mag.dapi.security.users.MemoryUserDatabase
   type: Class
-  source:
-    id: MemoryUserDatabase
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 23
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -57,10 +53,6 @@ items:
   nameWithType: MemoryUserDatabase.Roles
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.Roles
   type: Property
-  source:
-    id: Roles
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 30
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -82,10 +74,6 @@ items:
   nameWithType: MemoryUserDatabase.Groups
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.Groups
   type: Property
-  source:
-    id: Groups
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 31
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -107,10 +95,6 @@ items:
   nameWithType: MemoryUserDatabase.Users
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.Users
   type: Property
-  source:
-    id: Users
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 32
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -132,10 +116,6 @@ items:
   nameWithType: MemoryUserDatabase.Load(string)
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.Load(string)
   type: Method
-  source:
-    id: Load
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 37
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -164,10 +144,6 @@ items:
   nameWithType: MemoryUserDatabase.FromXml(string)
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.FromXml(string)
   type: Method
-  source:
-    id: FromXml
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 48
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -196,10 +172,6 @@ items:
   nameWithType: MemoryUserDatabase.AddRole(Role)
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddRole(com.mag.dapi.security.model.Role)
   type: Method
-  source:
-    id: AddRole
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 95
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -221,10 +193,6 @@ items:
   nameWithType: MemoryUserDatabase.AddGroup(Group)
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddGroup(com.mag.dapi.security.model.Group)
   type: Method
-  source:
-    id: AddGroup
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 101
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -246,10 +214,6 @@ items:
   nameWithType: MemoryUserDatabase.AddUser(User)
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddUser(com.mag.dapi.security.model.User)
   type: Method
-  source:
-    id: AddUser
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 107
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -271,10 +235,6 @@ items:
   nameWithType: MemoryUserDatabase.FindUser(string)
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.FindUser(string)
   type: Method
-  source:
-    id: FindUser
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 113
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users
@@ -301,10 +261,6 @@ items:
   nameWithType: MemoryUserDatabase.GetEffectiveRoles(User)
   fullName: com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles(com.mag.dapi.security.model.User)
   type: Method
-  source:
-    id: GetEffectiveRoles
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
-    startLine: 124
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.users

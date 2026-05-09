@@ -4,7 +4,7 @@ TCRBAC.NET is a C# port inspired by Apache Tomcat's `tomcat-users.xml` user data
 
 ## Start here
 
-- [Project README](README.md)
+- [Project README](../README.md)
 - [Documentation](docs/index.md)
 - <a href="/docs/developer.html">Developer commands</a>
 - [API](api/index.md)

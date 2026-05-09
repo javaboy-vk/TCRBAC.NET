@@ -17,10 +17,6 @@ items:
   nameWithType: Group
   fullName: com.mag.dapi.security.model.Group
   type: Class
-  source:
-    id: Group
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Group.cs
-    startLine: 20
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -49,10 +45,6 @@ items:
   nameWithType: Group.Group(string, string?)
   fullName: com.mag.dapi.security.model.Group.Group(string, string?)
   type: Constructor
-  source:
-    id: .ctor
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Group.cs
-    startLine: 25
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -79,10 +71,6 @@ items:
   nameWithType: Group.Name
   fullName: com.mag.dapi.security.model.Group.Name
   type: Property
-  source:
-    id: Name
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Group.cs
-    startLine: 37
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -106,10 +94,6 @@ items:
   nameWithType: Group.Description
   fullName: com.mag.dapi.security.model.Group.Description
   type: Property
-  source:
-    id: Description
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Group.cs
-    startLine: 42
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -133,10 +117,6 @@ items:
   nameWithType: Group.Roles
   fullName: com.mag.dapi.security.model.Group.Roles
   type: Property
-  source:
-    id: Roles
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Group.cs
-    startLine: 47
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -160,10 +140,6 @@ items:
   nameWithType: Group.AddRole(string)
   fullName: com.mag.dapi.security.model.Group.AddRole(string)
   type: Method
-  source:
-    id: AddRole
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Group.cs
-    startLine: 52
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model

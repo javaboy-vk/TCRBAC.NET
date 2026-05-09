@@ -19,10 +19,6 @@ items:
   nameWithType: SecurityConstraint
   fullName: com.mag.dapi.security.rbac.SecurityConstraint
   type: Class
-  source:
-    id: SecurityConstraint
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 21
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -54,10 +50,6 @@ items:
   nameWithType: SecurityConstraint.SecurityConstraint(string, IEnumerable<string>, IEnumerable<string>?)
   fullName: com.mag.dapi.security.rbac.SecurityConstraint.SecurityConstraint(string, System.Collections.Generic.IEnumerable<string>, System.Collections.Generic.IEnumerable<string>?)
   type: Constructor
-  source:
-    id: .ctor
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 27
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -86,10 +78,6 @@ items:
   nameWithType: SecurityConstraint.PathPattern
   fullName: com.mag.dapi.security.rbac.SecurityConstraint.PathPattern
   type: Property
-  source:
-    id: PathPattern
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 35
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -111,10 +99,6 @@ items:
   nameWithType: SecurityConstraint.RequiredRoles
   fullName: com.mag.dapi.security.rbac.SecurityConstraint.RequiredRoles
   type: Property
-  source:
-    id: RequiredRoles
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 36
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -136,10 +120,6 @@ items:
   nameWithType: SecurityConstraint.HttpMethods
   fullName: com.mag.dapi.security.rbac.SecurityConstraint.HttpMethods
   type: Property
-  source:
-    id: HttpMethods
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 37
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -161,10 +141,6 @@ items:
   nameWithType: SecurityConstraint.AddRole(string)
   fullName: com.mag.dapi.security.rbac.SecurityConstraint.AddRole(string)
   type: Method
-  source:
-    id: AddRole
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 39
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -189,10 +165,6 @@ items:
   nameWithType: SecurityConstraint.AddMethod(string)
   fullName: com.mag.dapi.security.rbac.SecurityConstraint.AddMethod(string)
   type: Method
-  source:
-    id: AddMethod
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 51
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -217,10 +189,6 @@ items:
   nameWithType: SecurityConstraint.Matches(string, string?)
   fullName: com.mag.dapi.security.rbac.SecurityConstraint.Matches(string, string?)
   type: Method
-  source:
-    id: Matches
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\SecurityConstraint.cs
-    startLine: 63
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac

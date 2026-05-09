@@ -16,10 +16,6 @@ items:
   nameWithType: Principal
   fullName: com.mag.dapi.security.realms.Principal
   type: Class
-  source:
-    id: Principal
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\Principal.cs
-    startLine: 20
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms
@@ -48,10 +44,6 @@ items:
   nameWithType: Principal.Principal(string, IEnumerable<string>)
   fullName: com.mag.dapi.security.realms.Principal.Principal(string, System.Collections.Generic.IEnumerable<string>)
   type: Constructor
-  source:
-    id: .ctor
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\Principal.cs
-    startLine: 25
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms
@@ -78,10 +70,6 @@ items:
   nameWithType: Principal.Name
   fullName: com.mag.dapi.security.realms.Principal.Name
   type: Property
-  source:
-    id: Name
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\Principal.cs
-    startLine: 32
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms
@@ -103,10 +91,6 @@ items:
   nameWithType: Principal.Roles
   fullName: com.mag.dapi.security.realms.Principal.Roles
   type: Property
-  source:
-    id: Roles
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\Principal.cs
-    startLine: 34
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms
@@ -128,10 +112,6 @@ items:
   nameWithType: Principal.IsInRole(string)
   fullName: com.mag.dapi.security.realms.Principal.IsInRole(string)
   type: Method
-  source:
-    id: IsInRole
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\Principal.cs
-    startLine: 36
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms

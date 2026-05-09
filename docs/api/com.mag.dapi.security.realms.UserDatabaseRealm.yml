@@ -14,10 +14,6 @@ items:
   nameWithType: UserDatabaseRealm
   fullName: com.mag.dapi.security.realms.UserDatabaseRealm
   type: Class
-  source:
-    id: UserDatabaseRealm
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\UserDatabaseRealm.cs
-    startLine: 23
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms
@@ -49,10 +45,6 @@ items:
   nameWithType: UserDatabaseRealm.UserDatabaseRealm(MemoryUserDatabase, ICredentialHandler)
   fullName: com.mag.dapi.security.realms.UserDatabaseRealm.UserDatabaseRealm(com.mag.dapi.security.users.MemoryUserDatabase, com.mag.dapi.security.credentials.ICredentialHandler)
   type: Constructor
-  source:
-    id: .ctor
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\UserDatabaseRealm.cs
-    startLine: 29
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms
@@ -79,10 +71,6 @@ items:
   nameWithType: UserDatabaseRealm.Authenticate(string, string)
   fullName: com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate(string, string)
   type: Method
-  source:
-    id: Authenticate
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\UserDatabaseRealm.cs
-    startLine: 39
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.realms

@@ -14,10 +14,6 @@ items:
   nameWithType: Program
   fullName: TomcatUserValidator.Program
   type: Class
-  source:
-    id: Program
-    path: D:\TCRBAC.NET\examples\TomcatUserValidator\Program.cs
-    startLine: 13
   assemblies:
   - TomcatUserValidator
   namespace: TomcatUserValidator
@@ -42,10 +38,6 @@ items:
   nameWithType: Program.Main(string[])
   fullName: TomcatUserValidator.Program.Main(string[])
   type: Method
-  source:
-    id: Main
-    path: D:\TCRBAC.NET\examples\TomcatUserValidator\Program.cs
-    startLine: 27
   assemblies:
   - TomcatUserValidator
   namespace: TomcatUserValidator
@@ -76,10 +68,6 @@ items:
   nameWithType: Program.FindTomcatUsersXml()
   fullName: TomcatUserValidator.Program.FindTomcatUsersXml()
   type: Method
-  source:
-    id: FindTomcatUsersXml
-    path: D:\TCRBAC.NET\examples\TomcatUserValidator\Program.cs
-    startLine: 70
   assemblies:
   - TomcatUserValidator
   namespace: TomcatUserValidator

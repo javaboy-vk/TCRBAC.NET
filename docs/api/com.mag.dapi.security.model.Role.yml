@@ -16,10 +16,6 @@ items:
   nameWithType: Role
   fullName: com.mag.dapi.security.model.Role
   type: Class
-  source:
-    id: Role
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Role.cs
-    startLine: 21
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -50,10 +46,6 @@ items:
   nameWithType: Role.Role(string, string?)
   fullName: com.mag.dapi.security.model.Role.Role(string, string?)
   type: Constructor
-  source:
-    id: .ctor
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Role.cs
-    startLine: 28
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -82,10 +74,6 @@ items:
   nameWithType: Role.Name
   fullName: com.mag.dapi.security.model.Role.Name
   type: Property
-  source:
-    id: Name
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Role.cs
-    startLine: 40
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -109,10 +97,6 @@ items:
   nameWithType: Role.Description
   fullName: com.mag.dapi.security.model.Role.Description
   type: Property
-  source:
-    id: Description
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Role.cs
-    startLine: 45
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -136,10 +120,6 @@ items:
   nameWithType: Role.ToString()
   fullName: com.mag.dapi.security.model.Role.ToString()
   type: Method
-  source:
-    id: ToString
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\Role.cs
-    startLine: 47
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model

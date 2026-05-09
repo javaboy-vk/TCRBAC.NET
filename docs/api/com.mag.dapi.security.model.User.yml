@@ -20,10 +20,6 @@ items:
   nameWithType: User
   fullName: com.mag.dapi.security.model.User
   type: Class
-  source:
-    id: User
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 20
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -52,10 +48,6 @@ items:
   nameWithType: User.User(string, string, string?)
   fullName: com.mag.dapi.security.model.User.User(string, string, string?)
   type: Constructor
-  source:
-    id: .ctor
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 26
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -84,10 +76,6 @@ items:
   nameWithType: User.Username
   fullName: com.mag.dapi.security.model.User.Username
   type: Property
-  source:
-    id: Username
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 39
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -111,10 +99,6 @@ items:
   nameWithType: User.PasswordCredential
   fullName: com.mag.dapi.security.model.User.PasswordCredential
   type: Property
-  source:
-    id: PasswordCredential
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 44
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -138,10 +122,6 @@ items:
   nameWithType: User.FullName
   fullName: com.mag.dapi.security.model.User.FullName
   type: Property
-  source:
-    id: FullName
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 49
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -165,10 +145,6 @@ items:
   nameWithType: User.Roles
   fullName: com.mag.dapi.security.model.User.Roles
   type: Property
-  source:
-    id: Roles
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 54
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -192,10 +168,6 @@ items:
   nameWithType: User.Groups
   fullName: com.mag.dapi.security.model.User.Groups
   type: Property
-  source:
-    id: Groups
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 59
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -219,10 +191,6 @@ items:
   nameWithType: User.AddRole(string)
   fullName: com.mag.dapi.security.model.User.AddRole(string)
   type: Method
-  source:
-    id: AddRole
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 61
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model
@@ -247,10 +215,6 @@ items:
   nameWithType: User.AddGroup(string)
   fullName: com.mag.dapi.security.model.User.AddGroup(string)
   type: Method
-  source:
-    id: AddGroup
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
-    startLine: 77
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.model

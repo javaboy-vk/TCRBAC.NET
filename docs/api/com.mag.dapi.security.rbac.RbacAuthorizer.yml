@@ -15,10 +15,6 @@ items:
   nameWithType: RbacAuthorizer
   fullName: com.mag.dapi.security.rbac.RbacAuthorizer
   type: Class
-  source:
-    id: RbacAuthorizer
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\RbacAuthorizer.cs
-    startLine: 22
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -51,10 +47,6 @@ items:
   nameWithType: RbacAuthorizer.HasAnyRole(Principal?, params string[])
   fullName: com.mag.dapi.security.rbac.RbacAuthorizer.HasAnyRole(com.mag.dapi.security.realms.Principal?, params string[])
   type: Method
-  source:
-    id: HasAnyRole
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\RbacAuthorizer.cs
-    startLine: 29
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -85,10 +77,6 @@ items:
   nameWithType: RbacAuthorizer.HasAllRoles(Principal?, params string[])
   fullName: com.mag.dapi.security.rbac.RbacAuthorizer.HasAllRoles(com.mag.dapi.security.realms.Principal?, params string[])
   type: Method
-  source:
-    id: HasAllRoles
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\RbacAuthorizer.cs
-    startLine: 53
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
@@ -119,10 +107,6 @@ items:
   nameWithType: RbacAuthorizer.IsAllowed(Principal?, string, string?, IEnumerable<SecurityConstraint>)
   fullName: com.mag.dapi.security.rbac.RbacAuthorizer.IsAllowed(com.mag.dapi.security.realms.Principal?, string, string?, System.Collections.Generic.IEnumerable<com.mag.dapi.security.rbac.SecurityConstraint>)
   type: Method
-  source:
-    id: IsAllowed
-    path: D:\TCRBAC.NET\src\com\mag\dapi\security\rbac\RbacAuthorizer.cs
-    startLine: 78
   assemblies:
   - TomcatUserRbacPort
   namespace: com.mag.dapi.security.rbac
