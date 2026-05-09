@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: TomcatUserValidator
+  commentId: N:TomcatUserValidator
+  id: TomcatUserValidator
+  children:
+  - TomcatUserValidator.Program
+  langs:
+  - csharp
+  - vb
+  name: TomcatUserValidator
+  nameWithType: TomcatUserValidator
+  fullName: TomcatUserValidator
+  type: Namespace
+  assemblies:
+  - TomcatUserValidator
+references:
+- uid: TomcatUserValidator.Program
+  commentId: T:TomcatUserValidator.Program
+  href: TomcatUserValidator.Program.html
+  name: Program
+  nameWithType: Program
+  fullName: TomcatUserValidator.Program

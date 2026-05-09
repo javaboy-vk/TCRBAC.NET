@@ -1,0 +1,141 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build TomcatUserValidator",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/examples/TomcatUserValidator/TomcatUserValidator.csproj"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build Tests",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/tests/TomcatUserRbacPort.Tests/TomcatUserRbacPort.Tests.csproj"
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Run Tests",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "test",
+        "${workspaceFolder}/tests/TomcatUserRbacPort.Tests/TomcatUserRbacPort.Tests.csproj"
+      ],
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "DocFX Build Docs",
+      "type": "shell",
+      "command": "docfx",
+      "args": [
+        "docfx.json"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/docs"
+      },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "DocFX Build Examples Docs",
+      "type": "shell",
+      "command": "docfx",
+      "args": [
+        "docfx.json"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/examples"
+      },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "DocFX Metadata Root Site",
+      "type": "shell",
+      "command": "docfx",
+      "args": [
+        "metadata",
+        "docfx.json"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "DocFX Build Root Site",
+      "type": "shell",
+      "command": "docfx",
+      "args": [
+        "build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Add Tomcat Icons",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/docs/add-tomcat-icons.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Docs",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "DocFX Build Docs",
+        "Add Tomcat Icons"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Examples Docs",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "DocFX Build Examples Docs",
+        "Add Tomcat Icons"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Root Site",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "DocFX Metadata Root Site",
+        "DocFX Build Root Site",
+        "Add Tomcat Icons"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

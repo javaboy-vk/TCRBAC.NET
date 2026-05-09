@@ -1,0 +1,993 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.mag.dapi.security.users.MemoryUserDatabase
+  commentId: T:com.mag.dapi.security.users.MemoryUserDatabase
+  id: MemoryUserDatabase
+  parent: com.mag.dapi.security.users
+  children:
+  - com.mag.dapi.security.users.MemoryUserDatabase.AddGroup(com.mag.dapi.security.model.Group)
+  - com.mag.dapi.security.users.MemoryUserDatabase.AddRole(com.mag.dapi.security.model.Role)
+  - com.mag.dapi.security.users.MemoryUserDatabase.AddUser(com.mag.dapi.security.model.User)
+  - com.mag.dapi.security.users.MemoryUserDatabase.FindUser(System.String)
+  - com.mag.dapi.security.users.MemoryUserDatabase.FromXml(System.String)
+  - com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles(com.mag.dapi.security.model.User)
+  - com.mag.dapi.security.users.MemoryUserDatabase.Groups
+  - com.mag.dapi.security.users.MemoryUserDatabase.Load(System.String)
+  - com.mag.dapi.security.users.MemoryUserDatabase.Roles
+  - com.mag.dapi.security.users.MemoryUserDatabase.Users
+  langs:
+  - csharp
+  - vb
+  name: MemoryUserDatabase
+  nameWithType: MemoryUserDatabase
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase
+  type: Class
+  source:
+    id: MemoryUserDatabase
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 23
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  summary: >-
+    In-memory user database inspired by Tomcat's MemoryUserDatabase.
+
+    Supports XML elements: role, group, and user.
+  example: []
+  syntax:
+    content: public sealed class MemoryUserDatabase
+    content.vb: Public NotInheritable Class MemoryUserDatabase
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Roles
+  commentId: P:com.mag.dapi.security.users.MemoryUserDatabase.Roles
+  id: Roles
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: Roles
+  nameWithType: MemoryUserDatabase.Roles
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Roles
+  type: Property
+  source:
+    id: Roles
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 30
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public IReadOnlyDictionary<string, Role> Roles { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.Role}
+    content.vb: Public ReadOnly Property Roles As IReadOnlyDictionary(Of String, Role)
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.Roles*
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Groups
+  commentId: P:com.mag.dapi.security.users.MemoryUserDatabase.Groups
+  id: Groups
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: Groups
+  nameWithType: MemoryUserDatabase.Groups
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Groups
+  type: Property
+  source:
+    id: Groups
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 31
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public IReadOnlyDictionary<string, Group> Groups { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.Group}
+    content.vb: Public ReadOnly Property Groups As IReadOnlyDictionary(Of String, Group)
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.Groups*
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Users
+  commentId: P:com.mag.dapi.security.users.MemoryUserDatabase.Users
+  id: Users
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: Users
+  nameWithType: MemoryUserDatabase.Users
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Users
+  type: Property
+  source:
+    id: Users
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 32
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public IReadOnlyDictionary<string, User> Users { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.User}
+    content.vb: Public ReadOnly Property Users As IReadOnlyDictionary(Of String, User)
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.Users*
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Load(System.String)
+  commentId: M:com.mag.dapi.security.users.MemoryUserDatabase.Load(System.String)
+  id: Load(System.String)
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: Load(string)
+  nameWithType: MemoryUserDatabase.Load(string)
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Load(string)
+  type: Method
+  source:
+    id: Load
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 37
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  summary: Loads a Tomcat-style XML user database from disk.
+  example: []
+  syntax:
+    content: public static MemoryUserDatabase Load(string xmlPath)
+    parameters:
+    - id: xmlPath
+      type: System.String
+    return:
+      type: com.mag.dapi.security.users.MemoryUserDatabase
+    content.vb: Public Shared Function Load(xmlPath As String) As MemoryUserDatabase
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.Load*
+  nameWithType.vb: MemoryUserDatabase.Load(String)
+  fullName.vb: com.mag.dapi.security.users.MemoryUserDatabase.Load(String)
+  name.vb: Load(String)
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.FromXml(System.String)
+  commentId: M:com.mag.dapi.security.users.MemoryUserDatabase.FromXml(System.String)
+  id: FromXml(System.String)
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: FromXml(string)
+  nameWithType: MemoryUserDatabase.FromXml(string)
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.FromXml(string)
+  type: Method
+  source:
+    id: FromXml
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 48
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  summary: Loads a Tomcat-style XML user database from an XML string.
+  example: []
+  syntax:
+    content: public static MemoryUserDatabase FromXml(string xml)
+    parameters:
+    - id: xml
+      type: System.String
+    return:
+      type: com.mag.dapi.security.users.MemoryUserDatabase
+    content.vb: Public Shared Function FromXml(xml As String) As MemoryUserDatabase
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.FromXml*
+  nameWithType.vb: MemoryUserDatabase.FromXml(String)
+  fullName.vb: com.mag.dapi.security.users.MemoryUserDatabase.FromXml(String)
+  name.vb: FromXml(String)
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.AddRole(com.mag.dapi.security.model.Role)
+  commentId: M:com.mag.dapi.security.users.MemoryUserDatabase.AddRole(com.mag.dapi.security.model.Role)
+  id: AddRole(com.mag.dapi.security.model.Role)
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: AddRole(Role)
+  nameWithType: MemoryUserDatabase.AddRole(Role)
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddRole(com.mag.dapi.security.model.Role)
+  type: Method
+  source:
+    id: AddRole
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 95
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public void AddRole(Role role)
+    parameters:
+    - id: role
+      type: com.mag.dapi.security.model.Role
+    content.vb: Public Sub AddRole(role As Role)
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.AddRole*
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.AddGroup(com.mag.dapi.security.model.Group)
+  commentId: M:com.mag.dapi.security.users.MemoryUserDatabase.AddGroup(com.mag.dapi.security.model.Group)
+  id: AddGroup(com.mag.dapi.security.model.Group)
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: AddGroup(Group)
+  nameWithType: MemoryUserDatabase.AddGroup(Group)
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddGroup(com.mag.dapi.security.model.Group)
+  type: Method
+  source:
+    id: AddGroup
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 101
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public void AddGroup(Group group)
+    parameters:
+    - id: group
+      type: com.mag.dapi.security.model.Group
+    content.vb: Public Sub AddGroup(group As Group)
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.AddGroup*
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.AddUser(com.mag.dapi.security.model.User)
+  commentId: M:com.mag.dapi.security.users.MemoryUserDatabase.AddUser(com.mag.dapi.security.model.User)
+  id: AddUser(com.mag.dapi.security.model.User)
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: AddUser(User)
+  nameWithType: MemoryUserDatabase.AddUser(User)
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddUser(com.mag.dapi.security.model.User)
+  type: Method
+  source:
+    id: AddUser
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 107
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public void AddUser(User user)
+    parameters:
+    - id: user
+      type: com.mag.dapi.security.model.User
+    content.vb: Public Sub AddUser(user As User)
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.AddUser*
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.FindUser(System.String)
+  commentId: M:com.mag.dapi.security.users.MemoryUserDatabase.FindUser(System.String)
+  id: FindUser(System.String)
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: FindUser(string)
+  nameWithType: MemoryUserDatabase.FindUser(string)
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.FindUser(string)
+  type: Method
+  source:
+    id: FindUser
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 113
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public User? FindUser(string username)
+    parameters:
+    - id: username
+      type: System.String
+    return:
+      type: com.mag.dapi.security.model.User
+    content.vb: Public Function FindUser(username As String) As User
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.FindUser*
+  nameWithType.vb: MemoryUserDatabase.FindUser(String)
+  fullName.vb: com.mag.dapi.security.users.MemoryUserDatabase.FindUser(String)
+  name.vb: FindUser(String)
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles(com.mag.dapi.security.model.User)
+  commentId: M:com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles(com.mag.dapi.security.model.User)
+  id: GetEffectiveRoles(com.mag.dapi.security.model.User)
+  parent: com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: GetEffectiveRoles(User)
+  nameWithType: MemoryUserDatabase.GetEffectiveRoles(User)
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles(com.mag.dapi.security.model.User)
+  type: Method
+  source:
+    id: GetEffectiveRoles
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\users\MemoryUserDatabase.cs
+    startLine: 124
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.users
+  syntax:
+    content: public IEnumerable<string> GetEffectiveRoles(User user)
+    parameters:
+    - id: user
+      type: com.mag.dapi.security.model.User
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String}
+    content.vb: Public Function GetEffectiveRoles(user As User) As IEnumerable(Of String)
+  overload: com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles*
+references:
+- uid: com.mag.dapi.security.users
+  commentId: N:com.mag.dapi.security.users
+  href: com.html
+  name: com.mag.dapi.security.users
+  nameWithType: com.mag.dapi.security.users
+  fullName: com.mag.dapi.security.users
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.users
+    name: users
+    href: com.mag.dapi.security.users.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.users
+    name: users
+    href: com.mag.dapi.security.users.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Roles*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.Roles
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_Roles
+  name: Roles
+  nameWithType: MemoryUserDatabase.Roles
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Roles
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.Role}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.Role}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, Role>
+  nameWithType: IReadOnlyDictionary<string, Role>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, com.mag.dapi.security.model.Role>
+  nameWithType.vb: IReadOnlyDictionary(Of String, Role)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, com.mag.dapi.security.model.Role)
+  name.vb: IReadOnlyDictionary(Of String, Role)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.mag.dapi.security.model.Role
+    name: Role
+    href: com.mag.dapi.security.model.Role.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.mag.dapi.security.model.Role
+    name: Role
+    href: com.mag.dapi.security.model.Role.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Groups*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.Groups
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_Groups
+  name: Groups
+  nameWithType: MemoryUserDatabase.Groups
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Groups
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.Group}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.Group}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, Group>
+  nameWithType: IReadOnlyDictionary<string, Group>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, com.mag.dapi.security.model.Group>
+  nameWithType.vb: IReadOnlyDictionary(Of String, Group)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, com.mag.dapi.security.model.Group)
+  name.vb: IReadOnlyDictionary(Of String, Group)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.mag.dapi.security.model.Group
+    name: Group
+    href: com.mag.dapi.security.model.Group.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.mag.dapi.security.model.Group
+    name: Group
+    href: com.mag.dapi.security.model.Group.html
+  - name: )
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Users*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.Users
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_Users
+  name: Users
+  nameWithType: MemoryUserDatabase.Users
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Users
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.User}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,com.mag.dapi.security.model.User}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, User>
+  nameWithType: IReadOnlyDictionary<string, User>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, com.mag.dapi.security.model.User>
+  nameWithType.vb: IReadOnlyDictionary(Of String, User)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, com.mag.dapi.security.model.User)
+  name.vb: IReadOnlyDictionary(Of String, User)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.mag.dapi.security.model.User
+    name: User
+    href: com.mag.dapi.security.model.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: com.mag.dapi.security.model.User
+    name: User
+    href: com.mag.dapi.security.model.User.html
+  - name: )
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.Load*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.Load
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_Load_System_String_
+  name: Load
+  nameWithType: MemoryUserDatabase.Load
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.Load
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.mag.dapi.security.users.MemoryUserDatabase
+  commentId: T:com.mag.dapi.security.users.MemoryUserDatabase
+  parent: com.mag.dapi.security.users
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html
+  name: MemoryUserDatabase
+  nameWithType: MemoryUserDatabase
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.FromXml*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.FromXml
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_FromXml_System_String_
+  name: FromXml
+  nameWithType: MemoryUserDatabase.FromXml
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.FromXml
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.AddRole*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.AddRole
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_AddRole_com_mag_dapi_security_model_Role_
+  name: AddRole
+  nameWithType: MemoryUserDatabase.AddRole
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddRole
+- uid: com.mag.dapi.security.model.Role
+  commentId: T:com.mag.dapi.security.model.Role
+  parent: com.mag.dapi.security.model
+  href: com.mag.dapi.security.model.Role.html
+  name: Role
+  nameWithType: Role
+  fullName: com.mag.dapi.security.model.Role
+- uid: com.mag.dapi.security.model
+  commentId: N:com.mag.dapi.security.model
+  href: com.html
+  name: com.mag.dapi.security.model
+  nameWithType: com.mag.dapi.security.model
+  fullName: com.mag.dapi.security.model
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.model
+    name: model
+    href: com.mag.dapi.security.model.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.model
+    name: model
+    href: com.mag.dapi.security.model.html
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.AddGroup*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.AddGroup
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_AddGroup_com_mag_dapi_security_model_Group_
+  name: AddGroup
+  nameWithType: MemoryUserDatabase.AddGroup
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddGroup
+- uid: com.mag.dapi.security.model.Group
+  commentId: T:com.mag.dapi.security.model.Group
+  parent: com.mag.dapi.security.model
+  href: com.mag.dapi.security.model.Group.html
+  name: Group
+  nameWithType: Group
+  fullName: com.mag.dapi.security.model.Group
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.AddUser*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.AddUser
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_AddUser_com_mag_dapi_security_model_User_
+  name: AddUser
+  nameWithType: MemoryUserDatabase.AddUser
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.AddUser
+- uid: com.mag.dapi.security.model.User
+  commentId: T:com.mag.dapi.security.model.User
+  parent: com.mag.dapi.security.model
+  href: com.mag.dapi.security.model.User.html
+  name: User
+  nameWithType: User
+  fullName: com.mag.dapi.security.model.User
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.FindUser*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.FindUser
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_FindUser_System_String_
+  name: FindUser
+  nameWithType: MemoryUserDatabase.FindUser
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.FindUser
+- uid: com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles*
+  commentId: Overload:com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html#com_mag_dapi_security_users_MemoryUserDatabase_GetEffectiveRoles_com_mag_dapi_security_model_User_
+  name: GetEffectiveRoles
+  nameWithType: MemoryUserDatabase.GetEffectiveRoles
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase.GetEffectiveRoles
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.mag.dapi.security.users
+  commentId: N:com.mag.dapi.security.users
+  id: com.mag.dapi.security.users
+  children:
+  - com.mag.dapi.security.users.MemoryUserDatabase
+  langs:
+  - csharp
+  - vb
+  name: com.mag.dapi.security.users
+  nameWithType: com.mag.dapi.security.users
+  fullName: com.mag.dapi.security.users
+  type: Namespace
+  assemblies:
+  - TomcatUserRbacPort
+references:
+- uid: com.mag.dapi.security.users.MemoryUserDatabase
+  commentId: T:com.mag.dapi.security.users.MemoryUserDatabase
+  parent: com.mag.dapi.security.users
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html
+  name: MemoryUserDatabase
+  nameWithType: MemoryUserDatabase
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase
+- uid: com.mag.dapi.security.users
+  commentId: N:com.mag.dapi.security.users
+  href: com.html
+  name: com.mag.dapi.security.users
+  nameWithType: com.mag.dapi.security.users
+  fullName: com.mag.dapi.security.users
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.users
+    name: users
+    href: com.mag.dapi.security.users.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.users
+    name: users
+    href: com.mag.dapi.security.users.html

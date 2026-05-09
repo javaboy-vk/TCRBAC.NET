@@ -1,0 +1,69 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/TomcatUserRbacPort.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "src": "../mdvault/docs",
+        "files": [
+          "api/**.md"
+        ],
+        "dest": ".",
+        "exclude": [
+          "site/**"
+        ]
+      },
+      {
+        "src": "../mdvault/docs",
+        "files": [
+          "articles/**.md",
+          "diagrams/**.md",
+          "*.md"
+        ],
+        "dest": ".",
+        "exclude": [
+          "site/**"
+        ]
+      },
+      {
+        "files": [
+          "api/**.yml"
+        ],
+        "exclude": [
+          "site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "src": "assets",
+        "files": [
+          "src-class-diagram.svg"
+        ],
+        "dest": "assets"
+      },
+      {
+        "files": [
+          "developer.html"
+        ]
+      }
+    ],
+    "dest": "site",
+    "globalMetadata": {
+      "_appTitle": "Tomcat User RBAC Port Documentation",
+      "_appName": "Tomcat User RBAC Port",
+      "_appFooter": "Author: vasilis | Version: 1.1"
+    }
+  }
+}

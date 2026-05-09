@@ -1,0 +1,114 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "docs/api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.yml"
+        ],
+        "exclude": [
+          "site/**",
+          "docs/site/**",
+          "examples/site/**",
+          "mdvault/**",
+          "examples/filterConfig.yml"
+        ]
+      },
+      {
+        "src": "mdvault",
+        "files": [
+          "*.md"
+        ],
+        "dest": "."
+      },
+      {
+        "src": "mdvault/docs",
+        "files": [
+          "**/*.md"
+        ],
+        "dest": "docs"
+      },
+      {
+        "src": "mdvault/api",
+        "files": [
+          "**/*.md"
+        ],
+        "dest": "api"
+      },
+      {
+        "src": "mdvault/examples",
+        "files": [
+          "**/*.md"
+        ],
+        "dest": "examples"
+      },
+      {
+        "src": "mdvault/tests",
+        "files": [
+          "**/*.md"
+        ],
+        "dest": "tests"
+      }
+    ],
+    "resource": [
+      {
+        "src": "docs/assets",
+        "files": [
+          "**/*"
+        ],
+        "dest": "assets"
+      },
+      {
+        "src": "examples/tomcat",
+        "files": [
+          "tomcat-users.xml",
+          "tomcat-users.xsd"
+        ],
+        "dest": "examples/tomcat"
+      },
+      {
+        "files": [
+          "docs/developer.html"
+        ]
+      },
+      {
+        "src": "tests",
+        "files": [
+          "run-tests.ps1"
+        ],
+        "dest": "tests"
+      },
+      {
+        "src": "mdvault/tests/results",
+        "files": [
+          "unit-tests.trx"
+        ],
+        "dest": "tests/results"
+      }
+    ],
+    "output": "site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "TCRBAC.NET",
+      "_appTitle": "TCRBAC.NET",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}

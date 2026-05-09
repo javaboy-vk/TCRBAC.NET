@@ -1,0 +1,173 @@
+### YamlMime:ManagedReference
+items:
+- uid: TomcatUserValidator.Program
+  commentId: T:TomcatUserValidator.Program
+  id: Program
+  parent: TomcatUserValidator
+  children:
+  - TomcatUserValidator.Program.FindTomcatUsersXml
+  - TomcatUserValidator.Program.Main(System.String[])
+  langs:
+  - csharp
+  - vb
+  name: Program
+  nameWithType: Program
+  fullName: TomcatUserValidator.Program
+  type: Class
+  source:
+    id: Program
+    path: D:\TCRBAC.NET\examples\TomcatUserValidator\Program.cs
+    startLine: 13
+  assemblies:
+  - TomcatUserValidator
+  namespace: TomcatUserValidator
+  summary: >-
+    Example command-line program that authenticates a username and password against
+
+    the sample Tomcat-style users file in <code>examples/tomcat/tomcat-users.xml</code>.
+  example: []
+  syntax:
+    content: public static class Program
+    content.vb: Public Module Program
+  inheritance:
+  - System.Object
+- uid: TomcatUserValidator.Program.Main(System.String[])
+  commentId: M:TomcatUserValidator.Program.Main(System.String[])
+  id: Main(System.String[])
+  parent: TomcatUserValidator.Program
+  langs:
+  - csharp
+  - vb
+  name: Main(string[])
+  nameWithType: Program.Main(string[])
+  fullName: TomcatUserValidator.Program.Main(string[])
+  type: Method
+  source:
+    id: Main
+    path: D:\TCRBAC.NET\examples\TomcatUserValidator\Program.cs
+    startLine: 27
+  assemblies:
+  - TomcatUserValidator
+  namespace: TomcatUserValidator
+  summary: 'Runs the validator. Expects exactly two arguments: username and password.'
+  example: []
+  syntax:
+    content: public static int Main(string[] args)
+    parameters:
+    - id: args
+      type: System.String[]
+      description: Command-line arguments in the form <code>&lt;username&gt; &lt;password&gt;</code>.
+    return:
+      type: System.Int32
+      description: 0 when authentication succeeds, 1 when credentials are invalid, and 2 when usage or configuration is invalid.
+    content.vb: Public Shared Function Main(args As String()) As Integer
+  overload: TomcatUserValidator.Program.Main*
+  nameWithType.vb: Program.Main(String())
+  fullName.vb: TomcatUserValidator.Program.Main(String())
+  name.vb: Main(String())
+- uid: TomcatUserValidator.Program.FindTomcatUsersXml
+  commentId: M:TomcatUserValidator.Program.FindTomcatUsersXml
+  id: FindTomcatUsersXml
+  parent: TomcatUserValidator.Program
+  langs:
+  - csharp
+  - vb
+  name: FindTomcatUsersXml()
+  nameWithType: Program.FindTomcatUsersXml()
+  fullName: TomcatUserValidator.Program.FindTomcatUsersXml()
+  type: Method
+  source:
+    id: FindTomcatUsersXml
+    path: D:\TCRBAC.NET\examples\TomcatUserValidator\Program.cs
+    startLine: 70
+  assemblies:
+  - TomcatUserValidator
+  namespace: TomcatUserValidator
+  summary: >-
+    Locates the sample <code>tomcat-users.xml</code> file from either the repository root
+
+    or the executable output directory.
+  example: []
+  syntax:
+    content: public static string? FindTomcatUsersXml()
+    return:
+      type: System.String
+      description: The full XML file path when found; otherwise null.
+    content.vb: Public Shared Function FindTomcatUsersXml() As String
+  overload: TomcatUserValidator.Program.FindTomcatUsersXml*
+references:
+- uid: TomcatUserValidator
+  commentId: N:TomcatUserValidator
+  href: TomcatUserValidator.html
+  name: TomcatUserValidator
+  nameWithType: TomcatUserValidator
+  fullName: TomcatUserValidator
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TomcatUserValidator.Program.Main*
+  commentId: Overload:TomcatUserValidator.Program.Main
+  href: TomcatUserValidator.Program.html#TomcatUserValidator_Program_Main_System_String___
+  name: Main
+  nameWithType: Program.Main
+  fullName: TomcatUserValidator.Program.Main
+- uid: System.String[]
+  isExternal: true
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: TomcatUserValidator.Program.FindTomcatUsersXml*
+  commentId: Overload:TomcatUserValidator.Program.FindTomcatUsersXml
+  href: TomcatUserValidator.Program.html#TomcatUserValidator_Program_FindTomcatUsersXml
+  name: FindTomcatUsersXml
+  nameWithType: Program.FindTomcatUsersXml
+  fullName: TomcatUserValidator.Program.FindTomcatUsersXml
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

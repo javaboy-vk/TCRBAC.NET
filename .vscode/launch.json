@@ -1,0 +1,58 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "TomcatUserValidator: tomcat/tomcat",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "Build TomcatUserValidator",
+      "program": "${workspaceFolder}/build/examples/TomcatUserValidator/Debug/net48/TomcatUserValidator.exe",
+      "args": [
+        "tomcat",
+        "tomcat"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "TomcatUserValidator: both/both",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "Build TomcatUserValidator",
+      "program": "${workspaceFolder}/build/examples/TomcatUserValidator/Debug/net48/TomcatUserValidator.exe",
+      "args": [
+        "both",
+        "both"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "TomcatUserValidator: failed login",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "Build TomcatUserValidator",
+      "program": "${workspaceFolder}/build/examples/TomcatUserValidator/Debug/net48/TomcatUserValidator.exe",
+      "args": [
+        "tomcat",
+        "wrong-password"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug Tests: RbacFlowTests",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "Build Tests",
+      "program": "${env:USERPROFILE}/.nuget/packages/microsoft.testplatform.testhost/17.8.0/lib/net462/testhost.exe",
+      "args": [
+        "${workspaceFolder}/build/tests/TomcatUserRbacPort.Tests/Debug/net48/TomcatUserRbacPort.Tests.dll",
+        "--port",
+        "0"
+      ],
+      "cwd": "${workspaceFolder}/build/tests/TomcatUserRbacPort.Tests/Debug/net48",
+      "console": "integratedTerminal"
+    }
+  ]
+}

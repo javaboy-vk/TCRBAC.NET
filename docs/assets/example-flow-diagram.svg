@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="900" viewBox="0 0 520 900" role="img" aria-labelledby="title desc">
+  <title id="title">Example flow diagram</title>
+  <desc id="desc">Simple top-to-bottom flowchart for the TomcatUserValidator command-line example.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L7,3 z" fill="#555"/>
+    </marker>
+    <style>
+      .node { fill: #efecff; stroke: #9b7cff; stroke-width: 1.4; }
+      .start { fill: #fbfaff; stroke: #8f6df6; stroke-width: 1.4; }
+      .edge { fill: none; stroke: #555; stroke-width: 1.1; marker-end: url(#arrow); }
+      .label-bg { fill: #f1f1f1; }
+      .text { fill: #2f2f3a; font-family: Segoe UI, Arial, sans-serif; font-size: 12px; }
+      .label { fill: #404040; font-family: Segoe UI, Arial, sans-serif; font-size: 12px; }
+    </style>
+  </defs>
+
+  <rect width="520" height="900" fill="#fff"/>
+
+  <rect class="start" x="249" y="8" width="153" height="29" rx="14.5"/>
+  <text class="text" x="325.5" y="27" text-anchor="middle">Run TomcatUserValidator</text>
+
+  <rect class="node" x="227" y="74" width="196" height="60"/>
+  <text class="text" x="325" y="98" text-anchor="middle">Load conf/log4net.config</text>
+  <text class="text" x="325" y="118" text-anchor="middle">from output directory</text>
+
+  <polygon class="node" points="325,170 388,233 325,296 262,233"/>
+  <text class="text" x="325" y="237" text-anchor="middle">Two arguments?</text>
+
+  <rect class="node" x="126" y="351" width="196" height="78"/>
+  <text class="text" x="224" y="375" text-anchor="middle">Find</text>
+  <text class="text" x="224" y="395" text-anchor="middle">examples/tomcat/tomcat-</text>
+  <text class="text" x="224" y="415" text-anchor="middle">users.xml</text>
+
+  <rect class="node" x="359" y="370" width="135" height="40"/>
+  <text class="text" x="426.5" y="394" text-anchor="middle">Print usage error</text>
+
+  <rect class="node" x="129" y="466" width="190" height="40"/>
+  <text class="text" x="224" y="490" text-anchor="middle">MemoryUserDatabase.Load</text>
+
+  <rect class="node" x="129" y="543" width="190" height="40"/>
+  <text class="text" x="224" y="567" text-anchor="middle">Create UserDatabaseRealm</text>
+
+  <polygon class="node" points="224,622 293,691 224,760 155,691"/>
+  <text class="text" x="224" y="695" text-anchor="middle">Authenticate user</text>
+
+  <rect class="node" x="12" y="813" width="195" height="59"/>
+  <text class="text" x="109.5" y="839" text-anchor="middle">Print success and effective</text>
+  <text class="text" x="109.5" y="858" text-anchor="middle">roles</text>
+
+  <rect class="node" x="244" y="823" width="188" height="40"/>
+  <text class="text" x="338" y="847" text-anchor="middle">Print authentication failed</text>
+
+  <path class="edge" d="M325 37 L325 74"/>
+  <path class="edge" d="M325 134 L325 170"/>
+  <path class="edge" d="M262 233 C223 262 200 290 224 351"/>
+  <path class="edge" d="M388 233 C421 264 431 306 426.5 370"/>
+  <path class="edge" d="M224 429 L224 466"/>
+  <path class="edge" d="M224 506 L224 543"/>
+  <path class="edge" d="M224 583 L224 622"/>
+  <path class="edge" d="M155 691 C123 724 108 761 109.5 813"/>
+  <path class="edge" d="M293 691 C322 723 337 766 338 823"/>
+
+  <rect class="label-bg" x="214" y="316" width="21" height="15"/>
+  <text class="label" x="224.5" y="328" text-anchor="middle">Yes</text>
+  <rect class="label-bg" x="418" y="316" width="18" height="15"/>
+  <text class="label" x="427" y="328" text-anchor="middle">No</text>
+  <rect class="label-bg" x="64" y="781" width="91" height="15"/>
+  <text class="label" x="109.5" y="793" text-anchor="middle">Valid credentials</text>
+  <rect class="label-bg" x="289" y="781" width="100" height="15"/>
+  <text class="label" x="339" y="793" text-anchor="middle">Invalid credentials</text>
+</svg>

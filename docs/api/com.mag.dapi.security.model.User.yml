@@ -1,0 +1,688 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.mag.dapi.security.model.User
+  commentId: T:com.mag.dapi.security.model.User
+  id: User
+  parent: com.mag.dapi.security.model
+  children:
+  - com.mag.dapi.security.model.User.#ctor(System.String,System.String,System.String)
+  - com.mag.dapi.security.model.User.AddGroup(System.String)
+  - com.mag.dapi.security.model.User.AddRole(System.String)
+  - com.mag.dapi.security.model.User.FullName
+  - com.mag.dapi.security.model.User.Groups
+  - com.mag.dapi.security.model.User.PasswordCredential
+  - com.mag.dapi.security.model.User.Roles
+  - com.mag.dapi.security.model.User.Username
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: User
+  fullName: com.mag.dapi.security.model.User
+  type: Class
+  source:
+    id: User
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 20
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  summary: Represents a user loaded from a Tomcat-style user XML file.
+  example: []
+  syntax:
+    content: public sealed class User
+    content.vb: Public NotInheritable Class User
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+- uid: com.mag.dapi.security.model.User.#ctor(System.String,System.String,System.String)
+  commentId: M:com.mag.dapi.security.model.User.#ctor(System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String)'
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: User(string, string, string?)
+  nameWithType: User.User(string, string, string?)
+  fullName: com.mag.dapi.security.model.User.User(string, string, string?)
+  type: Constructor
+  source:
+    id: .ctor
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 26
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  syntax:
+    content: public User(string username, string passwordCredential, string? fullName = null)
+    parameters:
+    - id: username
+      type: System.String
+    - id: passwordCredential
+      type: System.String
+    - id: fullName
+      type: System.String
+    content.vb: Public Sub New(username As String, passwordCredential As String, fullName As String = Nothing)
+  overload: com.mag.dapi.security.model.User.#ctor*
+  nameWithType.vb: User.New(String, String, String)
+  fullName.vb: com.mag.dapi.security.model.User.New(String, String, String)
+  name.vb: New(String, String, String)
+- uid: com.mag.dapi.security.model.User.Username
+  commentId: P:com.mag.dapi.security.model.User.Username
+  id: Username
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: Username
+  nameWithType: User.Username
+  fullName: com.mag.dapi.security.model.User.Username
+  type: Property
+  source:
+    id: Username
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 39
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  summary: Login name from the XML username attribute.
+  example: []
+  syntax:
+    content: public string Username { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Username As String
+  overload: com.mag.dapi.security.model.User.Username*
+- uid: com.mag.dapi.security.model.User.PasswordCredential
+  commentId: P:com.mag.dapi.security.model.User.PasswordCredential
+  id: PasswordCredential
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: PasswordCredential
+  nameWithType: User.PasswordCredential
+  fullName: com.mag.dapi.security.model.User.PasswordCredential
+  type: Property
+  source:
+    id: PasswordCredential
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 44
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  summary: Stored password value. This may be clear text, digest text, or another supported credential format.
+  example: []
+  syntax:
+    content: public string PasswordCredential { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property PasswordCredential As String
+  overload: com.mag.dapi.security.model.User.PasswordCredential*
+- uid: com.mag.dapi.security.model.User.FullName
+  commentId: P:com.mag.dapi.security.model.User.FullName
+  id: FullName
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: User.FullName
+  fullName: com.mag.dapi.security.model.User.FullName
+  type: Property
+  source:
+    id: FullName
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 49
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  summary: Optional display name.
+  example: []
+  syntax:
+    content: public string? FullName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property FullName As String
+  overload: com.mag.dapi.security.model.User.FullName*
+- uid: com.mag.dapi.security.model.User.Roles
+  commentId: P:com.mag.dapi.security.model.User.Roles
+  id: Roles
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: Roles
+  nameWithType: User.Roles
+  fullName: com.mag.dapi.security.model.User.Roles
+  type: Property
+  source:
+    id: Roles
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 54
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  summary: Direct role assignments from the XML roles attribute.
+  example: []
+  syntax:
+    content: public IReadOnlyCollection<string> Roles { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyCollection{System.String}
+    content.vb: Public ReadOnly Property Roles As IReadOnlyCollection(Of String)
+  overload: com.mag.dapi.security.model.User.Roles*
+- uid: com.mag.dapi.security.model.User.Groups
+  commentId: P:com.mag.dapi.security.model.User.Groups
+  id: Groups
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: Groups
+  nameWithType: User.Groups
+  fullName: com.mag.dapi.security.model.User.Groups
+  type: Property
+  source:
+    id: Groups
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 59
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  summary: Group memberships from the XML groups attribute.
+  example: []
+  syntax:
+    content: public IReadOnlyCollection<string> Groups { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyCollection{System.String}
+    content.vb: Public ReadOnly Property Groups As IReadOnlyCollection(Of String)
+  overload: com.mag.dapi.security.model.User.Groups*
+- uid: com.mag.dapi.security.model.User.AddRole(System.String)
+  commentId: M:com.mag.dapi.security.model.User.AddRole(System.String)
+  id: AddRole(System.String)
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: AddRole(string)
+  nameWithType: User.AddRole(string)
+  fullName: com.mag.dapi.security.model.User.AddRole(string)
+  type: Method
+  source:
+    id: AddRole
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 61
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  syntax:
+    content: public void AddRole(string roleName)
+    parameters:
+    - id: roleName
+      type: System.String
+    content.vb: Public Sub AddRole(roleName As String)
+  overload: com.mag.dapi.security.model.User.AddRole*
+  nameWithType.vb: User.AddRole(String)
+  fullName.vb: com.mag.dapi.security.model.User.AddRole(String)
+  name.vb: AddRole(String)
+- uid: com.mag.dapi.security.model.User.AddGroup(System.String)
+  commentId: M:com.mag.dapi.security.model.User.AddGroup(System.String)
+  id: AddGroup(System.String)
+  parent: com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: AddGroup(string)
+  nameWithType: User.AddGroup(string)
+  fullName: com.mag.dapi.security.model.User.AddGroup(string)
+  type: Method
+  source:
+    id: AddGroup
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\model\User.cs
+    startLine: 77
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.model
+  syntax:
+    content: public void AddGroup(string groupName)
+    parameters:
+    - id: groupName
+      type: System.String
+    content.vb: Public Sub AddGroup(groupName As String)
+  overload: com.mag.dapi.security.model.User.AddGroup*
+  nameWithType.vb: User.AddGroup(String)
+  fullName.vb: com.mag.dapi.security.model.User.AddGroup(String)
+  name.vb: AddGroup(String)
+references:
+- uid: com.mag.dapi.security.model
+  commentId: N:com.mag.dapi.security.model
+  href: com.html
+  name: com.mag.dapi.security.model
+  nameWithType: com.mag.dapi.security.model
+  fullName: com.mag.dapi.security.model
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.model
+    name: model
+    href: com.mag.dapi.security.model.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.model
+    name: model
+    href: com.mag.dapi.security.model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.mag.dapi.security.model.User.#ctor*
+  commentId: Overload:com.mag.dapi.security.model.User.#ctor
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User__ctor_System_String_System_String_System_String_
+  name: User
+  nameWithType: User.User
+  fullName: com.mag.dapi.security.model.User.User
+  nameWithType.vb: User.New
+  fullName.vb: com.mag.dapi.security.model.User.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.mag.dapi.security.model.User.Username*
+  commentId: Overload:com.mag.dapi.security.model.User.Username
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User_Username
+  name: Username
+  nameWithType: User.Username
+  fullName: com.mag.dapi.security.model.User.Username
+- uid: com.mag.dapi.security.model.User.PasswordCredential*
+  commentId: Overload:com.mag.dapi.security.model.User.PasswordCredential
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User_PasswordCredential
+  name: PasswordCredential
+  nameWithType: User.PasswordCredential
+  fullName: com.mag.dapi.security.model.User.PasswordCredential
+- uid: com.mag.dapi.security.model.User.FullName*
+  commentId: Overload:com.mag.dapi.security.model.User.FullName
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User_FullName
+  name: FullName
+  nameWithType: User.FullName
+  fullName: com.mag.dapi.security.model.User.FullName
+- uid: com.mag.dapi.security.model.User.Roles*
+  commentId: Overload:com.mag.dapi.security.model.User.Roles
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User_Roles
+  name: Roles
+  nameWithType: User.Roles
+  fullName: com.mag.dapi.security.model.User.Roles
+- uid: System.Collections.Generic.IReadOnlyCollection{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyCollection{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  name: IReadOnlyCollection<string>
+  nameWithType: IReadOnlyCollection<string>
+  fullName: System.Collections.Generic.IReadOnlyCollection<string>
+  nameWithType.vb: IReadOnlyCollection(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of String)
+  name.vb: IReadOnlyCollection(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyCollection`1
+  commentId: T:System.Collections.Generic.IReadOnlyCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: com.mag.dapi.security.model.User.Groups*
+  commentId: Overload:com.mag.dapi.security.model.User.Groups
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User_Groups
+  name: Groups
+  nameWithType: User.Groups
+  fullName: com.mag.dapi.security.model.User.Groups
+- uid: com.mag.dapi.security.model.User.AddRole*
+  commentId: Overload:com.mag.dapi.security.model.User.AddRole
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User_AddRole_System_String_
+  name: AddRole
+  nameWithType: User.AddRole
+  fullName: com.mag.dapi.security.model.User.AddRole
+- uid: com.mag.dapi.security.model.User.AddGroup*
+  commentId: Overload:com.mag.dapi.security.model.User.AddGroup
+  href: com.mag.dapi.security.model.User.html#com_mag_dapi_security_model_User_AddGroup_System_String_
+  name: AddGroup
+  nameWithType: User.AddGroup
+  fullName: com.mag.dapi.security.model.User.AddGroup

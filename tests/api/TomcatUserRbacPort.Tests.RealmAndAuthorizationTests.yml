@@ -1,0 +1,659 @@
+### YamlMime:ManagedReference
+items:
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  commentId: T:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  id: RealmAndAuthorizationTests
+  parent: TomcatUserRbacPort.Tests
+  children:
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  langs:
+  - csharp
+  - vb
+  name: RealmAndAuthorizationTests
+  nameWithType: RealmAndAuthorizationTests
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  type: Class
+  source:
+    id: RealmAndAuthorizationTests
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 7
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: public sealed class RealmAndAuthorizationTests
+    content.vb: Public NotInheritable Class RealmAndAuthorizationTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  id: Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: Principal_TrimsNameAndMatchesRolesCaseInsensitively()
+  nameWithType: RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively()
+  type: Method
+  source:
+    id: Principal_TrimsNameAndMatchesRolesCaseInsensitively
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 9
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void Principal_TrimsNameAndMatchesRolesCaseInsensitively()
+    content.vb: >-
+      <Fact>
+
+      Public Sub Principal_TrimsNameAndMatchesRolesCaseInsensitively()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks
+  id: Principal_RejectsMissingNameAndMissingRoleChecks
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: Principal_RejectsMissingNameAndMissingRoleChecks()
+  nameWithType: RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks()
+  type: Method
+  source:
+    id: Principal_RejectsMissingNameAndMissingRoleChecks
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 19
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void Principal_RejectsMissingNameAndMissingRoleChecks()
+    content.vb: >-
+      <Fact>
+
+      Public Sub Principal_RejectsMissingNameAndMissingRoleChecks()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  id: UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles()
+  nameWithType: RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles()
+  type: Method
+  source:
+    id: UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 29
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles()
+    content.vb: >-
+      <Fact>
+
+      Public Sub UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  id: UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword()
+  nameWithType: RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword()
+  type: Method
+  source:
+    id: UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 47
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword()
+    content.vb: >-
+      <Fact>
+
+      Public Sub UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies
+  id: UserDatabaseRealm_RejectsNullDependencies
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: UserDatabaseRealm_RejectsNullDependencies()
+  nameWithType: RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies()
+  type: Method
+  source:
+    id: UserDatabaseRealm_RejectsNullDependencies
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 61
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void UserDatabaseRealm_RejectsNullDependencies()
+    content.vb: >-
+      <Fact>
+
+      Public Sub UserDatabaseRealm_RejectsNullDependencies()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  id: SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: SecurityConstraint_MatchesExactAndPrefixPathsWithMethods()
+  nameWithType: RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods()
+  type: Method
+  source:
+    id: SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 71
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void SecurityConstraint_MatchesExactAndPrefixPathsWithMethods()
+    content.vb: >-
+      <Fact>
+
+      Public Sub SecurityConstraint_MatchesExactAndPrefixPathsWithMethods()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  id: SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod()
+  nameWithType: RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod()
+  type: Method
+  source:
+    id: SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 82
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod()
+    content.vb: >-
+      <Fact>
+
+      Public Sub SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations
+  id: RbacAuthorizer_AllowsExpectedRoleCombinations
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: RbacAuthorizer_AllowsExpectedRoleCombinations()
+  nameWithType: RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations()
+  type: Method
+  source:
+    id: RbacAuthorizer_AllowsExpectedRoleCombinations
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 94
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void RbacAuthorizer_AllowsExpectedRoleCombinations()
+    content.vb: >-
+      <Fact>
+
+      Public Sub RbacAuthorizer_AllowsExpectedRoleCombinations()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  id: RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: RbacAuthorizer_DeniesMissingPrincipalOrRoles()
+  nameWithType: RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles()
+  type: Method
+  source:
+    id: RbacAuthorizer_DeniesMissingPrincipalOrRoles
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 105
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void RbacAuthorizer_DeniesMissingPrincipalOrRoles()
+    content.vb: >-
+      <Fact>
+
+      Public Sub RbacAuthorizer_DeniesMissingPrincipalOrRoles()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint
+  commentId: M:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint
+  id: RbacAuthorizer_AppliesFirstMatchingConstraint
+  parent: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  langs:
+  - csharp
+  - vb
+  name: RbacAuthorizer_AppliesFirstMatchingConstraint()
+  nameWithType: RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint()
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint()
+  type: Method
+  source:
+    id: RbacAuthorizer_AppliesFirstMatchingConstraint
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\RealmAndAuthorizationTests.cs
+    startLine: 116
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void RbacAuthorizer_AppliesFirstMatchingConstraint()
+    content.vb: >-
+      <Fact>
+
+      Public Sub RbacAuthorizer_AppliesFirstMatchingConstraint()
+  overload: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+references:
+- uid: TomcatUserRbacPort.Tests
+  commentId: N:TomcatUserRbacPort.Tests
+  href: TomcatUserRbacPort.html
+  name: TomcatUserRbacPort.Tests
+  nameWithType: TomcatUserRbacPort.Tests
+  fullName: TomcatUserRbacPort.Tests
+  spec.csharp:
+  - uid: TomcatUserRbacPort
+    name: TomcatUserRbacPort
+    href: TomcatUserRbacPort.html
+  - name: .
+  - uid: TomcatUserRbacPort.Tests
+    name: Tests
+    href: TomcatUserRbacPort.Tests.html
+  spec.vb:
+  - uid: TomcatUserRbacPort
+    name: TomcatUserRbacPort
+    href: TomcatUserRbacPort.html
+  - name: .
+  - uid: TomcatUserRbacPort.Tests
+    name: Tests
+    href: TomcatUserRbacPort.Tests.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  name: Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  nameWithType: RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_TrimsNameAndMatchesRolesCaseInsensitively
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_Principal_RejectsMissingNameAndMissingRoleChecks
+  name: Principal_RejectsMissingNameAndMissingRoleChecks
+  nameWithType: RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.Principal_RejectsMissingNameAndMissingRoleChecks
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  name: UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  nameWithType: RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_AuthenticatesAndReturnsEffectiveRoles
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  name: UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  nameWithType: RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsUnknownUserAndInvalidPassword
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_UserDatabaseRealm_RejectsNullDependencies
+  name: UserDatabaseRealm_RejectsNullDependencies
+  nameWithType: RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.UserDatabaseRealm_RejectsNullDependencies
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  name: SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  nameWithType: RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_MatchesExactAndPrefixPathsWithMethods
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  name: SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  nameWithType: RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.SecurityConstraint_RejectsMissingPatternWrongPathAndWrongMethod
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_RbacAuthorizer_AllowsExpectedRoleCombinations
+  name: RbacAuthorizer_AllowsExpectedRoleCombinations
+  nameWithType: RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AllowsExpectedRoleCombinations
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  name: RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  nameWithType: RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_DeniesMissingPrincipalOrRoles
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint*
+  commentId: Overload:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html#TomcatUserRbacPort_Tests_RealmAndAuthorizationTests_RbacAuthorizer_AppliesFirstMatchingConstraint
+  name: RbacAuthorizer_AppliesFirstMatchingConstraint
+  nameWithType: RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.RbacAuthorizer_AppliesFirstMatchingConstraint

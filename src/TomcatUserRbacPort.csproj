@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    ============================================================
+    src/TomcatUserRbacPort.csproj
+    Author: javaboy-vk
+    Date: 2026-05-08
+    Version: 1.2
+    Description:
+      SDK-style .NET project file for the Tomcat User RBAC
+      C# port.
+
+      Source library project for the Tomcat User RBAC C# port.
+
+      This project restores log4net through NuGet instead of committing the
+      DLL to the repository.
+    ============================================================
+  -->
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+
+    <!-- Target .NET Framework 4.8 for compatibility with existing enterprise Windows/.NET workloads. -->
+    <TargetFramework>net48</TargetFramework>
+
+    <!-- Use the latest compiler language version available in the installed SDK. -->
+    <LangVersion>latest</LangVersion>
+
+    <!-- Keep nullable analysis enabled for safer C# code. -->
+    <Nullable>enable</Nullable>
+
+    <!-- Keep implicit usings enabled as requested by the prior project files. -->
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Generate XML documentation comments, equivalent in spirit to Java Javadoc output. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Do not fail/warn for public members missing XML comments during early project evolution. -->
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+    <!-- This source project should not be packed as a NuGet package. -->
+    <IsPackable>false</IsPackable>
+
+    <!-- Avoid duplicate compile-item errors because this project explicitly controls included source files. -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Required when building .NET Framework projects with modern SDK-style tooling. -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="log4net" Version="3.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Compile all production C# source files under the source tree. -->
+    <Compile Include="com\**\*.cs"
+         Exclude="**\bin\**;**\obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\conf\log4net.config" Link="conf\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

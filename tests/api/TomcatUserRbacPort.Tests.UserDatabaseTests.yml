@@ -1,0 +1,464 @@
+### YamlMime:ManagedReference
+items:
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests
+  commentId: T:TomcatUserRbacPort.Tests.UserDatabaseTests
+  id: UserDatabaseTests
+  parent: TomcatUserRbacPort.Tests
+  children:
+  - TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively
+  - TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames
+  - TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  - TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml
+  - TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath
+  langs:
+  - csharp
+  - vb
+  name: UserDatabaseTests
+  nameWithType: UserDatabaseTests
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests
+  type: Class
+  source:
+    id: UserDatabaseTests
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\UserDatabaseTests.cs
+    startLine: 5
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: public sealed class UserDatabaseTests
+    content.vb: Public NotInheritable Class UserDatabaseTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  commentId: M:TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  id: FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  parent: TomcatUserRbacPort.Tests.UserDatabaseTests
+  langs:
+  - csharp
+  - vb
+  name: FromXml_LoadsRolesGroupsUsersAndEffectiveRoles()
+  nameWithType: UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles()
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles()
+  type: Method
+  source:
+    id: FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\UserDatabaseTests.cs
+    startLine: 7
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void FromXml_LoadsRolesGroupsUsersAndEffectiveRoles()
+    content.vb: >-
+      <Fact>
+
+      Public Sub FromXml_LoadsRolesGroupsUsersAndEffectiveRoles()
+  overload: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames
+  commentId: M:TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames
+  id: FromXml_IgnoresElementsWithMissingNames
+  parent: TomcatUserRbacPort.Tests.UserDatabaseTests
+  langs:
+  - csharp
+  - vb
+  name: FromXml_IgnoresElementsWithMissingNames()
+  nameWithType: UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames()
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames()
+  type: Method
+  source:
+    id: FromXml_IgnoresElementsWithMissingNames
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\UserDatabaseTests.cs
+    startLine: 27
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void FromXml_IgnoresElementsWithMissingNames()
+    content.vb: >-
+      <Fact>
+
+      Public Sub FromXml_IgnoresElementsWithMissingNames()
+  overload: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml
+  commentId: M:TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml
+  id: FromXml_ThrowsForMalformedXml
+  parent: TomcatUserRbacPort.Tests.UserDatabaseTests
+  langs:
+  - csharp
+  - vb
+  name: FromXml_ThrowsForMalformedXml()
+  nameWithType: UserDatabaseTests.FromXml_ThrowsForMalformedXml()
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml()
+  type: Method
+  source:
+    id: FromXml_ThrowsForMalformedXml
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\UserDatabaseTests.cs
+    startLine: 43
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void FromXml_ThrowsForMalformedXml()
+    content.vb: >-
+      <Fact>
+
+      Public Sub FromXml_ThrowsForMalformedXml()
+  overload: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath
+  commentId: M:TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath
+  id: Load_RejectsMissingPath
+  parent: TomcatUserRbacPort.Tests.UserDatabaseTests
+  langs:
+  - csharp
+  - vb
+  name: Load_RejectsMissingPath()
+  nameWithType: UserDatabaseTests.Load_RejectsMissingPath()
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath()
+  type: Method
+  source:
+    id: Load_RejectsMissingPath
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\UserDatabaseTests.cs
+    startLine: 49
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void Load_RejectsMissingPath()
+    content.vb: >-
+      <Fact>
+
+      Public Sub Load_RejectsMissingPath()
+  overload: TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively
+  commentId: M:TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively
+  id: AddMethods_ReplaceExistingItemsCaseInsensitively
+  parent: TomcatUserRbacPort.Tests.UserDatabaseTests
+  langs:
+  - csharp
+  - vb
+  name: AddMethods_ReplaceExistingItemsCaseInsensitively()
+  nameWithType: UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively()
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively()
+  type: Method
+  source:
+    id: AddMethods_ReplaceExistingItemsCaseInsensitively
+    path: D:\TCRBAC.NET\tests\TomcatUserRbacPort.Tests\UserDatabaseTests.cs
+    startLine: 55
+  assemblies:
+  - TomcatUserRbacPort.Tests
+  namespace: TomcatUserRbacPort.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void AddMethods_ReplaceExistingItemsCaseInsensitively()
+    content.vb: >-
+      <Fact>
+
+      Public Sub AddMethods_ReplaceExistingItemsCaseInsensitively()
+  overload: TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+references:
+- uid: TomcatUserRbacPort.Tests
+  commentId: N:TomcatUserRbacPort.Tests
+  href: TomcatUserRbacPort.html
+  name: TomcatUserRbacPort.Tests
+  nameWithType: TomcatUserRbacPort.Tests
+  fullName: TomcatUserRbacPort.Tests
+  spec.csharp:
+  - uid: TomcatUserRbacPort
+    name: TomcatUserRbacPort
+    href: TomcatUserRbacPort.html
+  - name: .
+  - uid: TomcatUserRbacPort.Tests
+    name: Tests
+    href: TomcatUserRbacPort.Tests.html
+  spec.vb:
+  - uid: TomcatUserRbacPort
+    name: TomcatUserRbacPort
+    href: TomcatUserRbacPort.html
+  - name: .
+  - uid: TomcatUserRbacPort.Tests
+    name: Tests
+    href: TomcatUserRbacPort.Tests.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles*
+  commentId: Overload:TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  href: TomcatUserRbacPort.Tests.UserDatabaseTests.html#TomcatUserRbacPort_Tests_UserDatabaseTests_FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  name: FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  nameWithType: UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_LoadsRolesGroupsUsersAndEffectiveRoles
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames*
+  commentId: Overload:TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames
+  href: TomcatUserRbacPort.Tests.UserDatabaseTests.html#TomcatUserRbacPort_Tests_UserDatabaseTests_FromXml_IgnoresElementsWithMissingNames
+  name: FromXml_IgnoresElementsWithMissingNames
+  nameWithType: UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_IgnoresElementsWithMissingNames
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml*
+  commentId: Overload:TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml
+  href: TomcatUserRbacPort.Tests.UserDatabaseTests.html#TomcatUserRbacPort_Tests_UserDatabaseTests_FromXml_ThrowsForMalformedXml
+  name: FromXml_ThrowsForMalformedXml
+  nameWithType: UserDatabaseTests.FromXml_ThrowsForMalformedXml
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.FromXml_ThrowsForMalformedXml
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath*
+  commentId: Overload:TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath
+  href: TomcatUserRbacPort.Tests.UserDatabaseTests.html#TomcatUserRbacPort_Tests_UserDatabaseTests_Load_RejectsMissingPath
+  name: Load_RejectsMissingPath
+  nameWithType: UserDatabaseTests.Load_RejectsMissingPath
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.Load_RejectsMissingPath
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively*
+  commentId: Overload:TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively
+  href: TomcatUserRbacPort.Tests.UserDatabaseTests.html#TomcatUserRbacPort_Tests_UserDatabaseTests_AddMethods_ReplaceExistingItemsCaseInsensitively
+  name: AddMethods_ReplaceExistingItemsCaseInsensitively
+  nameWithType: UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests.AddMethods_ReplaceExistingItemsCaseInsensitively

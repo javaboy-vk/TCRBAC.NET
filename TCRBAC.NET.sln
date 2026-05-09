@@ -1,0 +1,44 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomcatUserRbacPort", "src\TomcatUserRbacPort.csproj", "{C9E3A385-BEF0-7933-46E9-F4830C75F24E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B1B6F319-0CFA-4FB3-9A52-13D0C7185EFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomcatUserRbacPort.Tests", "tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj", "{BA3A1DEC-76A6-4116-BC5F-A9F1D787A7CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{EE13BF13-8941-4434-A29A-3C9F421D5BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomcatUserValidator", "examples\TomcatUserValidator\TomcatUserValidator.csproj", "{DC92F408-ACB0-4038-9B02-657572D3E793}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9E3A385-BEF0-7933-46E9-F4830C75F24E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E3A385-BEF0-7933-46E9-F4830C75F24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E3A385-BEF0-7933-46E9-F4830C75F24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E3A385-BEF0-7933-46E9-F4830C75F24E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3A1DEC-76A6-4116-BC5F-A9F1D787A7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3A1DEC-76A6-4116-BC5F-A9F1D787A7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3A1DEC-76A6-4116-BC5F-A9F1D787A7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3A1DEC-76A6-4116-BC5F-A9F1D787A7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC92F408-ACB0-4038-9B02-657572D3E793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC92F408-ACB0-4038-9B02-657572D3E793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC92F408-ACB0-4038-9B02-657572D3E793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC92F408-ACB0-4038-9B02-657572D3E793}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {063AE7AD-8229-4BF8-B8F6-14214FFB100E}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA3A1DEC-76A6-4116-BC5F-A9F1D787A7CB} = {B1B6F319-0CFA-4FB3-9A52-13D0C7185EFC}
+		{DC92F408-ACB0-4038-9B02-657572D3E793} = {EE13BF13-8941-4434-A29A-3C9F421D5BBF}
+	EndGlobalSection
+EndGlobal

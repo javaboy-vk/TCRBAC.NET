@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.mag.dapi.security.rbac
+  commentId: N:com.mag.dapi.security.rbac
+  id: com.mag.dapi.security.rbac
+  children:
+  - com.mag.dapi.security.rbac.RbacAuthorizer
+  - com.mag.dapi.security.rbac.SecurityConstraint
+  langs:
+  - csharp
+  - vb
+  name: com.mag.dapi.security.rbac
+  nameWithType: com.mag.dapi.security.rbac
+  fullName: com.mag.dapi.security.rbac
+  type: Namespace
+  assemblies:
+  - TomcatUserRbacPort
+references:
+- uid: com.mag.dapi.security.rbac.RbacAuthorizer
+  commentId: T:com.mag.dapi.security.rbac.RbacAuthorizer
+  href: com.mag.dapi.security.rbac.RbacAuthorizer.html
+  name: RbacAuthorizer
+  nameWithType: RbacAuthorizer
+  fullName: com.mag.dapi.security.rbac.RbacAuthorizer
+- uid: com.mag.dapi.security.rbac.SecurityConstraint
+  commentId: T:com.mag.dapi.security.rbac.SecurityConstraint
+  href: com.mag.dapi.security.rbac.SecurityConstraint.html
+  name: SecurityConstraint
+  nameWithType: SecurityConstraint
+  fullName: com.mag.dapi.security.rbac.SecurityConstraint

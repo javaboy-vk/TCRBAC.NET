@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://tomcat.apache.org/xml"
+           xmlns="http://tomcat.apache.org/xml"
+           elementFormDefault="qualified">
+
+  <xs:element name="tomcat-users">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="role" type="roleType" />
+        <xs:element name="group" type="groupType" />
+        <xs:element name="user" type="userType" />
+      </xs:choice>
+      <xs:attribute name="version" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="roleType">
+    <xs:attribute name="rolename" type="xs:string" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="description" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="groupType">
+    <xs:attribute name="groupname" type="xs:string" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="description" type="xs:string" use="optional" />
+    <xs:attribute name="roles" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="userType">
+    <xs:attribute name="username" type="xs:string" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="password" type="xs:string" use="optional" />
+    <xs:attribute name="roles" type="xs:string" use="optional" />
+    <xs:attribute name="groups" type="xs:string" use="optional" />
+    <xs:attribute name="fullName" type="xs:string" use="optional" />
+    <xs:attribute name="fullname" type="xs:string" use="optional" />
+  </xs:complexType>
+</xs:schema>

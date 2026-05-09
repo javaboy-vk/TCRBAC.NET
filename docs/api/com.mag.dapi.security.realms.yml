@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.mag.dapi.security.realms
+  commentId: N:com.mag.dapi.security.realms
+  id: com.mag.dapi.security.realms
+  children:
+  - com.mag.dapi.security.realms.Principal
+  - com.mag.dapi.security.realms.UserDatabaseRealm
+  langs:
+  - csharp
+  - vb
+  name: com.mag.dapi.security.realms
+  nameWithType: com.mag.dapi.security.realms
+  fullName: com.mag.dapi.security.realms
+  type: Namespace
+  assemblies:
+  - TomcatUserRbacPort
+references:
+- uid: com.mag.dapi.security.realms.Principal
+  commentId: T:com.mag.dapi.security.realms.Principal
+  parent: com.mag.dapi.security.realms
+  href: com.mag.dapi.security.realms.Principal.html
+  name: Principal
+  nameWithType: Principal
+  fullName: com.mag.dapi.security.realms.Principal
+- uid: com.mag.dapi.security.realms.UserDatabaseRealm
+  commentId: T:com.mag.dapi.security.realms.UserDatabaseRealm
+  href: com.mag.dapi.security.realms.UserDatabaseRealm.html
+  name: UserDatabaseRealm
+  nameWithType: UserDatabaseRealm
+  fullName: com.mag.dapi.security.realms.UserDatabaseRealm
+- uid: com.mag.dapi.security.realms
+  commentId: N:com.mag.dapi.security.realms
+  href: com.html
+  name: com.mag.dapi.security.realms
+  nameWithType: com.mag.dapi.security.realms
+  fullName: com.mag.dapi.security.realms
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.realms
+    name: realms
+    href: com.mag.dapi.security.realms.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.realms
+    name: realms
+    href: com.mag.dapi.security.realms.html

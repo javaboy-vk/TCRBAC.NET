@@ -1,0 +1,503 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.mag.dapi.security.realms.UserDatabaseRealm
+  commentId: T:com.mag.dapi.security.realms.UserDatabaseRealm
+  id: UserDatabaseRealm
+  parent: com.mag.dapi.security.realms
+  children:
+  - com.mag.dapi.security.realms.UserDatabaseRealm.#ctor(com.mag.dapi.security.users.MemoryUserDatabase,com.mag.dapi.security.credentials.ICredentialHandler)
+  - com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: UserDatabaseRealm
+  nameWithType: UserDatabaseRealm
+  fullName: com.mag.dapi.security.realms.UserDatabaseRealm
+  type: Class
+  source:
+    id: UserDatabaseRealm
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\UserDatabaseRealm.cs
+    startLine: 23
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.realms
+  summary: >-
+    Realm that authenticates against <xref href="com.mag.dapi.security.users.MemoryUserDatabase" data-throw-if-not-resolved="false"></xref>.
+
+    This is the direct C# analog of the Tomcat UserDatabaseRealm pattern.
+  example: []
+  syntax:
+    content: public sealed class UserDatabaseRealm
+    content.vb: Public NotInheritable Class UserDatabaseRealm
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+- uid: com.mag.dapi.security.realms.UserDatabaseRealm.#ctor(com.mag.dapi.security.users.MemoryUserDatabase,com.mag.dapi.security.credentials.ICredentialHandler)
+  commentId: M:com.mag.dapi.security.realms.UserDatabaseRealm.#ctor(com.mag.dapi.security.users.MemoryUserDatabase,com.mag.dapi.security.credentials.ICredentialHandler)
+  id: '#ctor(com.mag.dapi.security.users.MemoryUserDatabase,com.mag.dapi.security.credentials.ICredentialHandler)'
+  parent: com.mag.dapi.security.realms.UserDatabaseRealm
+  langs:
+  - csharp
+  - vb
+  name: UserDatabaseRealm(MemoryUserDatabase, ICredentialHandler)
+  nameWithType: UserDatabaseRealm.UserDatabaseRealm(MemoryUserDatabase, ICredentialHandler)
+  fullName: com.mag.dapi.security.realms.UserDatabaseRealm.UserDatabaseRealm(com.mag.dapi.security.users.MemoryUserDatabase, com.mag.dapi.security.credentials.ICredentialHandler)
+  type: Constructor
+  source:
+    id: .ctor
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\UserDatabaseRealm.cs
+    startLine: 29
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.realms
+  syntax:
+    content: public UserDatabaseRealm(MemoryUserDatabase database, ICredentialHandler credentialHandler)
+    parameters:
+    - id: database
+      type: com.mag.dapi.security.users.MemoryUserDatabase
+    - id: credentialHandler
+      type: com.mag.dapi.security.credentials.ICredentialHandler
+    content.vb: Public Sub New(database As MemoryUserDatabase, credentialHandler As ICredentialHandler)
+  overload: com.mag.dapi.security.realms.UserDatabaseRealm.#ctor*
+  nameWithType.vb: UserDatabaseRealm.New(MemoryUserDatabase, ICredentialHandler)
+  fullName.vb: com.mag.dapi.security.realms.UserDatabaseRealm.New(com.mag.dapi.security.users.MemoryUserDatabase, com.mag.dapi.security.credentials.ICredentialHandler)
+  name.vb: New(MemoryUserDatabase, ICredentialHandler)
+- uid: com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate(System.String,System.String)
+  commentId: M:com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate(System.String,System.String)
+  id: Authenticate(System.String,System.String)
+  parent: com.mag.dapi.security.realms.UserDatabaseRealm
+  langs:
+  - csharp
+  - vb
+  name: Authenticate(string, string)
+  nameWithType: UserDatabaseRealm.Authenticate(string, string)
+  fullName: com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate(string, string)
+  type: Method
+  source:
+    id: Authenticate
+    path: D:\TCRBAC.NET\src\com\mag\dapi\security\realms\UserDatabaseRealm.cs
+    startLine: 39
+  assemblies:
+  - TomcatUserRbacPort
+  namespace: com.mag.dapi.security.realms
+  summary: Authenticates a username/password pair. Returns null when authentication fails.
+  example: []
+  syntax:
+    content: public Principal? Authenticate(string username, string password)
+    parameters:
+    - id: username
+      type: System.String
+    - id: password
+      type: System.String
+    return:
+      type: com.mag.dapi.security.realms.Principal
+    content.vb: Public Function Authenticate(username As String, password As String) As Principal
+  overload: com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate*
+  nameWithType.vb: UserDatabaseRealm.Authenticate(String, String)
+  fullName.vb: com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate(String, String)
+  name.vb: Authenticate(String, String)
+references:
+- uid: com.mag.dapi.security.users.MemoryUserDatabase
+  commentId: T:com.mag.dapi.security.users.MemoryUserDatabase
+  parent: com.mag.dapi.security.users
+  href: com.mag.dapi.security.users.MemoryUserDatabase.html
+  name: MemoryUserDatabase
+  nameWithType: MemoryUserDatabase
+  fullName: com.mag.dapi.security.users.MemoryUserDatabase
+- uid: com.mag.dapi.security.realms
+  commentId: N:com.mag.dapi.security.realms
+  href: com.html
+  name: com.mag.dapi.security.realms
+  nameWithType: com.mag.dapi.security.realms
+  fullName: com.mag.dapi.security.realms
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.realms
+    name: realms
+    href: com.mag.dapi.security.realms.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.realms
+    name: realms
+    href: com.mag.dapi.security.realms.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: com.mag.dapi.security.users
+  commentId: N:com.mag.dapi.security.users
+  href: com.html
+  name: com.mag.dapi.security.users
+  nameWithType: com.mag.dapi.security.users
+  fullName: com.mag.dapi.security.users
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.users
+    name: users
+    href: com.mag.dapi.security.users.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.users
+    name: users
+    href: com.mag.dapi.security.users.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: com.mag.dapi.security.realms.UserDatabaseRealm.#ctor*
+  commentId: Overload:com.mag.dapi.security.realms.UserDatabaseRealm.#ctor
+  href: com.mag.dapi.security.realms.UserDatabaseRealm.html#com_mag_dapi_security_realms_UserDatabaseRealm__ctor_com_mag_dapi_security_users_MemoryUserDatabase_com_mag_dapi_security_credentials_ICredentialHandler_
+  name: UserDatabaseRealm
+  nameWithType: UserDatabaseRealm.UserDatabaseRealm
+  fullName: com.mag.dapi.security.realms.UserDatabaseRealm.UserDatabaseRealm
+  nameWithType.vb: UserDatabaseRealm.New
+  fullName.vb: com.mag.dapi.security.realms.UserDatabaseRealm.New
+  name.vb: New
+- uid: com.mag.dapi.security.credentials.ICredentialHandler
+  commentId: T:com.mag.dapi.security.credentials.ICredentialHandler
+  parent: com.mag.dapi.security.credentials
+  href: com.mag.dapi.security.credentials.ICredentialHandler.html
+  name: ICredentialHandler
+  nameWithType: ICredentialHandler
+  fullName: com.mag.dapi.security.credentials.ICredentialHandler
+- uid: com.mag.dapi.security.credentials
+  commentId: N:com.mag.dapi.security.credentials
+  href: com.html
+  name: com.mag.dapi.security.credentials
+  nameWithType: com.mag.dapi.security.credentials
+  fullName: com.mag.dapi.security.credentials
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.credentials
+    name: credentials
+    href: com.mag.dapi.security.credentials.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.credentials
+    name: credentials
+    href: com.mag.dapi.security.credentials.html
+- uid: com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate*
+  commentId: Overload:com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate
+  href: com.mag.dapi.security.realms.UserDatabaseRealm.html#com_mag_dapi_security_realms_UserDatabaseRealm_Authenticate_System_String_System_String_
+  name: Authenticate
+  nameWithType: UserDatabaseRealm.Authenticate
+  fullName: com.mag.dapi.security.realms.UserDatabaseRealm.Authenticate
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: com.mag.dapi.security.realms.Principal
+  commentId: T:com.mag.dapi.security.realms.Principal
+  parent: com.mag.dapi.security.realms
+  href: com.mag.dapi.security.realms.Principal.html
+  name: Principal
+  nameWithType: Principal
+  fullName: com.mag.dapi.security.realms.Principal

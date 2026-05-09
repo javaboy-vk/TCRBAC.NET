@@ -1,0 +1,26 @@
+<Project>
+
+  <PropertyGroup>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)build\$(MSBuildProjectName)\</BaseOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([System.String]::Copy('$(MSBuildProjectDirectory)').StartsWith($([System.IO.Path]::Combine('$(MSBuildThisFileDirectory)', 'examples')), System.StringComparison.OrdinalIgnoreCase))">
+    <BaseOutputPath>$(MSBuildThisFileDirectory)build\examples\$(MSBuildProjectName)\</BaseOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([System.String]::Copy('$(MSBuildProjectDirectory)').StartsWith($([System.IO.Path]::Combine('$(MSBuildThisFileDirectory)', 'tests')), System.StringComparison.OrdinalIgnoreCase))">
+    <BaseOutputPath>$(MSBuildThisFileDirectory)build\tests\$(MSBuildProjectName)\</BaseOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(MSBuildProjectDirectory)\' == '$(MSBuildThisFileDirectory)'">
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(MSBuildProjectDirectory)\' == '$(MSBuildThisFileDirectory)' and Exists('$(MSBuildThisFileDirectory)src\TomcatUserRbacPort.csproj')">
+    <ProjectReference Include="$(MSBuildThisFileDirectory)src\TomcatUserRbacPort.csproj" />
+  </ItemGroup>
+
+</Project>

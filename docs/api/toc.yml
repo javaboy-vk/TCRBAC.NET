@@ -1,0 +1,59 @@
+### YamlMime:TableOfContent
+items:
+- uid: com.mag.dapi.security.credentials
+  name: com.mag.dapi.security.credentials
+  type: Namespace
+  items:
+  - uid: com.mag.dapi.security.credentials.ICredentialHandler
+    name: ICredentialHandler
+    type: Interface
+  - uid: com.mag.dapi.security.credentials.MessageDigestCredentialHandler
+    name: MessageDigestCredentialHandler
+    type: Class
+  - uid: com.mag.dapi.security.credentials.NestedCredentialHandler
+    name: NestedCredentialHandler
+    type: Class
+  - uid: com.mag.dapi.security.credentials.PlainTextCredentialHandler
+    name: PlainTextCredentialHandler
+    type: Class
+- uid: com.mag.dapi.security.model
+  name: com.mag.dapi.security.model
+  type: Namespace
+  items:
+  - uid: com.mag.dapi.security.model.Group
+    name: Group
+    type: Class
+  - uid: com.mag.dapi.security.model.Role
+    name: Role
+    type: Class
+  - uid: com.mag.dapi.security.model.User
+    name: User
+    type: Class
+- uid: com.mag.dapi.security.rbac
+  name: com.mag.dapi.security.rbac
+  type: Namespace
+  items:
+  - uid: com.mag.dapi.security.rbac.RbacAuthorizer
+    name: RbacAuthorizer
+    type: Class
+  - uid: com.mag.dapi.security.rbac.SecurityConstraint
+    name: SecurityConstraint
+    type: Class
+- uid: com.mag.dapi.security.realms
+  name: com.mag.dapi.security.realms
+  type: Namespace
+  items:
+  - uid: com.mag.dapi.security.realms.Principal
+    name: Principal
+    type: Class
+  - uid: com.mag.dapi.security.realms.UserDatabaseRealm
+    name: UserDatabaseRealm
+    type: Class
+- uid: com.mag.dapi.security.users
+  name: com.mag.dapi.security.users
+  type: Namespace
+  items:
+  - uid: com.mag.dapi.security.users.MemoryUserDatabase
+    name: MemoryUserDatabase
+    type: Class
+memberLayout: SamePage

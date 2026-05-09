@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: com.mag.dapi.security.model
+  commentId: N:com.mag.dapi.security.model
+  id: com.mag.dapi.security.model
+  children:
+  - com.mag.dapi.security.model.Group
+  - com.mag.dapi.security.model.Role
+  - com.mag.dapi.security.model.User
+  langs:
+  - csharp
+  - vb
+  name: com.mag.dapi.security.model
+  nameWithType: com.mag.dapi.security.model
+  fullName: com.mag.dapi.security.model
+  type: Namespace
+  assemblies:
+  - TomcatUserRbacPort
+references:
+- uid: com.mag.dapi.security.model.Group
+  commentId: T:com.mag.dapi.security.model.Group
+  parent: com.mag.dapi.security.model
+  href: com.mag.dapi.security.model.Group.html
+  name: Group
+  nameWithType: Group
+  fullName: com.mag.dapi.security.model.Group
+- uid: com.mag.dapi.security.model.Role
+  commentId: T:com.mag.dapi.security.model.Role
+  parent: com.mag.dapi.security.model
+  href: com.mag.dapi.security.model.Role.html
+  name: Role
+  nameWithType: Role
+  fullName: com.mag.dapi.security.model.Role
+- uid: com.mag.dapi.security.model.User
+  commentId: T:com.mag.dapi.security.model.User
+  parent: com.mag.dapi.security.model
+  href: com.mag.dapi.security.model.User.html
+  name: User
+  nameWithType: User
+  fullName: com.mag.dapi.security.model.User
+- uid: com.mag.dapi.security.model
+  commentId: N:com.mag.dapi.security.model
+  href: com.html
+  name: com.mag.dapi.security.model
+  nameWithType: com.mag.dapi.security.model
+  fullName: com.mag.dapi.security.model
+  spec.csharp:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.model
+    name: model
+    href: com.mag.dapi.security.model.html
+  spec.vb:
+  - uid: com
+    name: com
+    href: com.html
+  - name: .
+  - uid: com.mag
+    name: mag
+    href: com.mag.html
+  - name: .
+  - uid: com.mag.dapi
+    name: dapi
+    href: com.mag.dapi.html
+  - name: .
+  - uid: com.mag.dapi.security
+    name: security
+    href: com.mag.dapi.security.html
+  - name: .
+  - uid: com.mag.dapi.security.model
+    name: model
+    href: com.mag.dapi.security.model.html

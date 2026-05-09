@@ -1,0 +1,10 @@
+- name: Home
+  href: mdvault/index.md
+- name: Docs
+  href: mdvault/docs/index.md
+- name: API
+  href: mdvault/api/index.md
+- name: Examples
+  href: mdvault/examples/index.md
+- name: Tests
+  href: mdvault/tests/index.md

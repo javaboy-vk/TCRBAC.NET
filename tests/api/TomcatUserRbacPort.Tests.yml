@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: TomcatUserRbacPort.Tests
+  commentId: N:TomcatUserRbacPort.Tests
+  id: TomcatUserRbacPort.Tests
+  children:
+  - TomcatUserRbacPort.Tests.CredentialHandlerTests
+  - TomcatUserRbacPort.Tests.ExampleProgramTests
+  - TomcatUserRbacPort.Tests.ModelTests
+  - TomcatUserRbacPort.Tests.RbacFlowTests
+  - TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  - TomcatUserRbacPort.Tests.UserDatabaseTests
+  langs:
+  - csharp
+  - vb
+  name: TomcatUserRbacPort.Tests
+  nameWithType: TomcatUserRbacPort.Tests
+  fullName: TomcatUserRbacPort.Tests
+  type: Namespace
+  assemblies:
+  - TomcatUserRbacPort.Tests
+references:
+- uid: TomcatUserRbacPort.Tests.CredentialHandlerTests
+  commentId: T:TomcatUserRbacPort.Tests.CredentialHandlerTests
+  href: TomcatUserRbacPort.Tests.CredentialHandlerTests.html
+  name: CredentialHandlerTests
+  nameWithType: CredentialHandlerTests
+  fullName: TomcatUserRbacPort.Tests.CredentialHandlerTests
+- uid: TomcatUserRbacPort.Tests.ExampleProgramTests
+  commentId: T:TomcatUserRbacPort.Tests.ExampleProgramTests
+  href: TomcatUserRbacPort.Tests.ExampleProgramTests.html
+  name: ExampleProgramTests
+  nameWithType: ExampleProgramTests
+  fullName: TomcatUserRbacPort.Tests.ExampleProgramTests
+- uid: TomcatUserRbacPort.Tests.ModelTests
+  commentId: T:TomcatUserRbacPort.Tests.ModelTests
+  href: TomcatUserRbacPort.Tests.ModelTests.html
+  name: ModelTests
+  nameWithType: ModelTests
+  fullName: TomcatUserRbacPort.Tests.ModelTests
+- uid: TomcatUserRbacPort.Tests.RbacFlowTests
+  commentId: T:TomcatUserRbacPort.Tests.RbacFlowTests
+  href: TomcatUserRbacPort.Tests.RbacFlowTests.html
+  name: RbacFlowTests
+  nameWithType: RbacFlowTests
+  fullName: TomcatUserRbacPort.Tests.RbacFlowTests
+- uid: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  commentId: T:TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+  href: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests.html
+  name: RealmAndAuthorizationTests
+  nameWithType: RealmAndAuthorizationTests
+  fullName: TomcatUserRbacPort.Tests.RealmAndAuthorizationTests
+- uid: TomcatUserRbacPort.Tests.UserDatabaseTests
+  commentId: T:TomcatUserRbacPort.Tests.UserDatabaseTests
+  href: TomcatUserRbacPort.Tests.UserDatabaseTests.html
+  name: UserDatabaseTests
+  nameWithType: UserDatabaseTests
+  fullName: TomcatUserRbacPort.Tests.UserDatabaseTests

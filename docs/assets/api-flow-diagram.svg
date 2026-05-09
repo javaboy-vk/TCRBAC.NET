@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">API flow diagram</title>
+  <desc id="desc">Sequence diagram for loading users, authenticating credentials, creating a principal, and authorizing access.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .participant { fill: #ffffff; stroke: #334155; stroke-width: 1.5; rx: 6; }
+      .label { fill: #0f172a; font-family: Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 600; }
+      .small { fill: #334155; font-family: Segoe UI, Arial, sans-serif; font-size: 13px; }
+      .line { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 5 5; }
+      .call { stroke: #2563eb; stroke-width: 2; marker-end: url(#arrow); fill: none; }
+      .return { stroke: #64748b; stroke-width: 2; stroke-dasharray: 6 4; marker-end: url(#arrow-muted); fill: none; }
+      .num { fill: #ffffff; font-family: Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; }
+      .dot { fill: #2563eb; }
+    </style>
+  </defs>
+  <rect class="bg" width="1120" height="520"/>
+  <text x="40" y="38" class="label" font-size="22">API Runtime Flow</text>
+  <text x="40" y="62" class="small">Load users, authenticate credentials, create a principal, then authorize access.</text>
+
+  <g id="participants">
+    <rect class="participant" x="40" y="90" width="145" height="48"/>
+    <text class="label" x="112.5" y="120" text-anchor="middle">Application</text>
+    <rect class="participant" x="220" y="90" width="170" height="48"/>
+    <text class="label" x="305" y="120" text-anchor="middle">MemoryUserDatabase</text>
+    <rect class="participant" x="425" y="90" width="155" height="48"/>
+    <text class="label" x="502.5" y="120" text-anchor="middle">UserDatabaseRealm</text>
+    <rect class="participant" x="615" y="90" width="145" height="48"/>
+    <text class="label" x="687.5" y="120" text-anchor="middle">ICredentialHandler</text>
+    <rect class="participant" x="795" y="90" width="125" height="48"/>
+    <text class="label" x="857.5" y="120" text-anchor="middle">Principal</text>
+    <rect class="participant" x="955" y="90" width="135" height="48"/>
+    <text class="label" x="1022.5" y="120" text-anchor="middle">RbacAuthorizer</text>
+  </g>
+
+  <g id="lifelines">
+    <line class="line" x1="112.5" y1="138" x2="112.5" y2="470"/>
+    <line class="line" x1="305" y1="138" x2="305" y2="470"/>
+    <line class="line" x1="502.5" y1="138" x2="502.5" y2="470"/>
+    <line class="line" x1="687.5" y1="138" x2="687.5" y2="470"/>
+    <line class="line" x1="857.5" y1="138" x2="857.5" y2="470"/>
+    <line class="line" x1="1022.5" y1="138" x2="1022.5" y2="470"/>
+  </g>
+
+  <g id="messages">
+    <circle class="dot" cx="126" cy="170" r="10"/><text class="num" x="126" y="174" text-anchor="middle">1</text>
+    <line class="call" x1="142" y1="170" x2="285" y2="170"/><text class="small" x="155" y="160">Load("tomcat-users.xml")</text>
+    <line class="return" x1="285" y1="205" x2="132" y2="205"/><text class="small" x="165" y="196">users, groups, roles</text>
+
+    <circle class="dot" cx="126" cy="245" r="10"/><text class="num" x="126" y="249" text-anchor="middle">2</text>
+    <line class="call" x1="142" y1="245" x2="482" y2="245"/><text class="small" x="205" y="236">Authenticate(username, password)</text>
+
+    <circle class="dot" cx="516" cy="285" r="10"/><text class="num" x="516" y="289" text-anchor="middle">3</text>
+    <line class="call" x1="503" y1="285" x2="325" y2="285"/><text class="small" x="347" y="276">FindUser(username)</text>
+    <line class="return" x1="325" y1="318" x2="486" y2="318"/><text class="small" x="357" y="309">User or null</text>
+
+    <circle class="dot" cx="516" cy="355" r="10"/><text class="num" x="516" y="359" text-anchor="middle">4</text>
+    <line class="call" x1="522" y1="355" x2="668" y2="355"/><text class="small" x="535" y="346">Matches(password, stored)</text>
+    <line class="return" x1="668" y1="388" x2="522" y2="388"/><text class="small" x="568" y="379">true or false</text>
+
+    <circle class="dot" cx="516" cy="425" r="10"/><text class="num" x="516" y="429" text-anchor="middle">5</text>
+    <line class="call" x1="503" y1="425" x2="325" y2="425"/><text class="small" x="337" y="416">GetEffectiveRoles(user)</text>
+    <line class="return" x1="325" y1="458" x2="486" y2="458"/><text class="small" x="345" y="449">effective roles</text>
+
+    <circle class="dot" cx="872" cy="245" r="10"/><text class="num" x="872" y="249" text-anchor="middle">6</text>
+    <line class="return" x1="845" y1="245" x2="522" y2="245"/><text class="small" x="650" y="236">Principal or null</text>
+
+    <circle class="dot" cx="126" cy="490" r="10"/><text class="num" x="126" y="494" text-anchor="middle">7</text>
+    <line class="call" x1="142" y1="490" x2="1004" y2="490"/><text class="small" x="420" y="482">IsAllowed(principal, path, method, constraints)</text>
+    <line class="return" x1="1004" y1="508" x2="142" y2="508"/><text class="small" x="540" y="504">allow or deny</text>
+  </g>
+</svg>

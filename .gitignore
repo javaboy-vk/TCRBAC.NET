@@ -1,0 +1,55 @@
+# Build output
+build/
+bin/
+obj/
+
+# Local/private binary dependency folder
+# Keep the directory if needed, but do not commit downloaded DLLs.
+lib/*.dll
+lib/*.pdb
+lib/*.xml
+/lib/*
+!/lib/.gitkeep
+
+# Test output
+TestResults/
+*.trx
+*.coverage
+coverage/
+coverage.*
+
+# Generated documentation sites
+site/
+docs/site/
+examples/site/
+
+
+# Visual Studio / VS Code local files
+.vs/
+.vscode/*
+!.vscode/
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Always exclude local history / cache / temporary files
+.vscode/.history/
+.vscode/.ropeproject/
+.vscode/*.log
+
+
+# NuGet and local tooling
+packages/
+*.nupkg
+.nuget/
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+*.tmp
+*.log

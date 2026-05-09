@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TCRBAC Developer Commands</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #5f6b7a;
+      --line: #c8d4e3;
+      --panel: #f7f9fc;
+      --head: #e4effb;
+      --accent: #2f6faf;
+      --code: #0f1720;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.45;
+    }
+
+    header {
+      padding: 32px 42px 22px;
+      border-bottom: 1px solid var(--line);
+      background: var(--head);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: 0;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 980px;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 32px 48px;
+    }
+
+    section {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      margin: 0 0 22px;
+      padding: 20px 22px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    ul {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.95em;
+    }
+
+    pre {
+      margin: 10px 0 14px;
+      padding: 13px 15px;
+      overflow-x: auto;
+      color: #eef5ff;
+      background: var(--code);
+      border-left: 4px solid var(--accent);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TCRBAC Developer Commands</h1>
+    <p>Quick reference for a new developer building, testing, running examples, debugging in VS Code, and generating HTML documentation for the TCRBAC .NET Framework 4.8 solution.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>.NET SDK 8.0 or newer. The repo uses <code>global.json</code> with SDK <code>8.0.100</code> and <code>rollForward</code> set to <code>latestFeature</code>.</li>
+        <li>.NET Framework 4.8 runtime for running the built <code>net48</code> binaries on Windows.</li>
+        <li>DocFX installed globally for HTML documentation.</li>
+        <li>Optional Node.js and Mermaid CLI only if you need to regenerate Mermaid-authored diagrams.</li>
+      </ul>
+      <pre><code>dotnet --info
+dotnet tool install -g docfx
+docfx --version
+
+npm install -g @mermaid-js/mermaid-cli
+mmdc --version</code></pre>
+      <p class="note">The Mermaid commands are optional. The committed docs already use SVG files under <code>docs\assets</code>.</p>
+    </section>
+
+    <section>
+      <h2>Fresh Checkout Setup</h2>
+      <p>Run this full sequence from a new checkout. Replace the first two lines with the real clone URL and local folder if needed.</p>
+      <pre><code>git clone &lt;repository-url&gt; TCRBAC.NET
+cd TCRBAC.NET
+
+dotnet --info
+dotnet nuget list source
+dotnet restore TCRBAC.NET.sln
+dotnet build TCRBAC.NET.sln
+dotnet test TCRBAC.NET.sln
+
+dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
+
+docfx build
+docfx docs\docfx.json
+docfx examples\docfx.json
+docfx serve site</code></pre>
+      <p><code>dotnet restore</code> downloads every project dependency from NuGet. That includes <code>log4net 3.3.1</code>, <code>Microsoft.NETFramework.ReferenceAssemblies.net48</code>, <code>Microsoft.NET.Test.Sdk</code>, <code>xunit</code>, <code>xunit.runner.visualstudio</code>, and <code>coverlet.collector</code>.</p>
+      <p>The repo-local <code>NuGet.config</code> clears machine-specific package sources and uses <code>nuget.org</code>, so a new developer does not need a checked-in DLL under <code>lib</code>.</p>
+      <p>After <code>docfx serve site</code>, open the printed local URL. The main generated site is expected at <code>http://localhost:8080</code> when DocFX selects port <code>8080</code>.</p>
+    </section>
+
+    <section>
+      <h2>Core Build Workflow</h2>
+      <p>Run these from the repository root: <code>D:\TCRBAC.NET</code>.</p>
+      <pre><code>dotnet restore
+dotnet clean
+dotnet build
+dotnet test</code></pre>
+      <p>Build outputs are written under <code>build\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for the library, <code>build\examples\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for examples, and <code>build\tests\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for tests.</p>
+      <p>Shared configuration files live in <code>conf</code>. The source, test, and example projects copy <code>conf\log4net.config</code> into their outputs as <code>conf\log4net.config</code>.</p>
+      <p>The projects restore log4net from NuGet with <code>PackageReference Include=&quot;log4net&quot; Version=&quot;3.3.1&quot;</code>; do not commit a local <code>log4net.dll</code>.</p>
+
+      <h3>Release Build</h3>
+      <pre><code>dotnet build --configuration Release
+dotnet test --configuration Release</code></pre>
+    </section>
+
+    <section>
+      <h2>Project-Specific Commands</h2>
+      <div class="grid">
+        <div>
+          <h3>Library</h3>
+          <pre><code>dotnet build src\TomcatUserRbacPort.csproj</code></pre>
+        </div>
+        <div>
+          <h3>Tests</h3>
+          <pre><code>dotnet build tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj
+dotnet test tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj</code></pre>
+        </div>
+        <div>
+          <h3>Validator Example</h3>
+          <pre><code>dotnet build examples\TomcatUserValidator\TomcatUserValidator.csproj
+dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
+dotnet run --project examples\TomcatUserValidator -- tomcat wrong-password</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Generate HTML Documentation</h2>
+      <h3>Main Documentation Site</h3>
+      <pre><code>docfx docs\docfx.json
+docfx serve docs\site</code></pre>
+      <p class="note">The site includes API documentation, guides, and diagrams. Open the local URL printed by <code>docfx serve</code>.</p>
+
+      <h3>Examples Documentation Site</h3>
+      <pre><code>docfx examples\docfx.json
+docfx serve examples\site</code></pre>
+
+      <h3>VS Code Tasks</h3>
+      <p>Open the Command Palette and run <code>Tasks: Run Task</code>, then choose:</p>
+      <ul>
+        <li><code>Build Docs</code></li>
+        <li><code>Build Examples Docs</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Diagrams</h2>
+      <p>Current source UML diagram artifacts:</p>
+      <ul>
+        <li><a href="diagrams/src-class-diagram.html">docs/diagrams/src-class-diagram.md</a></li>
+        <li><a href="/assets/src-class-diagram.svg">docs/assets/src-class-diagram.svg</a></li>
+      </ul>
+      <p>If Mermaid CLI is installed and you have a <code>.mmd</code> input file, render SVGs with:</p>
+      <pre><code>mmdc -i input.mmd -o output.svg</code></pre>
+    </section>
+
+    <section>
+      <h2>VS Code Debugging</h2>
+      <p>Open Run and Debug, then choose one of these launch targets:</p>
+      <ul>
+        <li><code>TomcatUserValidator: tomcat/tomcat</code></li>
+        <li><code>TomcatUserValidator: both/both</code></li>
+        <li><code>TomcatUserValidator: failed login</code></li>
+        <li><code>Debug Tests: RbacFlowTests</code></li>
+      </ul>
+      <p>Build and test tasks are also available from <code>Tasks: Run Task</code>:</p>
+      <ul>
+        <li><code>Build TomcatUserValidator</code></li>
+        <li><code>Build Tests</code></li>
+        <li><code>Run Tests</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Useful Files</h2>
+      <ul>
+        <li><a href="../README.html">README.md</a></li>
+        <li><a href="testing-and-debugging.html">docs/testing-and-debugging.md</a></li>
+        <li><a href="../examples/TomcatUserValidator/README.html">examples/TomcatUserValidator/README.md</a></li>
+        <li><a href="../examples/tomcat/tomcat-users.xml">examples/tomcat/tomcat-users.xml</a></li>
+        <li><a href="../.vscode/tasks.json">.vscode/tasks.json</a></li>
+        <li><a href="../.vscode/launch.json">.vscode/launch.json</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Troubleshooting</h2>
+      <h3>VS Code still shows stale C# errors</h3>
+      <pre><code>Developer: Reload Window
+C#: Restart Language Server</code></pre>
+
+      <h3>Clean generated files</h3>
+      <pre><code>dotnet clean</code></pre>
+
+      <h3>DocFX command not found</h3>
+      <pre><code>dotnet tool install -g docfx</code></pre>
+    </section>
+  </main>
+</body>
+</html>

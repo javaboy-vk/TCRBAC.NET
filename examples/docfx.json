@@ -1,0 +1,64 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "TomcatUserValidator/TomcatUserValidator.csproj"
+          ],
+          "src": "."
+        }
+      ],
+      "dest": "api",
+      "filter": "filterConfig.yml"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "toc.yml"
+        ],
+        "exclude": [
+          "site/**"
+        ]
+      },
+      {
+        "src": "../mdvault/examples",
+        "files": [
+          "README.md",
+          "index.md",
+          "Example-Flow-Diagram.md",
+          "TomcatUserValidator/README.md",
+          "tomcat/README.md"
+        ],
+        "dest": ".",
+        "exclude": [
+          "site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "src": "../docs/assets",
+        "files": [
+          "example-flow-diagram.svg"
+        ],
+        "dest": "assets"
+      },
+      {
+        "files": [
+          "tomcat/tomcat-users.xml",
+          "tomcat/tomcat-users.xsd"
+        ]
+      }
+    ],
+    "dest": "site",
+    "globalMetadata": {
+      "_appTitle": "TCRBAC Examples Documentation",
+      "_appName": "TCRBAC Examples",
+      "_appFooter": "Author: vasilis | Examples"
+    }
+  }
+}

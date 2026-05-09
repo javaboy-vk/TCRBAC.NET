@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "name": "TCRBAC",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "dotnet.defaultSolution": "TCRBAC.NET.sln",
+    "omnisharp.defaultLaunchSolution": "TCRBAC.NET.sln",
+    "omnisharp.useModernNet": true,
+    "omnisharp.enableMsBuildLoadProjectsOnDemand": false,
+    "omnisharp.enableEditorConfigSupport": true,
+    "files.exclude": {
+      "**/bin": true,
+      "**/obj": true
+    },
+    "search.exclude": {
+      "**/bin": true,
+      "**/obj": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-dotnettools.csdevkit",
+      "ms-dotnettools.csharp"
+    ]
+  }
+}
