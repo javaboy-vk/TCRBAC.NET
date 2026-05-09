@@ -53,3 +53,7 @@ Thumbs.db
 Desktop.ini
 *.tmp
 *.log
+
+.playwright-mcp/
+# Stale/generated DocFX metadata output
+/api/
