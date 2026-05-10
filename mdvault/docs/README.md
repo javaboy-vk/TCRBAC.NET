@@ -36,8 +36,9 @@ Generate the full documentation site from the repository root:
 
 ```powershell
 docfx build
-.\tests\serve-test-site.ps1
 ```
+
+This updates the generated `site` folder only. It does not start a server.
 
 Generate only the standalone docs site:
 

@@ -56,22 +56,6 @@
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "Serve Documentation Site",
-      "type": "shell",
-      "command": "powershell",
-      "args": [
-        "-NoProfile",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        "${workspaceFolder}/tests/serve-test-site.ps1",
-        "-Port",
-        "8080"
-      ],
-      "group": "test",
-      "problemMatcher": []
-    },
-    {
       "label": "DocFX Build Docs",
       "type": "shell",
       "command": "docfx",

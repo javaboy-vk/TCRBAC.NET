@@ -95,9 +95,7 @@
         "src": "tests",
         "files": [
           "run-tests.ps1",
-          "Convert-TrxToAllure.ps1",
-          "serve-test-site.ps1",
-          "serve-test-site.js"
+          "Convert-TrxToAllure.ps1"
         ],
         "dest": "tests"
       },

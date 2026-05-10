@@ -117,10 +117,9 @@ dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
 docfx build
 docfx docs\docfx.json
 docfx examples\docfx.json
-.\tests\serve-test-site.ps1
 ```
 
-When the documentation site runs on port `8080`, open:
+This updates the generated files only. It does not start a server. If the documentation site is already running on port `8080`, open:
 
 ```text
 http://localhost:8080
@@ -189,16 +188,15 @@ The example reads `examples\tomcat\tomcat-users.xml`, loads users through `Memor
 
 ## Documentation
 
-Generate the full documentation site:
+Build the full documentation site:
 
 ```powershell
 docfx build
-.\tests\serve-test-site.ps1
 ```
 
-Then open `http://localhost:8080`.
+This updates the generated `site` folder only. It does not start or stop any server.
 
-The project uses one local documentation site on port `8080`. `serve-test-site.ps1` serves the generated `site` folder. Use the top navigation links for `Tests`, `Allure`, and `Coverage`:
+If the documentation site is already running on port `8080`, refresh `http://localhost:8080`. Use the top navigation links for `Tests`, `Allure`, and `Coverage`:
 
 - `http://localhost:8080/tests/index.html`
 - `http://localhost:8080/tests/allure-report/index.html`

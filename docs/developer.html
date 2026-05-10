@@ -163,12 +163,11 @@ dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
 
 docfx build
 docfx docs\docfx.json
-docfx examples\docfx.json
-.\tests\serve-test-site.ps1</code></pre>
+docfx examples\docfx.json</code></pre>
       <p><code>dotnet restore</code> downloads every project dependency from NuGet. That includes <code>log4net 3.3.1</code>, <code>Microsoft.NETFramework.ReferenceAssemblies.net48</code>, <code>Microsoft.NET.Test.Sdk</code>, <code>xunit</code>, <code>xunit.runner.visualstudio</code>, and <code>coverlet.collector</code>.</p>
       <p><code>npm install</code> restores the Allure command-line dependency. <code>dotnet tool restore</code> restores ReportGenerator.</p>
       <p>The repo-local <code>NuGet.config</code> clears machine-specific package sources and uses <code>nuget.org</code>, so a new developer does not need a checked-in DLL under <code>lib</code>.</p>
-      <p>After <code>.\tests\serve-test-site.ps1</code>, open <code>http://localhost:8080</code>. The top navigation includes <code>Tests</code>, <code>Allure</code>, and <code>Coverage</code>.</p>
+      <p>These commands update generated files only. They do not start a server. If the documentation site is already running on port <code>8080</code>, refresh <code>http://localhost:8080</code>. The top navigation includes <code>Tests</code>, <code>Allure</code>, and <code>Coverage</code>.</p>
     </section>
 
     <section>
@@ -195,9 +194,9 @@ dotnet build
       <p>Open reports directly from the command line:</p>
       <pre><code>start .\tests\AllureReport\index.html
 start .\tests\CoverageReport\index.html</code></pre>
-      <p>Open the same reports from the documentation site:</p>
-      <pre><code>docfx build
-.\tests\serve-test-site.ps1</code></pre>
+      <p>Update the documentation site files without starting a server:</p>
+      <pre><code>docfx build</code></pre>
+      <p>If the documentation site is already running, refresh these pages:</p>
       <ul>
         <li><code>http://localhost:8080/tests/index.html</code></li>
         <li><code>http://localhost:8080/tests/allure-report/index.html</code></li>
@@ -229,9 +228,9 @@ dotnet run --project examples\TomcatUserValidator -- tomcat wrong-password</code
     <section>
       <h2>Generate HTML Documentation</h2>
       <h3>Main Documentation Site</h3>
-      <pre><code>docfx build
-.\tests\serve-test-site.ps1</code></pre>
-      <p class="note">The main local documentation site runs on <code>http://localhost:8080</code> and includes the Tests, Allure, and Coverage navigation links.</p>
+      <p>Build the site files without starting a server:</p>
+      <pre><code>docfx build</code></pre>
+      <p class="note">This updates the generated <code>site</code> folder only. If the main local documentation site is already running on <code>http://localhost:8080</code>, refresh the browser to see the updated Tests, Allure, and Coverage links.</p>
 
       <h3>Standalone Developer Docs Site</h3>
       <pre><code>docfx docs\docfx.json
@@ -241,13 +240,19 @@ docfx serve docs\site</code></pre>
       <pre><code>docfx examples\docfx.json
 docfx serve examples\site</code></pre>
 
+      <h3>DocFX Serve Port</h3>
+      <p><code>docfx build</code> does not use a port because it only writes files to the generated output folder. A port is used only when a developer manually starts a DocFX web server with <code>docfx serve</code>.</p>
+      <p>Set the port on the <code>docfx serve</code> command with <code>--port</code> or <code>-p</code>:</p>
+      <pre><code>docfx serve site --port 8080
+docfx serve site -p 8081</code></pre>
+      <p class="note">Use a different port only when the preferred port is already used by another process. The build-only workflow in this repository does not start or change any server.</p>
+
       <h3>VS Code Tasks</h3>
       <p>Open the Command Palette and run <code>Tasks: Run Task</code>, then choose:</p>
       <ul>
         <li><code>Build Docs</code></li>
         <li><code>Build Examples Docs</code></li>
         <li><code>Reset and Run Tests with Allure</code></li>
-        <li><code>Serve Documentation Site</code></li>
       </ul>
     </section>
 
@@ -277,7 +282,6 @@ docfx serve examples\site</code></pre>
         <li><code>Build Tests</code></li>
         <li><code>Run Tests</code></li>
         <li><code>Reset and Run Tests with Allure</code></li>
-        <li><code>Serve Documentation Site</code></li>
       </ul>
     </section>
 

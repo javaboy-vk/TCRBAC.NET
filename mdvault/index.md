@@ -23,7 +23,8 @@ Generate the full documentation site:
 
 ```powershell
 docfx build
-.\tests\serve-test-site.ps1
 ```
+
+This updates the generated `site` folder only. It does not start a server.
 
 ![pygount summary for the project](../docs/assets/pygount-summary.svg)
