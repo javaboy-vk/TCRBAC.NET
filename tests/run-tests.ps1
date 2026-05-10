@@ -74,8 +74,8 @@ function Add-DocumentationHeaderToReportHtml {
 <style id="tcrbac-docs-header-style">
   .tcrbac-docs-header { background: #fff; border-bottom: 1px solid #dee2e6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; position: relative; z-index: 1000; }
   .tcrbac-docs-nav { align-items: center; display: flex; gap: 1rem; min-height: 56px; padding: 0 24px; }
-  .tcrbac-docs-brand { color: #111827; font-size: 1rem; font-weight: 600; margin-right: 1rem; text-decoration: none; white-space: nowrap; }
-  .tcrbac-docs-link { color: #374151; font-size: .95rem; text-decoration: none; white-space: nowrap; }
+  .tcrbac-docs-brand { color: #111827; font-size: 16px; font-weight: 600; margin-right: 1rem; text-decoration: none; white-space: nowrap; }
+  .tcrbac-docs-link { color: #374151; font-size: 14px; text-decoration: none; white-space: nowrap; }
   .tcrbac-docs-link:hover { color: #0d6efd; text-decoration: underline; }
   .tcrbac-docs-link[aria-current="page"] { color: #0d6efd; font-weight: 600; }
   @media (max-width: 720px) { .tcrbac-docs-nav { align-items: flex-start; flex-direction: column; gap: .5rem; padding: 12px 16px; } }
