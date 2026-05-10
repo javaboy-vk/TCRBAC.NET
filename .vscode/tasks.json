@@ -28,14 +28,48 @@
     },
     {
       "label": "Run Tests",
-      "type": "process",
-      "command": "dotnet",
+      "type": "shell",
+      "command": "powershell",
       "args": [
-        "test",
-        "${workspaceFolder}/tests/TomcatUserRbacPort.Tests/TomcatUserRbacPort.Tests.csproj"
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/tests/run-tests.ps1"
       ],
       "group": "test",
       "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Reset and Run Tests with Allure",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/tests/run-tests.ps1",
+        "-Reset"
+      ],
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Serve Documentation Site",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/tests/serve-test-site.ps1",
+        "-Port",
+        "8080"
+      ],
+      "group": "test",
+      "problemMatcher": []
     },
     {
       "label": "DocFX Build Docs",

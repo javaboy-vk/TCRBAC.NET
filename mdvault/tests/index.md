@@ -24,20 +24,55 @@ The unit tests include positive and negative cases for every source class:
 From the repository root:
 
 ```powershell
-dotnet test tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj --logger "trx;LogFileName=unit-tests.trx" --results-directory tests\TestResults
+.\tests\run-tests.ps1 -Reset
 ```
 
 The test assembly is built under `build\tests\TomcatUserRbacPort.Tests\<Configuration>\net48`.
 
-Or run the helper script:
+The helper script writes:
 
-```powershell
-.\tests\run-tests.ps1
-```
+- TRX results to `tests\TestResults\unit-tests.trx`
+- Allure result JSON to `tests\AllureResults`
+- Allure HTML report to `tests\AllureReport\index.html`
+- documentation-site copies to `site\tests\results` and `site\tests\allure-report`
 
 ## View results
 
-- <a href="results/unit-tests.trx">Latest TRX test results</a>
+- <span id="latest-allure-report"></span>
+
+<script>
+(() => {
+  const runnerOrigin = window.location.origin;
+  const container = document.getElementById("latest-allure-report");
+  if (!container) {
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.href = "allure-report/index.html";
+  link.textContent = "Latest Allure report";
+
+  const unavailable = document.createElement("span");
+  unavailable.textContent = "No Allure report is available. Run the test suite again.";
+
+  async function render() {
+    try {
+      const response = await fetch(`${runnerOrigin}/__tests/status`);
+      if (response.ok) {
+        const status = await response.json();
+        container.replaceChildren(status.hasAllureReport ? link : unavailable);
+        return;
+      }
+    } catch (_) {
+      // Fall back to a plain link when the page is opened without the local runner.
+    }
+
+    container.replaceChildren(link);
+  }
+
+  render();
+})();
+</script>
 
 Latest verified run:
 

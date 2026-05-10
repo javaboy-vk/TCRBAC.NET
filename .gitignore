@@ -13,6 +13,11 @@ lib/*.xml
 
 # Test output
 TestResults/
+tests/TestResults/
+tests/AllureResults/
+tests/AllureReport/
+site/tests/results/
+site/tests/allure-report/
 *.trx
 *.coverage
 coverage/
@@ -47,6 +52,7 @@ examples/site/
 packages/
 *.nupkg
 .nuget/
+node_modules/
 
 # OS/editor noise
 Thumbs.db

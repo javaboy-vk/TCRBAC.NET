@@ -23,7 +23,7 @@ Generate the full documentation site:
 
 ```powershell
 docfx build
-docfx serve site
+.\tests\serve-test-site.ps1
 ```
 
 ![pygount summary for the project](../docs/assets/pygount-summary.svg)

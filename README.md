@@ -39,6 +39,7 @@ The repository keeps one project file per buildable unit:
 - Windows with .NET Framework 4.8 runtime.
 - .NET SDK 8.0 or newer. The repo has `global.json` set to SDK `8.0.100` with `rollForward` enabled.
 - DocFX for generated HTML documentation.
+- Node.js with npm for the repo-local Allure CLI used by the test report workflow.
 
 Install DocFX if needed:
 
@@ -52,6 +53,37 @@ Optional, only when regenerating Mermaid-authored diagrams:
 npm install -g @mermaid-js/mermaid-cli
 ```
 
+## Allure Local Setup
+
+Allure is installed as a repo-local npm development dependency. A clean DEV environment does not need a global Allure installation.
+
+Install Node.js first if `node` or `npm` is not available:
+
+```powershell
+node --version
+npm --version
+```
+
+Then install the repository JavaScript tooling from the repo root:
+
+```powershell
+npm install
+```
+
+This restores the Allure CLI declared in `package.json` into `node_modules` and uses `package-lock.json` to keep the installed version reproducible. Verify the local Allure CLI:
+
+```powershell
+npm run allure:version
+```
+
+Expected output includes:
+
+```text
+3.7.0
+```
+
+The test runner calls the local Allure CLI automatically through `npx` when a global `allure` command is not on `PATH`, so developers normally only need `npm install`.
+
 ## Fresh Checkout Setup
 
 Run these commands from a new checkout:
@@ -62,19 +94,20 @@ cd TCRBAC.NET
 
 dotnet --info
 dotnet nuget list source
+npm install
 dotnet restore TCRBAC.NET.sln
 dotnet build TCRBAC.NET.sln
-dotnet test TCRBAC.NET.sln
+.\tests\run-tests.ps1 -Reset
 
 dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
 
 docfx build
 docfx docs\docfx.json
 docfx examples\docfx.json
-docfx serve site
+.\tests\serve-test-site.ps1
 ```
 
-When `docfx serve site` runs on port `8080`, open:
+When the documentation site runs on port `8080`, open:
 
 ```text
 http://localhost:8080
@@ -103,14 +136,14 @@ Common root commands:
 dotnet restore
 dotnet clean
 dotnet build
-dotnet test
+.\tests\run-tests.ps1 -Reset
 ```
 
 Release build:
 
 ```powershell
 dotnet build --configuration Release
-dotnet test --configuration Release
+.\tests\run-tests.ps1 -Configuration Release -Reset
 ```
 
 Build outputs are written under the repository-level `build` directory:
@@ -120,6 +153,8 @@ Build outputs are written under the repository-level `build` directory:
 - `build\tests\TomcatUserRbacPort.Tests\<Configuration>\net48`
 
 The source, test, and example projects copy `conf\log4net.config` into their output directories as `conf\log4net.config`.
+
+The test runner writes TRX results to `tests\TestResults\unit-tests.trx`, Allure result JSON to `tests\AllureResults`, and the generated Allure HTML report to `tests\AllureReport\index.html`.
 
 ## Example
 
@@ -138,8 +173,12 @@ Generate the full documentation site:
 
 ```powershell
 docfx build
-docfx serve site
+.\tests\serve-test-site.ps1
 ```
+
+Then open `http://localhost:8080`.
+
+The project uses one local documentation site on port `8080`. `serve-test-site.ps1` serves the generated `site` folder and the Tests page endpoints used for cleanup and rerun actions.
 
 Generate the standalone docs site:
 

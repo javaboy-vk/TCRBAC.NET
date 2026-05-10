@@ -52,5 +52,5 @@ Typical commands:
 dotnet tool install -g docfx
 docfx metadata
 docfx build
-docfx serve site
+.\tests\serve-test-site.ps1
 ```

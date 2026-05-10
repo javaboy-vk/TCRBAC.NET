@@ -36,7 +36,7 @@ Generate the full documentation site from the repository root:
 
 ```powershell
 docfx build
-docfx serve site
+.\tests\serve-test-site.ps1
 ```
 
 Generate only the standalone docs site:
