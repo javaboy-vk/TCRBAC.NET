@@ -107,6 +107,20 @@
           "unit-tests.trx"
         ],
         "dest": "tests/results"
+      },
+      {
+        "src": "tests/AllureReport",
+        "files": [
+          "**/*"
+        ],
+        "dest": "tests/allure-report"
+      },
+      {
+        "src": "tests/CoverageReport",
+        "files": [
+          "**/*"
+        ],
+        "dest": "tests/coverage-report"
       }
     ],
     "output": "site",

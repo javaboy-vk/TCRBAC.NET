@@ -8,3 +8,7 @@
   href: mdvault/examples/index.md
 - name: Tests
   href: mdvault/tests/index.md
+- name: Allure
+  href: http://localhost:8080/tests/allure-report/index.html
+- name: Coverage
+  href: http://localhost:8080/tests/coverage-report/index.html

@@ -16,8 +16,10 @@ TestResults/
 tests/TestResults/
 tests/AllureResults/
 tests/AllureReport/
+tests/CoverageReport/
 site/tests/results/
 site/tests/allure-report/
+site/tests/coverage-report/
 *.trx
 *.coverage
 coverage/

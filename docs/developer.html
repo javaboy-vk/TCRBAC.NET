@@ -127,15 +127,22 @@
         <li>.NET SDK 8.0 or newer. The repo uses <code>global.json</code> with SDK <code>8.0.100</code> and <code>rollForward</code> set to <code>latestFeature</code>.</li>
         <li>.NET Framework 4.8 runtime for running the built <code>net48</code> binaries on Windows.</li>
         <li>DocFX installed globally for HTML documentation.</li>
-        <li>Optional Node.js and Mermaid CLI only if you need to regenerate Mermaid-authored diagrams.</li>
+        <li>Node.js and npm. The test workflow uses the repo-local Allure CLI package restored by <code>npm install</code>.</li>
+        <li>ReportGenerator restored as a repo-local .NET tool from <code>.config\dotnet-tools.json</code>.</li>
+        <li>Optional Mermaid CLI only if you need to regenerate Mermaid-authored diagrams.</li>
       </ul>
       <pre><code>dotnet --info
 dotnet tool install -g docfx
 docfx --version
 
+node --version
+npm --version
+npm install
+dotnet tool restore
+
 npm install -g @mermaid-js/mermaid-cli
 mmdc --version</code></pre>
-      <p class="note">The Mermaid commands are optional. The committed docs already use SVG files under <code>docs\assets</code>.</p>
+      <p class="note">The Mermaid commands are optional. The committed docs already use SVG files under <code>docs\assets</code>. Allure and ReportGenerator setup is local to the repository.</p>
     </section>
 
     <section>
@@ -146,19 +153,22 @@ cd TCRBAC.NET
 
 dotnet --info
 dotnet nuget list source
+npm install
+dotnet tool restore
 dotnet restore TCRBAC.NET.sln
 dotnet build TCRBAC.NET.sln
-dotnet test TCRBAC.NET.sln
+.\tests\run-tests.ps1 -Reset
 
 dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
 
 docfx build
 docfx docs\docfx.json
 docfx examples\docfx.json
-docfx serve site</code></pre>
+.\tests\serve-test-site.ps1</code></pre>
       <p><code>dotnet restore</code> downloads every project dependency from NuGet. That includes <code>log4net 3.3.1</code>, <code>Microsoft.NETFramework.ReferenceAssemblies.net48</code>, <code>Microsoft.NET.Test.Sdk</code>, <code>xunit</code>, <code>xunit.runner.visualstudio</code>, and <code>coverlet.collector</code>.</p>
+      <p><code>npm install</code> restores the Allure command-line dependency. <code>dotnet tool restore</code> restores ReportGenerator.</p>
       <p>The repo-local <code>NuGet.config</code> clears machine-specific package sources and uses <code>nuget.org</code>, so a new developer does not need a checked-in DLL under <code>lib</code>.</p>
-      <p>After <code>docfx serve site</code>, open the printed local URL. The main generated site is expected at <code>http://localhost:8080</code> when DocFX selects port <code>8080</code>.</p>
+      <p>After <code>.\tests\serve-test-site.ps1</code>, open <code>http://localhost:8080</code>. The top navigation includes <code>Tests</code>, <code>Allure</code>, and <code>Coverage</code>.</p>
     </section>
 
     <section>
@@ -167,14 +177,32 @@ docfx serve site</code></pre>
       <pre><code>dotnet restore
 dotnet clean
 dotnet build
-dotnet test</code></pre>
+.\tests\run-tests.ps1 -Reset</code></pre>
       <p>Build outputs are written under <code>build\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for the library, <code>build\examples\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for examples, and <code>build\tests\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for tests.</p>
       <p>Shared configuration files live in <code>conf</code>. The source, test, and example projects copy <code>conf\log4net.config</code> into their outputs as <code>conf\log4net.config</code>.</p>
       <p>The projects restore log4net from NuGet with <code>PackageReference Include=&quot;log4net&quot; Version=&quot;3.3.1&quot;</code>; do not commit a local <code>log4net.dll</code>.</p>
 
       <h3>Release Build</h3>
       <pre><code>dotnet build --configuration Release
-dotnet test --configuration Release</code></pre>
+.\tests\run-tests.ps1 -Configuration Release -Reset</code></pre>
+    </section>
+
+    <section>
+      <h2>Allure And Coverage Reports</h2>
+      <p>Use the test runner instead of plain <code>dotnet test</code> when you want the visible reports to stay current.</p>
+      <pre><code>.\tests\run-tests.ps1 -Reset</code></pre>
+      <p>The runner resets old output, runs the xUnit suite, writes TRX results, converts them to Allure results, generates the Allure HTML report, collects Cobertura coverage, generates the ReportGenerator HTML coverage report, and copies both reports into the generated documentation site.</p>
+      <p>Open reports directly from the command line:</p>
+      <pre><code>start .\tests\AllureReport\index.html
+start .\tests\CoverageReport\index.html</code></pre>
+      <p>Open the same reports from the documentation site:</p>
+      <pre><code>docfx build
+.\tests\serve-test-site.ps1</code></pre>
+      <ul>
+        <li><code>http://localhost:8080/tests/index.html</code></li>
+        <li><code>http://localhost:8080/tests/allure-report/index.html</code></li>
+        <li><code>http://localhost:8080/tests/coverage-report/index.html</code></li>
+      </ul>
     </section>
 
     <section>
@@ -187,7 +215,7 @@ dotnet test --configuration Release</code></pre>
         <div>
           <h3>Tests</h3>
           <pre><code>dotnet build tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj
-dotnet test tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj</code></pre>
+.\tests\run-tests.ps1 -Reset</code></pre>
         </div>
         <div>
           <h3>Validator Example</h3>
@@ -201,9 +229,13 @@ dotnet run --project examples\TomcatUserValidator -- tomcat wrong-password</code
     <section>
       <h2>Generate HTML Documentation</h2>
       <h3>Main Documentation Site</h3>
+      <pre><code>docfx build
+.\tests\serve-test-site.ps1</code></pre>
+      <p class="note">The main local documentation site runs on <code>http://localhost:8080</code> and includes the Tests, Allure, and Coverage navigation links.</p>
+
+      <h3>Standalone Developer Docs Site</h3>
       <pre><code>docfx docs\docfx.json
 docfx serve docs\site</code></pre>
-      <p class="note">The site includes API documentation, guides, and diagrams. Open the local URL printed by <code>docfx serve</code>.</p>
 
       <h3>Examples Documentation Site</h3>
       <pre><code>docfx examples\docfx.json
@@ -214,6 +246,8 @@ docfx serve examples\site</code></pre>
       <ul>
         <li><code>Build Docs</code></li>
         <li><code>Build Examples Docs</code></li>
+        <li><code>Reset and Run Tests with Allure</code></li>
+        <li><code>Serve Documentation Site</code></li>
       </ul>
     </section>
 
@@ -242,6 +276,8 @@ docfx serve examples\site</code></pre>
         <li><code>Build TomcatUserValidator</code></li>
         <li><code>Build Tests</code></li>
         <li><code>Run Tests</code></li>
+        <li><code>Reset and Run Tests with Allure</code></li>
+        <li><code>Serve Documentation Site</code></li>
       </ul>
     </section>
 

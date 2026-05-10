@@ -34,40 +34,71 @@ The helper script writes:
 - TRX results to `tests\TestResults\unit-tests.trx`
 - Allure result JSON to `tests\AllureResults`
 - Allure HTML report to `tests\AllureReport\index.html`
-- documentation-site copies to `site\tests\results` and `site\tests\allure-report`
+- Cobertura coverage XML under `tests\TestResults`
+- Coverage HTML report to `tests\CoverageReport\index.html`
+- documentation-site copies to `site\tests\results`, `site\tests\allure-report`, and `site\tests\coverage-report`
 
 ## View results
 
 - <span id="latest-allure-report"></span>
+- <span id="latest-coverage-report"></span>
 
 <script>
 (() => {
   const runnerOrigin = window.location.origin;
-  const container = document.getElementById("latest-allure-report");
-  if (!container) {
-    return;
+  const reports = [
+    {
+      containerId: "latest-allure-report",
+      statusKey: "hasAllureReport",
+      href: "allure-report/index.html",
+      label: "Latest Allure report",
+      unavailable: "No Allure report is available. Run the test suite again."
+    },
+    {
+      containerId: "latest-coverage-report",
+      statusKey: "hasCoverageReport",
+      href: "coverage-report/index.html",
+      label: "Latest Coverage report",
+      unavailable: "No Coverage report is available. Run the test suite again."
+    }
+  ];
+
+  function makeLink(report) {
+    const link = document.createElement("a");
+    link.href = report.href;
+    link.textContent = report.label;
+    return link;
   }
 
-  const link = document.createElement("a");
-  link.href = "allure-report/index.html";
-  link.textContent = "Latest Allure report";
-
-  const unavailable = document.createElement("span");
-  unavailable.textContent = "No Allure report is available. Run the test suite again.";
+  function makeUnavailable(report) {
+    const unavailable = document.createElement("span");
+    unavailable.textContent = report.unavailable;
+    return unavailable;
+  }
 
   async function render() {
+    let status = null;
     try {
       const response = await fetch(`${runnerOrigin}/__tests/status`);
       if (response.ok) {
-        const status = await response.json();
-        container.replaceChildren(status.hasAllureReport ? link : unavailable);
-        return;
+        status = await response.json();
       }
     } catch (_) {
       // Fall back to a plain link when the page is opened without the local runner.
     }
 
-    container.replaceChildren(link);
+    for (const report of reports) {
+      const container = document.getElementById(report.containerId);
+      if (!container) {
+        continue;
+      }
+
+      if (status) {
+        container.replaceChildren(status[report.statusKey] ? makeLink(report) : makeUnavailable(report));
+      } else {
+        container.replaceChildren(makeLink(report));
+      }
+    }
   }
 
   render();

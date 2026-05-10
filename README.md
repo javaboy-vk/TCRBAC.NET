@@ -84,6 +84,18 @@ Expected output includes:
 
 The test runner calls the local Allure CLI automatically through `npx` when a global `allure` command is not on `PATH`, so developers normally only need `npm install`.
 
+## Coverage Local Setup
+
+Coverage is collected by `coverlet.collector` during `dotnet test` and rendered by ReportGenerator. ReportGenerator is installed as a repo-local .NET tool, so a clean DEV environment does not need a global ReportGenerator installation.
+
+Restore the local .NET tools from the repo root:
+
+```powershell
+dotnet tool restore
+```
+
+This restores `dotnet-reportgenerator-globaltool` from `.config\dotnet-tools.json`.
+
 ## Fresh Checkout Setup
 
 Run these commands from a new checkout:
@@ -95,6 +107,7 @@ cd TCRBAC.NET
 dotnet --info
 dotnet nuget list source
 npm install
+dotnet tool restore
 dotnet restore TCRBAC.NET.sln
 dotnet build TCRBAC.NET.sln
 .\tests\run-tests.ps1 -Reset
@@ -154,7 +167,14 @@ Build outputs are written under the repository-level `build` directory:
 
 The source, test, and example projects copy `conf\log4net.config` into their output directories as `conf\log4net.config`.
 
-The test runner writes TRX results to `tests\TestResults\unit-tests.trx`, Allure result JSON to `tests\AllureResults`, and the generated Allure HTML report to `tests\AllureReport\index.html`.
+The test runner writes TRX results to `tests\TestResults\unit-tests.trx`, Allure result JSON to `tests\AllureResults`, the generated Allure HTML report to `tests\AllureReport\index.html`, Cobertura coverage XML under `tests\TestResults`, and the generated Coverage HTML report to `tests\CoverageReport\index.html`.
+
+Open the command-line generated reports directly:
+
+```powershell
+start .\tests\AllureReport\index.html
+start .\tests\CoverageReport\index.html
+```
 
 ## Example
 
@@ -178,7 +198,11 @@ docfx build
 
 Then open `http://localhost:8080`.
 
-The project uses one local documentation site on port `8080`. `serve-test-site.ps1` serves the generated `site` folder and the Tests page endpoints used for cleanup and rerun actions.
+The project uses one local documentation site on port `8080`. `serve-test-site.ps1` serves the generated `site` folder. Use the top navigation links for `Tests`, `Allure`, and `Coverage`:
+
+- `http://localhost:8080/tests/index.html`
+- `http://localhost:8080/tests/allure-report/index.html`
+- `http://localhost:8080/tests/coverage-report/index.html`
 
 Generate the standalone docs site:
 

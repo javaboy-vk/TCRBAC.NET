@@ -55,6 +55,7 @@ function writeText(response, statusCode, text, contentType = "text/plain; charse
 function getTestStatus() {
   return {
     hasAllureReport: fs.existsSync(path.join(siteRoot, "tests", "allure-report", "index.html")),
+    hasCoverageReport: fs.existsSync(path.join(siteRoot, "tests", "coverage-report", "index.html")),
     hasTrxResults: fs.existsSync(path.join(siteRoot, "tests", "results", "unit-tests.trx")),
   };
 }
@@ -89,7 +90,7 @@ function runTests(resetOnly) {
     ];
 
     if (resetOnly) {
-      commandArgs.push("-SkipTestRun", "-SkipAllureReport");
+      commandArgs.push("-SkipTestRun", "-SkipAllureReport", "-SkipCoverageReport");
     }
 
     const child = spawn("powershell.exe", commandArgs, {
