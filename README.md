@@ -17,10 +17,6 @@ Root namespace: `com.mag.dapi.*`
 - `com.mag.dapi.security.credentials.ICredentialHandler`
 - `com.mag.dapi.security.rbac.RbacAuthorizer`
 
-## Repository Layout
-
-See [Project Structure](docs/Project-Structure.html) for the root directory inventory, generated output folders, and the purpose of each source/configuration directory.
-
 ## Prerequisites
 
 - Windows with .NET Framework 4.8 runtime.
