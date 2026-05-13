@@ -4,9 +4,13 @@ TCRBAC.NET is a small C#/.NET Framework 4.8 port inspired by Apache Tomcat's `to
 
 It is not a byte-for-byte translation of Apache Tomcat. The goal is a compact, readable library that keeps the Tomcat-style security concepts familiar while fitting a C# project layout.
 
-Root namespace: `com.mag.dapi.*`
+## Project Structure
+
+**Start here for the repository map:** [Project Structure](docs/Project-Structure.html)
 
 ## Main API
+
+Root namespace: `com.mag.dapi.*`
 
 - `com.mag.dapi.security.users.MemoryUserDatabase`
 - `com.mag.dapi.security.realms.UserDatabaseRealm`
@@ -15,24 +19,7 @@ Root namespace: `com.mag.dapi.*`
 
 ## Repository Layout
 
-```text
-TCRBAC.NET.sln
-src\TomcatUserRbacPort.csproj
-tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj
-examples\TomcatUserValidator\TomcatUserValidator.csproj
-conf\log4net.config
-docs\
-docs\assets\
-mdvault\
-```
-
-The repository keeps one project file per buildable unit:
-
-- `src` contains the library.
-- `tests` contains the xUnit test project.
-- `examples` contains the runnable validator example.
-- `mdvault` contains source Markdown for DocFX-generated pages.
-- `site`, `docs\site`, `examples\site`, `build`, `bin`, and `obj` are generated outputs and should not be committed.
+See [Project Structure](docs/Project-Structure.html) for the root directory inventory, generated output folders, and the purpose of each source/configuration directory.
 
 ## Prerequisites
 
