@@ -14,6 +14,14 @@
       --head: #e4effb;
       --accent: #2f6faf;
       --code: #0f1720;
+      --tcrbac-vscode-blue: #007acc;
+      --tcrbac-vscode-blue-dark: #005a9e;
+      --tcrbac-vscode-orange: #ff8c00;
+      --tcrbac-docs-header-height: 60px;
+      --tcrbac-docs-logo-size: 38px;
+      --tcrbac-docs-brand-font-size: 16px;
+      --tcrbac-docs-link-font-size: 14px;
+      --tcrbac-docs-link-gap: 16px;
     }
 
     body {
@@ -24,102 +32,102 @@
       line-height: 1.45;
     }
 
-    .site-header {
-      border-bottom: 1px solid var(--line);
-      background: #ffffff;
+    body > header {
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+      border-bottom: 1px solid var(--tcrbac-vscode-blue-dark);
+      background: var(--tcrbac-vscode-blue);
     }
 
-    .site-nav {
+    body > header > nav,
+    body > header .navbar,
+    body > header .container-xxl {
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+    }
+
+    body > header .navbar,
+    body > header .container-xxl,
+    body > header #navpanel,
+    body > header #navbar,
+    body > header .navbar-nav {
       display: flex;
       align-items: center;
-      gap: 12px;
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 8px 12px;
     }
 
-    .site-brand {
+    body > header .navbar {
+      padding: 0;
+    }
+
+    body > header .container-xxl {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      height: var(--tcrbac-docs-header-height);
+      margin: 0;
+      padding: 0 12px;
+      width: 100%;
+    }
+
+    body > header .navbar-brand {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      min-height: 32px;
-      color: var(--ink);
-      font-size: 16px;
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+      margin-right: 14px;
+      color: #ffffff;
+      font-size: var(--tcrbac-docs-brand-font-size);
       font-weight: 400;
       text-decoration: none;
       white-space: nowrap;
     }
 
-    .site-brand img {
-      width: 28px;
-      height: 28px;
+    body > header .navbar-brand img {
+      width: var(--tcrbac-docs-logo-size);
+      height: var(--tcrbac-docs-logo-size);
     }
 
-    .site-links {
-      display: flex;
-      align-items: center;
+    body > header #navpanel,
+    body > header #navbar {
+      flex: 1 1 auto;
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+    }
+
+    body > header .navbar-nav {
       flex-wrap: wrap;
-      gap: 4px;
+      gap: var(--tcrbac-docs-link-gap);
+      height: var(--tcrbac-docs-header-height);
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .site-links a {
+    body > header .nav-item {
+      margin: 0;
+      padding: 0;
+    }
+
+    body > header .nav-link {
       display: inline-flex;
       align-items: center;
-      min-height: 32px;
-      padding: 0 7px;
-      color: var(--muted);
-      font-size: 14px;
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+      padding: 0;
+      color: #ffffff;
+      font-size: var(--tcrbac-docs-link-font-size);
+      font-weight: 400;
       text-decoration: none;
     }
 
-    .site-links a:hover {
-      color: var(--accent);
+    body > header .nav-link:hover {
+      color: #ffffff;
       text-decoration: none;
     }
 
-    .site-tools {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-left: auto;
-    }
-
-    .site-theme {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--ink);
-      font-size: 14px;
-    }
-
-    .site-theme-dot {
-      width: 13px;
-      height: 13px;
-      border: 1px solid var(--ink);
-      border-radius: 50%;
-      background: linear-gradient(90deg, var(--ink) 0 50%, #ffffff 50% 100%);
-    }
-
-    .site-search {
-      display: inline-flex;
-      align-items: center;
-      min-height: 32px;
-      min-width: 186px;
-      padding: 0 10px;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: #ffffff;
-      font-size: 14px;
-    }
-
-    .site-search::before {
-      width: 12px;
-      height: 12px;
-      margin-right: 10px;
-      border: 1px solid var(--muted);
-      border-radius: 50%;
-      content: "";
+    body > header .nav-link[aria-current="page"] {
+      color: var(--tcrbac-vscode-orange);
+      font-weight: 700;
     }
 
     .page-header {
@@ -141,24 +149,33 @@
     }
 
     @media (max-width: 720px) {
-      .site-nav {
+      body > header,
+      body > header > nav,
+      body > header .navbar,
+      body > header .container-xxl {
+        height: auto;
+      }
+
+      body > header .container-xxl {
         align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
+        min-height: var(--tcrbac-docs-header-height);
+        padding: 8px 12px;
       }
 
-      .site-links {
+      body > header #navpanel,
+      body > header #navbar,
+      body > header .navbar-nav {
+        height: auto;
+        min-height: 0;
+      }
+
+      body > header .navbar-nav {
         margin-left: 0;
+        gap: 12px;
       }
 
-      .site-tools {
-        margin-left: 0;
-        width: 100%;
-      }
-
-      .site-search {
-        width: 100%;
-      }
     }
 
     main {
@@ -200,7 +217,7 @@
 
     code {
       font-family: Consolas, "Courier New", monospace;
-      font-size: 0.95em;
+      font-size: 1em;
     }
 
     pre {
@@ -229,116 +246,152 @@
 
     .note {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 1em;
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Main navigation">
-      <a class="site-brand" href="../index.html">
-        <img src="../logo.svg" alt="TCRBAC.NET">
-        TCRBAC.NET
-      </a>
-      <div class="site-links">
-        <a href="../index.html">Home</a>
-        <a href="index.html">Docs</a>
-        <a href="../api/index.html">API</a>
-        <a href="../examples/index.html">Examples</a>
-        <a href="../tests/index.html">Tests</a>
-        <a href="../tests/allure-report/index.html">Allure</a>
-        <a href="../tests/coverage-report/index.html">Coverage</a>
-      </div>
-      <div class="site-tools" aria-hidden="true">
-        <div class="site-theme"><span class="site-theme-dot"></span><span>v</span></div>
-        <div class="site-search">Search</div>
+  <header class="bg-body border-bottom">
+    <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation" aria-label="Main navigation">
+      <div class="container-xxl flex-nowrap">
+        <a class="navbar-brand" href="../index.html">
+          <img id="logo" class="svg" src="../logo.svg" alt="TCRBAC.NET">
+          TCRBAC.NET
+        </a>
+        <div class="collapse navbar-collapse" id="navpanel">
+          <div id="navbar">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Docs</a></li>
+              <li class="nav-item"><a class="nav-link" href="../api/index.html">API</a></li>
+              <li class="nav-item"><a class="nav-link" href="../examples/index.html">Examples</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tests/index.html">Tests</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tests/allure-report/index.html">Allure</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tests/coverage-report/index.html">Coverage</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
 
-  <header class="page-header">
+  <section class="page-header">
     <h1>TCRBAC Developer Commands</h1>
     <p>Quick reference for a new developer building, testing, running examples, debugging in VS Code, and generating HTML documentation for the TCRBAC .NET Framework 4.8 solution.</p>
-  </header>
+  </section>
 
   <main>
     <section>
-      <h2>Prerequisites</h2>
-      <ul>
-        <li>.NET SDK 8.0 or newer. The repo uses <code>global.json</code> with SDK <code>8.0.100</code> and <code>rollForward</code> set to <code>latestFeature</code>.</li>
-        <li>.NET Framework 4.8 runtime for running the built <code>net48</code> binaries on Windows.</li>
-        <li>DocFX installed globally for HTML documentation.</li>
-        <li>Node.js and npm. The test workflow uses the repo-local Allure CLI package restored by <code>npm install</code>.</li>
-        <li>ReportGenerator restored as a repo-local .NET tool from <code>.config\dotnet-tools.json</code>.</li>
-        <li>Optional Mermaid CLI only if you need to regenerate Mermaid-authored diagrams.</li>
-      </ul>
-      <pre><code>dotnet --info
-dotnet tool install -g docfx
-docfx --version
-
-node --version
-npm --version
-npm install
-dotnet tool restore
-
-npm install -g @mermaid-js/mermaid-cli
-mmdc --version</code></pre>
-      <p class="note">The Mermaid commands are optional. The committed docs already use SVG files under <code>docs\assets</code>. Allure and ReportGenerator setup is local to the repository.</p>
+      <h2>What This Page Does</h2>
+      <p>This is the full command-line path for a new developer. Run the commands from the repository root unless a step says otherwise.</p>
+      <p>The source code targets <code>.NET Framework 4.8</code>. The build tools are run by a .NET SDK selected by <code>global.json</code>, which currently asks for SDK <code>8.0.100</code> with <code>rollForward</code> set to <code>latestFeature</code>.</p>
     </section>
 
     <section>
-      <h2>Fresh Checkout Setup</h2>
-      <p>Run this full sequence from a new checkout. Replace the first two lines with the real clone URL and local folder if needed.</p>
+      <h2>Install Prerequisites</h2>
+      <ul>
+        <li>Git for cloning the repository.</li>
+        <li>.NET SDK 8.x. This is the simplest path because it matches <code>global.json</code>.</li>
+        <li>.NET Framework 4.8 Developer Pack or targeting pack, required because the projects target <code>net48</code>.</li>
+        <li>Node.js and npm, required by the Allure report workflow.</li>
+        <li>DocFX, installed as a global .NET tool.</li>
+        <li>Repo-local .NET tools, restored from <code>.config\dotnet-tools.json</code>.</li>
+      </ul>
+      <pre><code>git --version
+dotnet --list-sdks
+dotnet --info
+node --version
+npm --version
+
+dotnet tool update -g docfx
+docfx --version</code></pre>
+      <p class="note">If only SDK 9.x is installed, either install an 8.x SDK, run this shell with <code>$env:DOTNET_ROLL_FORWARD = "Major"</code>, or change <code>global.json</code> for the local checkout. Installing SDK 8.x is preferred because it matches the repository policy without a per-shell override.</p>
+      <h3>Using An Installed .NET SDK 9.x</h3>
+      <p>The SDK version is selected by <code>global.json</code> in the repository root. The default file pins the toolchain to SDK <code>8.0.100</code> and only rolls forward within .NET 8 feature bands.</p>
+      <p>If a developer only has SDK 9.x installed and does not want to install SDK 8.x, edit <code>global.json</code> locally and allow a major-version roll-forward:</p>
+      <pre><code>{
+  "sdk": {
+    "version": "8.0.100",
+    "rollForward": "latestMajor"
+  }
+}</code></pre>
+      <p>Alternatively, pin the file to the installed SDK 9 baseline:</p>
+      <pre><code>{
+  "sdk": {
+    "version": "9.0.100",
+    "rollForward": "latestFeature"
+  }
+}</code></pre>
+      <p class="note">Treat this as a local environment change unless the team intentionally updates the repository standard. The projects still target <code>net48</code>; this only changes which .NET SDK runs restore, build, test, and DocFX tooling.</p>
+    </section>
+
+    <section>
+      <h2>Full First-Time Setup</h2>
+      <p>Use this sequence after cloning. Replace the clone URL with the real repository URL if needed.</p>
       <pre><code>git clone &lt;repository-url&gt; TCRBAC.NET
 cd TCRBAC.NET
 
-dotnet --info
+dotnet --list-sdks
 dotnet nuget list source
 npm install
 dotnet tool restore
-dotnet restore TCRBAC.NET.sln
-dotnet build TCRBAC.NET.sln
-.\tests\run-tests.ps1 -Reset
-
-dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
-
-docfx build
-docfx docs\docfx.json
-docfx examples\docfx.json</code></pre>
-      <p><code>dotnet restore</code> downloads every project dependency from NuGet. That includes <code>log4net 3.3.1</code>, <code>Microsoft.NETFramework.ReferenceAssemblies.net48</code>, <code>Microsoft.NET.Test.Sdk</code>, <code>xunit</code>, <code>xunit.runner.visualstudio</code>, and <code>coverlet.collector</code>.</p>
-      <p><code>npm install</code> restores the Allure command-line dependency. <code>dotnet tool restore</code> restores ReportGenerator.</p>
-      <p>The repo-local <code>NuGet.config</code> clears machine-specific package sources and uses <code>nuget.org</code>, so a new developer does not need a checked-in DLL under <code>lib</code>.</p>
-      <p>These commands update generated files only. They do not start a server. If the documentation site is already running on port <code>8080</code>, refresh <code>http://localhost:8080</code>. The top navigation includes <code>Tests</code>, <code>Allure</code>, and <code>Coverage</code>.</p>
+dotnet restore TCRBAC.NET.sln</code></pre>
+      <p><code>dotnet restore</code> downloads all NuGet dependencies, including log4net, xUnit, coverlet, ReportGenerator support packages, and the .NET Framework 4.8 reference assemblies package used by CLI builds.</p>
     </section>
 
     <section>
-      <h2>Core Build Workflow</h2>
-      <p>Run these from the repository root: <code>D:\TCRBAC.NET</code>.</p>
-      <pre><code>dotnet restore
-dotnet clean
-dotnet build
-.\tests\run-tests.ps1 -Reset</code></pre>
-      <p>Build outputs are written under <code>build\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for the library, <code>build\examples\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for examples, and <code>build\tests\&lt;ProjectName&gt;\&lt;Configuration&gt;\net48</code> for tests.</p>
-      <p>Shared configuration files live in <code>conf</code>. The source, test, and example projects copy <code>conf\log4net.config</code> into their outputs as <code>conf\log4net.config</code>.</p>
-      <p>The projects restore log4net from NuGet with <code>PackageReference Include=&quot;log4net&quot; Version=&quot;3.3.1&quot;</code>; do not commit a local <code>log4net.dll</code>.</p>
-
-      <h3>Release Build</h3>
-      <pre><code>dotnet build --configuration Release
-.\tests\run-tests.ps1 -Configuration Release -Reset</code></pre>
+      <h2>Build Everything</h2>
+      <p>This builds the library, tests, and example project through the solution.</p>
+      <pre><code>dotnet clean TCRBAC.NET.sln
+dotnet build TCRBAC.NET.sln</code></pre>
+      <p>Build outputs are written under <code>build</code>. The library output is under <code>build\TomcatUserRbacPort</code>, examples under <code>build\examples</code>, and tests under <code>build\tests</code>.</p>
     </section>
 
     <section>
-      <h2>Allure And Coverage Reports</h2>
-      <p>Use the test runner instead of plain <code>dotnet test</code> when you want the visible reports to stay current.</p>
-      <pre><code>.\tests\run-tests.ps1 -Reset</code></pre>
-      <p>The runner resets old output, runs the xUnit suite, writes TRX results, converts them to Allure results, generates the Allure HTML report, collects Cobertura coverage, generates the ReportGenerator HTML coverage report, and copies both reports into the generated documentation site.</p>
-      <p>Open reports directly from the command line:</p>
-      <pre><code>start .\tests\AllureReport\index.html
-start .\tests\CoverageReport\index.html</code></pre>
-      <p>Update the documentation site files without starting a server:</p>
-      <pre><code>docfx build</code></pre>
-      <p>If the documentation site is already running, refresh these pages:</p>
+      <h2>Run All Tests And Reports</h2>
+      <p>Use the project test runner rather than plain <code>dotnet test</code>. It runs the xUnit tests, writes TRX output, generates Allure, generates coverage, and copies the report pages into the documentation site.</p>
+      <pre><code>powershell -NoProfile -ExecutionPolicy Bypass -File tests\run-tests.ps1 -Reset</code></pre>
+      <p>Generated outputs:</p>
       <ul>
+        <li><code>tests\TestResults\unit-tests.trx</code></li>
+        <li><code>tests\AllureReport\index.html</code></li>
+        <li><code>tests\CoverageReport\index.html</code></li>
+        <li><code>site\tests\allure-report\index.html</code></li>
+        <li><code>site\tests\coverage-report\index.html</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Run The Examples</h2>
+      <p>The validator example reads <code>examples\tomcat\tomcat-users.xml</code> and checks a username/password pair.</p>
+      <pre><code>dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
+dotnet run --project examples\TomcatUserValidator -- tomcat wrong-password
+dotnet run --project examples\TomcatUserValidator -- both both</code></pre>
+      <p>Expected exit codes are <code>0</code> for successful authentication, <code>1</code> for authentication failure, and <code>2</code> for invalid usage or missing sample data.</p>
+    </section>
+
+    <section>
+      <h2>Build And Deploy The Site</h2>
+      <p>Run these commands in this order. The Tomcat<img class="tomcat-inline-icon" src="https://tomcat.apache.org/res/images/tomcat.png" alt="Apache Tomcat" title="Apache Tomcat" style="height: 16px; vertical-align: text-bottom; margin-left: 4px; margin-right: 2px;"> icon script must run after every DocFX build because DocFX rewrites the generated HTML.</p>
+      <pre><code>docfx metadata docfx.json
+docfx build docfx.json
+
+docfx docs\docfx.json
+docfx examples\docfx.json
+
+powershell -NoProfile -ExecutionPolicy Bypass -File docs\add-tomcat-icons.ps1</code></pre>
+      <p>The deployed local site folder is <code>site</code>. The standalone documentation outputs are <code>docs\site</code> and <code>examples\site</code>.</p>
+      <p class="note">If the standalone <code>docs</code> or <code>examples</code> build reports access denied while overwriting <code>api\toc.yml</code>, close programs that may have the file open and rerun the same command from a normal PowerShell prompt.</p>
+    </section>
+
+    <section>
+      <h2>Serve The Site</h2>
+      <p>Start a local DocFX web server after the build and icon pass complete.</p>
+      <pre><code>docfx serve site --port 8080</code></pre>
+      <p>Open <code>http://localhost:8080</code>. Refresh the browser after rebuilding the site.</p>
+      <p>Use these pages to verify the full deployment:</p>
+      <ul>
+        <li><code>http://localhost:8080/docs/developer.html</code></li>
         <li><code>http://localhost:8080/tests/index.html</code></li>
         <li><code>http://localhost:8080/tests/allure-report/index.html</code></li>
         <li><code>http://localhost:8080/tests/coverage-report/index.html</code></li>
@@ -346,66 +399,42 @@ start .\tests\CoverageReport\index.html</code></pre>
     </section>
 
     <section>
-      <h2>Project-Specific Commands</h2>
-      <div class="grid">
-        <div>
-          <h3>Library</h3>
-          <pre><code>dotnet build src\TomcatUserRbacPort.csproj</code></pre>
-        </div>
-        <div>
-          <h3>Tests</h3>
-          <pre><code>dotnet build tests\TomcatUserRbacPort.Tests\TomcatUserRbacPort.Tests.csproj
-.\tests\run-tests.ps1 -Reset</code></pre>
-        </div>
-        <div>
-          <h3>Validator Example</h3>
-          <pre><code>dotnet build examples\TomcatUserValidator\TomcatUserValidator.csproj
+      <h2>One Paste Command Sequence</h2>
+      <p>Run this from an already cloned repository root when all prerequisites are installed.</p>
+      <pre><code>npm install
+dotnet tool restore
+dotnet restore TCRBAC.NET.sln
+dotnet clean TCRBAC.NET.sln
+dotnet build TCRBAC.NET.sln
+powershell -NoProfile -ExecutionPolicy Bypass -File tests\run-tests.ps1 -Reset
 dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
-dotnet run --project examples\TomcatUserValidator -- tomcat wrong-password</code></pre>
-        </div>
-      </div>
+dotnet run --project examples\TomcatUserValidator -- tomcat wrong-password
+docfx metadata docfx.json
+docfx build docfx.json
+docfx docs\docfx.json
+docfx examples\docfx.json
+powershell -NoProfile -ExecutionPolicy Bypass -File docs\add-tomcat-icons.ps1
+docfx serve site --port 8080</code></pre>
     </section>
 
     <section>
-      <h2>Generate HTML Documentation</h2>
-      <h3>Main Documentation Site</h3>
-      <p>Build the site files without starting a server:</p>
-      <pre><code>docfx build</code></pre>
-      <p class="note">This updates the generated <code>site</code> folder only. If the main local documentation site is already running on <code>http://localhost:8080</code>, refresh the browser to see the updated Tests, Allure, and Coverage links.</p>
+      <h2>Optional Release Build</h2>
+      <pre><code>dotnet build TCRBAC.NET.sln --configuration Release
+powershell -NoProfile -ExecutionPolicy Bypass -File tests\run-tests.ps1 -Configuration Release -Reset</code></pre>
+    </section>
 
-      <h3>Standalone Developer Docs Site</h3>
-      <pre><code>docfx docs\docfx.json
-docfx serve docs\site</code></pre>
-
-      <h3>Examples Documentation Site</h3>
-      <pre><code>docfx examples\docfx.json
-docfx serve examples\site</code></pre>
-
-      <h3>DocFX Serve Port</h3>
-      <p><code>docfx build</code> does not use a port because it only writes files to the generated output folder. A port is used only when a developer manually starts a DocFX web server with <code>docfx serve</code>.</p>
-      <p>Set the port on the <code>docfx serve</code> command with <code>--port</code> or <code>-p</code>:</p>
-      <pre><code>docfx serve site --port 8080
-docfx serve site -p 8081</code></pre>
-      <p class="note">Use a different port only when the preferred port is already used by another process. The build-only workflow in this repository does not start or change any server.</p>
-
-      <h3>VS Code Tasks</h3>
-      <p>Open the Command Palette and run <code>Tasks: Run Task</code>, then choose:</p>
+    <section>
+      <h2>VS Code Tasks</h2>
+      <p>Open the Command Palette and run <code>Tasks: Run Task</code>, then choose one of these repo tasks:</p>
       <ul>
+        <li><code>Build TomcatUserValidator</code></li>
+        <li><code>Build Tests</code></li>
+        <li><code>Run Tests</code></li>
+        <li><code>Reset and Run Tests with Allure</code></li>
+        <li><code>Build Root Site</code></li>
         <li><code>Build Docs</code></li>
         <li><code>Build Examples Docs</code></li>
-        <li><code>Reset and Run Tests with Allure</code></li>
       </ul>
-    </section>
-
-    <section>
-      <h2>Diagrams</h2>
-      <p>Current source UML diagram artifacts:</p>
-      <ul>
-        <li><a href="diagrams/src-class-diagram.html">docs/diagrams/src-class-diagram.md</a></li>
-        <li><a href="/assets/src-class-diagram.svg">docs/assets/src-class-diagram.svg</a></li>
-      </ul>
-      <p>If Mermaid CLI is installed and you have a <code>.mmd</code> input file, render SVGs with:</p>
-      <pre><code>mmdc -i input.mmd -o output.svg</code></pre>
     </section>
 
     <section>
@@ -416,13 +445,6 @@ docfx serve site -p 8081</code></pre>
         <li><code>TomcatUserValidator: both/both</code></li>
         <li><code>TomcatUserValidator: failed login</code></li>
         <li><code>Debug Tests: RbacFlowTests</code></li>
-      </ul>
-      <p>Build and test tasks are also available from <code>Tasks: Run Task</code>:</p>
-      <ul>
-        <li><code>Build TomcatUserValidator</code></li>
-        <li><code>Build Tests</code></li>
-        <li><code>Run Tests</code></li>
-        <li><code>Reset and Run Tests with Allure</code></li>
       </ul>
     </section>
 
@@ -440,15 +462,20 @@ docfx serve site -p 8081</code></pre>
 
     <section>
       <h2>Troubleshooting</h2>
+      <h3>DocFX command not found</h3>
+      <pre><code>dotnet tool update -g docfx</code></pre>
+
+      <h3>Only .NET SDK 9.x is installed</h3>
+      <pre><code>$env:DOTNET_ROLL_FORWARD = "Major"
+dotnet --info</code></pre>
+      <p class="note">This override is for the current PowerShell session. Installing SDK 8.x is still the cleanest setup for this repository.</p>
+
+      <h3>Tomcat<img class="tomcat-inline-icon" src="https://tomcat.apache.org/res/images/tomcat.png" alt="Apache Tomcat" title="Apache Tomcat" style="height: 16px; vertical-align: text-bottom; margin-left: 4px; margin-right: 2px;"> icons disappeared</h3>
+      <pre><code>powershell -NoProfile -ExecutionPolicy Bypass -File docs\add-tomcat-icons.ps1</code></pre>
+
       <h3>VS Code still shows stale C# errors</h3>
       <pre><code>Developer: Reload Window
 C#: Restart Language Server</code></pre>
-
-      <h3>Clean generated files</h3>
-      <pre><code>dotnet clean</code></pre>
-
-      <h3>DocFX command not found</h3>
-      <pre><code>dotnet tool install -g docfx</code></pre>
     </section>
   </main>
 </body>

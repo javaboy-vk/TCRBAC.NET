@@ -56,9 +56,14 @@
       },
       {
         "files": [
-          "developer.html"
+          "developer.html",
+          "Project-Structure.html"
         ]
       }
+    ],
+    "template": [
+      "default",
+      "../templates/tcrbac-vscode"
     ],
     "dest": "site",
     "globalMetadata": {

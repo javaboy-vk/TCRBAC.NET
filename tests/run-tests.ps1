@@ -72,29 +72,53 @@ function Add-DocumentationHeaderToReportHtml {
 
     $style = @'
 <style id="tcrbac-docs-header-style">
-  .tcrbac-docs-header { background: #fff; border-bottom: 1px solid #dee2e6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; position: relative; z-index: 1000; }
-  .tcrbac-docs-nav { align-items: center; display: flex; gap: 1rem; min-height: 56px; padding: 0 24px; }
-  .tcrbac-docs-brand { color: #111827; font-size: 16px; font-weight: 600; margin-right: 1rem; text-decoration: none; white-space: nowrap; }
-  .tcrbac-docs-link { color: #374151; font-size: 14px; text-decoration: none; white-space: nowrap; }
-  .tcrbac-docs-link:hover { color: #0d6efd; text-decoration: underline; }
-  .tcrbac-docs-link[aria-current="page"] { color: #0d6efd; font-weight: 600; }
-  @media (max-width: 720px) { .tcrbac-docs-nav { align-items: flex-start; flex-direction: column; gap: .5rem; padding: 12px 16px; } }
+  :root { --tcrbac-vscode-blue: #007acc; --tcrbac-vscode-blue-dark: #005a9e; --tcrbac-vscode-orange: #ff8c00; --tcrbac-vscode-orange-soft: rgba(255, 140, 0, 0.14); }
+  #tcrbac-docs-header { background: var(--tcrbac-vscode-blue) !important; border-bottom: 1px solid var(--tcrbac-vscode-blue-dark) !important; box-sizing: border-box !important; display: flex !important; align-items: stretch !important; font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important; height: 60px !important; min-height: 60px !important; position: relative !important; width: 100% !important; z-index: 1000 !important; }
+  #tcrbac-docs-header * { box-sizing: border-box !important; }
+  #tcrbac-docs-header .navbar { align-items: center !important; display: flex !important; flex: 1 1 auto !important; height: 60px !important; min-height: 60px !important; padding: 0 !important; }
+  #tcrbac-docs-header .container-xxl { align-items: center !important; display: flex !important; flex-wrap: nowrap !important; height: 60px !important; justify-content: flex-start !important; margin: 0 !important; min-height: 60px !important; padding: 0 12px !important; width: 100% !important; }
+  #tcrbac-docs-header .navbar-brand,
+  #tcrbac-docs-header .navbar-brand:visited { align-items: center !important; color: #fff !important; display: inline-flex !important; flex: 0 0 auto !important; font-size: 16px !important; font-weight: 400 !important; height: 60px !important; line-height: 60px !important; margin: 0 14px 0 0 !important; max-width: none !important; min-width: 0 !important; padding: 0 !important; text-decoration: none !important; white-space: nowrap !important; }
+  #tcrbac-docs-header #logo { display: block !important; flex: 0 0 auto !important; height: 38px !important; margin: 0 6px 0 0 !important; max-height: 38px !important; max-width: 38px !important; width: 38px !important; }
+  #tcrbac-docs-header #navpanel { align-items: center !important; display: flex !important; flex: 1 1 auto !important; height: 60px !important; min-height: 60px !important; }
+  #tcrbac-docs-header #navbar { align-items: center !important; display: flex !important; flex: 1 1 auto !important; height: 60px !important; justify-content: flex-start !important; min-height: 60px !important; }
+  #tcrbac-docs-header .navbar-nav { align-items: center !important; display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 16px !important; height: 60px !important; list-style: none !important; margin: 0 !important; padding: 0 !important; }
+  #tcrbac-docs-header .nav-item { display: block !important; margin: 0 !important; padding: 0 !important; }
+  #tcrbac-docs-header .nav-link,
+  #tcrbac-docs-header .nav-link:visited { align-items: center !important; background: transparent !important; border: 0 !important; color: #fff !important; display: inline-flex !important; flex: 0 0 auto !important; font-size: 14px !important; font-weight: 400 !important; height: 60px !important; line-height: 60px !important; margin: 0 !important; padding: 0 !important; text-decoration: none !important; white-space: nowrap !important; }
+  #tcrbac-docs-header .nav-link:hover,
+  #tcrbac-docs-header .nav-link:focus { color: #fff !important; text-decoration: none !important; }
+  #tcrbac-docs-header .nav-link.active,
+  #tcrbac-docs-header .nav-link[aria-current="page"] { color: var(--tcrbac-vscode-orange) !important; font-weight: 700 !important; }
+  .tcrbac-docs-header + #app { --bg-support-atlas: var(--tcrbac-vscode-orange); --on-support-atlas: var(--tcrbac-vscode-orange); }
+  .card-header, tr.header th { background: var(--tcrbac-vscode-blue) !important; color: #fff !important; }
+  a, a:visited { color: var(--tcrbac-vscode-blue); }
+  a:hover, a:focus { color: var(--tcrbac-vscode-orange); }
+  @media (max-width: 720px) { #tcrbac-docs-header { height: auto !important; min-height: 60px !important; } #tcrbac-docs-header .container-xxl { align-items: flex-start !important; flex-direction: column !important; height: auto !important; padding: 8px 12px !important; } #tcrbac-docs-header #navpanel, #tcrbac-docs-header #navbar, #tcrbac-docs-header .navbar-nav { height: auto !important; min-height: 0 !important; } #tcrbac-docs-header .navbar-nav { flex-wrap: wrap !important; gap: 12px !important; padding-bottom: 8px !important; } #tcrbac-docs-header .nav-link { height: 28px !important; line-height: 28px !important; } }
 </style>
 '@
 
     $allureCurrent = if ($CurrentReport -eq "Allure") { ' aria-current="page"' } else { "" }
     $coverageCurrent = if ($CurrentReport -eq "Coverage") { ' aria-current="page"' } else { "" }
     $header = @"
-<header id="tcrbac-docs-header" class="tcrbac-docs-header">
-  <nav class="tcrbac-docs-nav" aria-label="Main navigation">
-    <a class="tcrbac-docs-brand" href="../../index.html">TCRBAC.NET</a>
-    <a class="tcrbac-docs-link" href="../../index.html">Home</a>
-    <a class="tcrbac-docs-link" href="../../docs/index.html">Docs</a>
-    <a class="tcrbac-docs-link" href="../../api/index.html">API</a>
-    <a class="tcrbac-docs-link" href="../../examples/index.html">Examples</a>
-    <a class="tcrbac-docs-link" href="../index.html">Tests</a>
-    <a class="tcrbac-docs-link" href="../allure-report/index.html"$allureCurrent>Allure</a>
-    <a class="tcrbac-docs-link" href="../coverage-report/index.html"$coverageCurrent>Coverage</a>
+<header id="tcrbac-docs-header" class="bg-body border-bottom tcrbac-docs-header">
+  <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+    <div class="container-xxl flex-nowrap">
+      <a class="navbar-brand" href="../../index.html"><img id="logo" class="svg" src="../../logo.svg" alt="TCRBAC.NET">TCRBAC.NET</a>
+      <div class="collapse navbar-collapse" id="navpanel">
+        <div id="navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../docs/index.html">Docs</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../api/index.html">API</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../examples/index.html">Examples</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html">Tests</a></li>
+            <li class="nav-item"><a class="nav-link" href="../allure-report/index.html"$allureCurrent>Allure</a></li>
+            <li class="nav-item"><a class="nav-link" href="../coverage-report/index.html"$coverageCurrent>Coverage</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </nav>
 </header>
 "@

@@ -1,0 +1,121 @@
+:root {
+  --tcrbac-vscode-blue: #007acc;
+  --tcrbac-vscode-blue-dark: #005a9e;
+  --tcrbac-vscode-orange: #ff8c00;
+  --tcrbac-vscode-orange-soft: rgba(255, 140, 0, 0.14);
+  --tcrbac-docs-header-height: 60px;
+  --tcrbac-docs-logo-size: 38px;
+  --tcrbac-docs-brand-font-size: 16px;
+  --tcrbac-docs-link-font-size: 14px;
+  --tcrbac-docs-link-gap: 16px;
+}
+
+body > header,
+body[data-layout="landing"] > header,
+body > header.bg-body {
+  background: var(--tcrbac-vscode-blue) !important;
+  border-bottom-color: var(--tcrbac-vscode-blue-dark) !important;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  height: var(--tcrbac-docs-header-height) !important;
+  min-height: var(--tcrbac-docs-header-height) !important;
+}
+
+body > header .navbar,
+body > header .navbar-brand,
+body > header .navbar-brand:hover,
+body > header .navbar-brand:focus,
+body > header .navbar a,
+body > header .navbar button {
+  color: #fff !important;
+}
+
+body > header > nav,
+body > header .navbar,
+body > header .container-xxl {
+  height: var(--tcrbac-docs-header-height) !important;
+  min-height: var(--tcrbac-docs-header-height) !important;
+}
+
+body > header .container-xxl {
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+body > header .navbar-brand {
+  font-size: var(--tcrbac-docs-brand-font-size) !important;
+  font-weight: 400 !important;
+  height: var(--tcrbac-docs-header-height) !important;
+  margin-right: 14px !important;
+  padding: 0 !important;
+}
+
+body > header .navbar-brand #logo {
+  height: var(--tcrbac-docs-logo-size) !important;
+  margin-right: 6px !important;
+  width: var(--tcrbac-docs-logo-size) !important;
+}
+
+body > header .navbar-nav,
+body > header #navbar {
+  align-items: center !important;
+  display: flex !important;
+  gap: var(--tcrbac-docs-link-gap) !important;
+  justify-content: flex-start !important;
+}
+
+body > header .navbar-nav > li > a,
+body > header .nav-link,
+body > header #navbar a {
+  color: #fff !important;
+  font-size: var(--tcrbac-docs-link-font-size) !important;
+  font-weight: 400 !important;
+}
+
+body > header .navbar-nav > li.active > a,
+body > header .nav-link.active,
+body > header #navbar a.active {
+  color: var(--tcrbac-vscode-orange) !important;
+  font-weight: 700 !important;
+}
+
+body > header .navbar .form-control {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
+body > header .navbar .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.toc li.active > a,
+.toc li > a.active,
+.toc .active > a,
+.toc a.active,
+.affix li.active > a,
+.affix .active > a,
+.navbar-nav .active > a,
+.navbar-nav .active > .nav-link,
+.nav-link.active {
+  color: var(--tcrbac-vscode-orange) !important;
+  font-weight: 700;
+}
+
+.toc li.active,
+.toc .active {
+  border-left: 3px solid var(--tcrbac-vscode-orange);
+}
+
+.toc li.active > a,
+.toc .active > a {
+  background: var(--tcrbac-vscode-orange-soft);
+}
+
+.toc li > a:hover,
+.toc li > a:focus,
+.affix li > a:hover,
+.affix li > a:focus {
+  color: var(--tcrbac-vscode-orange) !important;
+}

@@ -1,0 +1,107 @@
+:root {
+  --tcrbac-vscode-blue: #007acc;
+  --tcrbac-vscode-blue-dark: #005a9e;
+  --tcrbac-vscode-orange: #ff8c00;
+  --tcrbac-vscode-orange-soft: rgba(255, 140, 0, 0.14);
+  --tcrbac-docs-header-height: 60px;
+  --tcrbac-docs-logo-size: 38px;
+  --tcrbac-docs-brand-font-size: 16px;
+  --tcrbac-docs-link-font-size: 14px;
+  --tcrbac-docs-link-gap: 16px;
+}
+
+header .navbar,
+header .navbar.navbar-inverse,
+.navbar-inverse {
+  background: var(--tcrbac-vscode-blue) !important;
+  border-color: var(--tcrbac-vscode-blue-dark) !important;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  height: var(--tcrbac-docs-header-height) !important;
+  min-height: var(--tcrbac-docs-header-height) !important;
+}
+
+header .navbar .navbar-brand,
+header .navbar .navbar-nav > li > a,
+header .navbar .navbar-toggle,
+header .navbar .form-control {
+  color: #fff !important;
+}
+
+header .navbar .container,
+header .navbar .navbar-header,
+header .navbar .navbar-collapse {
+  min-height: var(--tcrbac-docs-header-height) !important;
+}
+
+header .navbar .navbar-brand {
+  align-items: center !important;
+  display: inline-flex !important;
+  font-size: var(--tcrbac-docs-brand-font-size) !important;
+  font-weight: 400 !important;
+  height: var(--tcrbac-docs-header-height) !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+header .navbar .navbar-brand #logo {
+  height: var(--tcrbac-docs-logo-size) !important;
+  width: var(--tcrbac-docs-logo-size) !important;
+}
+
+header .navbar .navbar-nav {
+  align-items: center !important;
+  display: flex !important;
+  gap: var(--tcrbac-docs-link-gap) !important;
+}
+
+header .navbar .navbar-nav > li > a {
+  font-size: var(--tcrbac-docs-link-font-size) !important;
+  font-weight: 400 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+header .navbar .navbar-nav > li.active > a {
+  color: var(--tcrbac-vscode-orange) !important;
+  font-weight: 700 !important;
+}
+
+header .navbar .form-control {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+header .navbar .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.toc .nav > li.active > a,
+.toc .nav > li.active > a:hover,
+.toc .nav > li.active > a:focus,
+.toc .nav > li > a.active,
+.toc .active > a,
+.affix ul > li.active > a,
+.affix ul > li.active > a:before,
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  color: var(--tcrbac-vscode-orange) !important;
+  font-weight: 700;
+}
+
+.toc .nav > li.active,
+.toc .active {
+  border-left: 3px solid var(--tcrbac-vscode-orange);
+}
+
+.toc .nav > li.active > a,
+.toc .active > a {
+  background: var(--tcrbac-vscode-orange-soft) !important;
+}
+
+.toc .nav > li > a:hover,
+.toc .nav > li > a:focus,
+.affix ul > li > a:hover,
+.affix ul > li > a:focus {
+  color: var(--tcrbac-vscode-orange) !important;
+}

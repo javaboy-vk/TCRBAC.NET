@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TCRBAC Project Structure</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #5f6b7a;
+      --line: #c8d4e3;
+      --panel: #f7f9fc;
+      --head: #e4effb;
+      --accent: #2f6faf;
+      --code: #0f1720;
+      --tcrbac-vscode-blue: #007acc;
+      --tcrbac-vscode-blue-dark: #005a9e;
+      --tcrbac-vscode-orange: #ff8c00;
+      --tcrbac-docs-header-height: 60px;
+      --tcrbac-docs-logo-size: 38px;
+      --tcrbac-docs-brand-font-size: 16px;
+      --tcrbac-docs-link-font-size: 14px;
+      --tcrbac-docs-link-gap: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.45;
+    }
+
+    body > header {
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+      border-bottom: 1px solid var(--tcrbac-vscode-blue-dark);
+      background: var(--tcrbac-vscode-blue);
+    }
+
+    body > header > nav,
+    body > header .navbar,
+    body > header .container-xxl {
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+    }
+
+    body > header .navbar,
+    body > header .container-xxl,
+    body > header #navpanel,
+    body > header #navbar,
+    body > header .navbar-nav {
+      display: flex;
+      align-items: center;
+    }
+
+    body > header .navbar {
+      padding: 0;
+    }
+
+    body > header .container-xxl {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      height: var(--tcrbac-docs-header-height);
+      margin: 0;
+      padding: 0 12px;
+      width: 100%;
+    }
+
+    body > header .navbar-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+      margin-right: 14px;
+      color: #ffffff;
+      font-size: var(--tcrbac-docs-brand-font-size);
+      font-weight: 400;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    body > header .navbar-brand img {
+      width: var(--tcrbac-docs-logo-size);
+      height: var(--tcrbac-docs-logo-size);
+    }
+
+    body > header #navpanel,
+    body > header #navbar {
+      flex: 1 1 auto;
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+    }
+
+    body > header .navbar-nav {
+      flex-wrap: wrap;
+      gap: var(--tcrbac-docs-link-gap);
+      height: var(--tcrbac-docs-header-height);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body > header .nav-item {
+      margin: 0;
+      padding: 0;
+    }
+
+    body > header .nav-link {
+      display: inline-flex;
+      align-items: center;
+      height: var(--tcrbac-docs-header-height);
+      min-height: var(--tcrbac-docs-header-height);
+      padding: 0;
+      color: #ffffff;
+      font-size: var(--tcrbac-docs-link-font-size);
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    body > header .nav-link:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    body > header .nav-link[aria-current="page"] {
+      color: var(--tcrbac-vscode-orange);
+      font-weight: 700;
+    }
+
+    .page-header {
+      padding: 32px 42px 22px;
+      border-bottom: 1px solid var(--line);
+      background: var(--head);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: 0;
+    }
+
+    .page-header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 980px;
+    }
+
+    @media (max-width: 720px) {
+      body > header,
+      body > header > nav,
+      body > header .navbar,
+      body > header .container-xxl {
+        height: auto;
+      }
+
+      body > header .container-xxl {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        min-height: var(--tcrbac-docs-header-height);
+        padding: 8px 12px;
+      }
+
+      body > header #navpanel,
+      body > header #navbar,
+      body > header .navbar-nav {
+        height: auto;
+        min-height: 0;
+      }
+
+      body > header .navbar-nav {
+        margin-left: 0;
+        gap: 12px;
+      }
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 32px 48px;
+    }
+
+    section {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      margin: 0 0 22px;
+      padding: 20px 22px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    ul {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 1em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--head);
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .dir-icon {
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 0.95em;
+      line-height: 1;
+      vertical-align: -1px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-body border-bottom">
+    <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation" aria-label="Main navigation">
+      <div class="container-xxl flex-nowrap">
+        <a class="navbar-brand" href="../index.html">
+          <img id="logo" class="svg" src="../logo.svg" alt="TCRBAC.NET">
+          TCRBAC.NET
+        </a>
+        <div class="collapse navbar-collapse" id="navpanel">
+          <div id="navbar">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Docs</a></li>
+              <li class="nav-item"><a class="nav-link" href="../api/index.html">API</a></li>
+              <li class="nav-item"><a class="nav-link" href="../examples/index.html">Examples</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tests/index.html">Tests</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tests/allure-report/index.html">Allure</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tests/coverage-report/index.html">Coverage</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <h1>TCRBAC Project Structure</h1>
+    <p>Root-level source and configuration files and directories. Generated outputs are documented separately in the Generated Directories section.</p>
+  </section>
+
+  <main>
+    <section>
+      <h2>Root Directory Inventory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Path</th>
+            <th>Type</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>.config</code></td><td>Directory</td><td>Repo-local .NET tool manifest. <code>dotnet tool restore</code> reads this folder to restore tools such as ReportGenerator.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>.git</code></td><td>Directory</td><td>Git repository metadata. This is created by Git and is not edited manually during normal development.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>.vscode</code></td><td>Directory</td><td>Shared VS Code tasks, launch profiles, settings, and extension recommendations that support build, test, and debug workflows.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>conf</code></td><td>Directory</td><td>Shared runtime configuration files, including <code>log4net.config</code>, copied into build outputs.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>docs</code></td><td>Directory</td><td>Documentation support files, static HTML pages, DocFX configuration for the standalone docs site, generated API metadata, assets, and scripts.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>examples</code></td><td>Directory</td><td>Runnable example projects and sample Tomcat input files.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>mdvault</code></td><td>Directory</td><td>Source Markdown for generated DocFX pages. This keeps authored documentation separate from generated HTML output.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>src</code></td><td>Directory</td><td>Main library source project for <code>TomcatUserRbacPort</code>.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>templates</code></td><td>Directory</td><td>Custom DocFX template files used to apply the shared documentation header and color theme.</td></tr>
+          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>tests</code></td><td>Directory</td><td>xUnit test project, test runner scripts, generated test results, Allure report output, and coverage report output.</td></tr>
+          <tr><td><code>.gitignore</code></td><td>File</td><td>Defines generated, local, and private files that Git should ignore.</td></tr>
+          <tr><td><code>Directory.Build.props</code></td><td>File</td><td>MSBuild settings shared by projects in the repository.</td></tr>
+          <tr><td><code>docfx.json</code></td><td>File</td><td>Root DocFX configuration for the full documentation site generated into <code>site</code>.</td></tr>
+          <tr><td><code>global.json</code></td><td>File</td><td>Selects the .NET SDK used by CLI commands. The default asks for SDK 8.0.100 with feature-band roll-forward.</td></tr>
+          <tr><td><code>NuGet.config</code></td><td>File</td><td>Repo-local NuGet source configuration. It clears machine-specific feeds and uses <code>nuget.org</code>.</td></tr>
+          <tr><td><code>omnisharp.json</code></td><td>File</td><td>OmniSharp/C# editor configuration used by VS Code.</td></tr>
+          <tr><td><code>package-lock.json</code></td><td>File</td><td>npm lock file that keeps JavaScript tool restores reproducible.</td></tr>
+          <tr><td><code>package.json</code></td><td>File</td><td>npm tooling manifest for JavaScript-based development tools such as Allure.</td></tr>
+          <tr><td><code>README.md</code></td><td>File</td><td>Main GitHub-facing project overview and quick-start entry point.</td></tr>
+          <tr><td><code>TCRBAC.code-workspace</code></td><td>File</td><td>VS Code workspace file for opening the repository with the intended workspace name and settings.</td></tr>
+          <tr><td><code>TCRBAC.NET.sln</code></td><td>File</td><td>Visual Studio/.NET solution containing the library, tests, and example project.</td></tr>
+          <tr><td><code>toc.yml</code></td><td>File</td><td>Root DocFX table of contents used by the generated documentation site.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Generated Directories</h2>
+      <p>These directories are created by normal commands and should not be treated as source:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Path</th>
+            <th>Created By</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>.playwright-mcp</code></td><td>Browser/MCP tooling</td><td>Stores local browser automation cache and state. It is machine-local and ignored by Git.</td></tr>
+          <tr><td><code>build</code></td><td><code>dotnet build</code></td><td>Contains compiled library, example, and test binaries under the repository-owned output layout.</td></tr>
+          <tr><td><code>docs/site</code></td><td><code>docfx docs\docfx.json</code></td><td>Standalone generated documentation site for the <code>docs</code> area.</td></tr>
+          <tr><td><code>examples/site</code></td><td><code>docfx examples\docfx.json</code></td><td>Standalone generated documentation site for the examples area.</td></tr>
+          <tr><td><code>node_modules</code></td><td><code>npm install</code></td><td>Contains restored npm packages, including the repo-local Allure CLI.</td></tr>
+          <tr><td><code>obj</code></td><td><code>dotnet restore</code> and <code>dotnet build</code></td><td>Contains MSBuild intermediate files, generated project assets, and temporary compilation state.</td></tr>
+          <tr><td><code>site</code></td><td><code>docfx build docfx.json</code></td><td>Full generated documentation site served with <code>docfx serve site --port 8080</code>.</td></tr>
+          <tr><td><code>tests/AllureReport</code></td><td><code>tests\run-tests.ps1</code></td><td>Generated Allure HTML report for test results.</td></tr>
+          <tr><td><code>tests/AllureResults</code></td><td><code>tests\run-tests.ps1</code></td><td>Intermediate Allure result files converted from TRX test output.</td></tr>
+          <tr><td><code>tests/CoverageReport</code></td><td><code>tests\run-tests.ps1</code></td><td>Generated HTML coverage report from ReportGenerator.</td></tr>
+          <tr><td><code>tests/TestResults</code></td><td><code>tests\run-tests.ps1</code> and <code>dotnet test</code></td><td>Raw test outputs, including TRX files and coverage collector output.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Main Source Directories</h2>
+      <ul>
+        <li><code>src</code> contains the library project.</li>
+        <li><code>tests</code> contains test code and test/report scripts.</li>
+        <li><code>examples</code> contains runnable example code and sample Tomcat files.</li>
+        <li><code>mdvault</code> contains authored Markdown documentation.</li>
+        <li><code>docs</code> contains documentation assets, generated API metadata, static documentation pages, and documentation scripts.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

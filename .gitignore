@@ -3,14 +3,6 @@ build/
 bin/
 obj/
 
-# Local/private binary dependency folder
-# Keep the directory if needed, but do not commit downloaded DLLs.
-lib/*.dll
-lib/*.pdb
-lib/*.xml
-/lib/*
-!/lib/.gitkeep
-
 # Test output
 TestResults/
 tests/TestResults/

@@ -220,6 +220,7 @@ Useful generated pages:
 
 - `site\index.html`
 - `site\docs\developer.html`
+- `site\docs\Project-Structure.html`
 - `site\docs\api\Api-Flow-Diagram.html`
 - `site\docs\diagrams\src-class-diagram.html`
 - `site\examples\Example-Flow-Diagram.html`

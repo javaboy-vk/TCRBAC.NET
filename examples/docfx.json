@@ -55,6 +55,10 @@
         ]
       }
     ],
+    "template": [
+      "default",
+      "../templates/tcrbac-vscode"
+    ],
     "dest": "site",
     "globalMetadata": {
       "_appTitle": "TCRBAC Examples Documentation",
