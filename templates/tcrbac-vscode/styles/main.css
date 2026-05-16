@@ -10,6 +10,15 @@
   --tcrbac-docs-link-gap: 16px;
 }
 
+.tomcat-inline-icon {
+  display: inline-block;
+  height: 16px;
+  margin-left: 4px;
+  margin-right: 2px;
+  vertical-align: text-bottom;
+  width: 16px;
+}
+
 header .navbar,
 header .navbar.navbar-inverse,
 .navbar-inverse {

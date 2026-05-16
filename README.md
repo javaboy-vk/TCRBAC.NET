@@ -22,7 +22,7 @@ Root namespace: `com.mag.dapi.*`
 - Windows with .NET Framework 4.8 runtime.
 - .NET SDK 8.0 or newer. The repo has `global.json` set to SDK `8.0.100` with `rollForward` enabled.
 - DocFX for generated HTML documentation.
-- Node.js with npm for the repo-local Allure CLI used by the test report workflow.
+- Node.js with npm only if the test runner has to install the build-local Allure CLI fallback.
 
 Install DocFX if needed:
 
@@ -36,36 +36,34 @@ Optional, only when regenerating Mermaid-authored diagrams:
 npm install -g @mermaid-js/mermaid-cli
 ```
 
-## Allure Local Setup
+## Allure Setup
 
-Allure is installed as a repo-local npm development dependency. A clean DEV environment does not need a global Allure installation.
+The test runner first looks for a global `allure` command on `PATH`. If it exists, the repository uses that installation and records it in the Project Structure environment setup section.
 
-Install Node.js first if `node` or `npm` is not available:
+If no global `allure` command is found, `tests\run-tests.ps1` installs Allure `3.7.0` under `build\tools\allure` and uses `build\tools\npm-cache` for npm cache files. That keeps the generated tooling inside `build` and avoids root `node_modules`.
+
+Install Node.js first only if the script needs this build-local fallback:
 
 ```powershell
 node --version
 npm --version
 ```
 
-Then install the repository JavaScript tooling from the repo root:
+The fallback installation is automatic when the test runner needs it:
 
 ```powershell
-npm install
+.\tests\run-tests.ps1 -Reset
 ```
 
-This restores the Allure CLI declared in `package.json` into `node_modules` and uses `package-lock.json` to keep the installed version reproducible. Verify the local Allure CLI:
-
-```powershell
-npm run allure:version
-```
-
-Expected output includes:
+When the fallback is used, the command line prints the installation path:
 
 ```text
-3.7.0
+Allure was not found globally. Installing Allure 3.7.0 under <repo>\build\tools\allure
 ```
 
-The test runner calls the local Allure CLI automatically through `npx` when a global `allure` command is not on `PATH`, so developers normally only need `npm install`.
+The same tool location is also written to the Project Structure page under the machine-specific environment setup section, for example `Hercules environment setup`.
+
+You can install Allure globally yourself if you prefer, but the repository does not require that.
 
 ## Coverage Local Setup
 
@@ -89,7 +87,6 @@ cd TCRBAC.NET
 
 dotnet --info
 dotnet nuget list source
-npm install
 dotnet tool restore
 dotnet restore TCRBAC.NET.sln
 dotnet build TCRBAC.NET.sln
@@ -97,7 +94,8 @@ dotnet build TCRBAC.NET.sln
 
 dotnet run --project examples\TomcatUserValidator -- tomcat tomcat
 
-docfx build
+docfx metadata docfx.json
+docfx build docfx.json
 docfx docs\docfx.json
 docfx examples\docfx.json
 ```
@@ -149,13 +147,13 @@ Build outputs are written under the repository-level `build` directory:
 
 The source, test, and example projects copy `conf\log4net.config` into their output directories as `conf\log4net.config`.
 
-The test runner writes TRX results to `tests\TestResults\unit-tests.trx`, Allure result JSON to `tests\AllureResults`, the generated Allure HTML report to `tests\AllureReport\index.html`, Cobertura coverage XML under `tests\TestResults`, and the generated Coverage HTML report to `tests\CoverageReport\index.html`.
+The test runner writes TRX results to `build\tests\TestResults\unit-tests.trx`, Allure result JSON to `build\tests\AllureResults`, the generated Allure HTML report to `build\tests\AllureReport\index.html`, Cobertura coverage XML under `build\tests\TestResults`, and the generated Coverage HTML report to `build\tests\CoverageReport\index.html`.
 
 Open the command-line generated reports directly:
 
 ```powershell
-start .\tests\AllureReport\index.html
-start .\tests\CoverageReport\index.html
+start .\build\tests\AllureReport\index.html
+start .\build\tests\CoverageReport\index.html
 ```
 
 ## Example
@@ -174,10 +172,11 @@ The example reads `examples\tomcat\tomcat-users.xml`, loads users through `Memor
 Build the full documentation site:
 
 ```powershell
-docfx build
+docfx metadata docfx.json
+docfx build docfx.json
 ```
 
-This updates the generated `site` folder only. It does not start or stop any server.
+This updates API metadata under `docs\api` and the generated site under `build\site`. It does not start or stop any server.
 
 If the documentation site is already running on port `8080`, refresh `http://localhost:8080`. Use the top navigation links for `Tests`, `Allure`, and `Coverage`:
 
@@ -189,25 +188,25 @@ Generate the standalone docs site:
 
 ```powershell
 docfx docs\docfx.json
-docfx serve docs\site
+docfx serve build\docs-site
 ```
 
 Generate the standalone examples site:
 
 ```powershell
 docfx examples\docfx.json
-docfx serve examples\site
+docfx serve build\examples-site
 ```
 
 Useful generated pages:
 
-- `site\index.html`
-- `site\docs\developer.html`
-- `site\docs\Project-Structure.html`
-- `site\docs\api\Api-Flow-Diagram.html`
-- `site\docs\diagrams\src-class-diagram.html`
-- `site\examples\Example-Flow-Diagram.html`
-- `site\tests\index.html`
+- `build\site\index.html`
+- `build\site\docs\developer.html`
+- `build\site\docs\Project-Structure.html`
+- `build\site\docs\api\Api-Flow-Diagram.html`
+- `build\site\docs\diagrams\src-class-diagram.html`
+- `build\site\examples\Example-Flow-Diagram.html`
+- `build\site\tests\index.html`
 
 ## Minimal Usage
 
@@ -223,5 +222,9 @@ if (principal != null && RbacAuthorizer.HasAnyRole(principal, "manager-gui", "ad
 ```
 
 ## Project Summary
+
+```powershell
+pygount --format=summary --folders-to-skip "...,.git,build,bin,obj,node_modules,.playwright-mcp,site"
+```
 
 ![pygount summary for the project](docs/assets/pygount-summary.svg)

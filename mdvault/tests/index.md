@@ -31,12 +31,12 @@ The test assembly is built under `build\tests\TomcatUserRbacPort.Tests\<Configur
 
 The helper script writes:
 
-- TRX results to `tests\TestResults\unit-tests.trx`
-- Allure result JSON to `tests\AllureResults`
-- Allure HTML report to `tests\AllureReport\index.html`
-- Cobertura coverage XML under `tests\TestResults`
-- Coverage HTML report to `tests\CoverageReport\index.html`
-- documentation-site copies to `site\tests\results`, `site\tests\allure-report`, and `site\tests\coverage-report`
+- TRX results to `build\tests\TestResults\unit-tests.trx`
+- Allure result JSON to `build\tests\AllureResults`
+- Allure HTML report to `build\tests\AllureReport\index.html`
+- Cobertura coverage XML under `build\tests\TestResults`
+- Coverage HTML report to `build\tests\CoverageReport\index.html`
+- documentation-site copies to `build\site\tests\results`, `build\site\tests\allure-report`, and `build\site\tests\coverage-report`
 
 ## View results
 

@@ -19,11 +19,11 @@ docfx examples\docfx.json
 The generated HTML site is written to:
 
 ```text
-examples\site
+build\examples-site
 ```
 
 Preview it locally:
 
 ```powershell
-docfx serve examples\site
+docfx serve build\examples-site
 ```

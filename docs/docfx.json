@@ -65,7 +65,7 @@
       "default",
       "../templates/tcrbac-vscode"
     ],
-    "dest": "site",
+    "dest": "../build/docs-site",
     "globalMetadata": {
       "_appTitle": "Tomcat User RBAC Port Documentation",
       "_appName": "Tomcat User RBAC Port",

@@ -284,7 +284,8 @@
 
   <main>
     <section>
-      <h2>Root Directory Inventory</h2>
+      <h2>Root Inventory</h2>
+      <p>Root-level source and configuration files and directories. Generated outputs are documented separately in the Generated Directories section.</p>
       <table>
         <thead>
           <tr>
@@ -294,24 +295,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>.config</code></td><td>Directory</td><td>Repo-local .NET tool manifest. <code>dotnet tool restore</code> reads this folder to restore tools such as ReportGenerator.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>.git</code></td><td>Directory</td><td>Git repository metadata. This is created by Git and is not edited manually during normal development.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>.vscode</code></td><td>Directory</td><td>Shared VS Code tasks, launch profiles, settings, and extension recommendations that support build, test, and debug workflows.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>conf</code></td><td>Directory</td><td>Shared runtime configuration files, including <code>log4net.config</code>, copied into build outputs.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>docs</code></td><td>Directory</td><td>Documentation support files, static HTML pages, DocFX configuration for the standalone docs site, generated API metadata, assets, and scripts.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>examples</code></td><td>Directory</td><td>Runnable example projects and sample Tomcat input files.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>mdvault</code></td><td>Directory</td><td>Source Markdown for generated DocFX pages. This keeps authored documentation separate from generated HTML output.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>src</code></td><td>Directory</td><td>Main library source project for <code>TomcatUserRbacPort</code>.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>templates</code></td><td>Directory</td><td>Custom DocFX template files used to apply the shared documentation header and color theme.</td></tr>
-          <tr><td><span class="dir-icon" aria-hidden="true">&#128193;</span><code>tests</code></td><td>Directory</td><td>xUnit test project, test runner scripts, generated test results, Allure report output, and coverage report output.</td></tr>
+          <tr><td><code>.config</code></td><td>Directory</td><td>Repo-local .NET tool manifest. <code>dotnet tool restore</code> reads this folder to restore tools such as ReportGenerator.</td></tr>
+          <tr><td><code>.git</code></td><td>Directory</td><td>Git repository metadata. This is created by Git and is not edited manually during normal development.</td></tr>
+          <tr><td><code>.vscode</code></td><td>Directory</td><td>Shared VS Code tasks, launch profiles, settings, and extension recommendations that support build, test, and debug workflows.</td></tr>
+          <tr><td><code>build</code></td><td>Directory</td><td>Repository-owned generated-output root. Only <code>build/.gitkeep</code> is intended to be committed so fresh checkouts have the directory.</td></tr>
+          <tr><td><code>conf</code></td><td>Directory</td><td>Shared runtime configuration files, including <code>log4net.config</code>, copied into build outputs.</td></tr>
+          <tr><td><code>docs</code></td><td>Directory</td><td>Documentation support files, static HTML pages, DocFX configuration for the standalone docs site, API metadata, and assets.</td></tr>
+          <tr><td><code>examples</code></td><td>Directory</td><td>Runnable example projects, sample Tomcat input files, and example API metadata.</td></tr>
+          <tr><td><code>mdvault</code></td><td>Directory</td><td>Source Markdown for generated DocFX pages. This keeps authored documentation separate from generated HTML output.</td></tr>
+          <tr><td><code>src</code></td><td>Directory</td><td>Main library source project for <code>TomcatUserRbacPort</code>.</td></tr>
+          <tr><td><code>templates</code></td><td>Directory</td><td>Custom DocFX template files used to apply the shared documentation header and color theme.</td></tr>
+          <tr><td><code>tests</code></td><td>Directory</td><td>xUnit test project, test/report scripts, and test API metadata. Generated test outputs and reports are written under <code>build</code>.</td></tr>
           <tr><td><code>.gitignore</code></td><td>File</td><td>Defines generated, local, and private files that Git should ignore.</td></tr>
           <tr><td><code>Directory.Build.props</code></td><td>File</td><td>MSBuild settings shared by projects in the repository.</td></tr>
-          <tr><td><code>docfx.json</code></td><td>File</td><td>Root DocFX configuration for the full documentation site generated into <code>site</code>.</td></tr>
+          <tr><td><code>docfx.json</code></td><td>File</td><td>Root DocFX configuration for the full documentation site generated into <code>build/site</code>.</td></tr>
           <tr><td><code>global.json</code></td><td>File</td><td>Selects the .NET SDK used by CLI commands. The default asks for SDK 8.0.100 with feature-band roll-forward.</td></tr>
           <tr><td><code>NuGet.config</code></td><td>File</td><td>Repo-local NuGet source configuration. It clears machine-specific feeds and uses <code>nuget.org</code>.</td></tr>
           <tr><td><code>omnisharp.json</code></td><td>File</td><td>OmniSharp/C# editor configuration used by VS Code.</td></tr>
-          <tr><td><code>package-lock.json</code></td><td>File</td><td>npm lock file that keeps JavaScript tool restores reproducible.</td></tr>
-          <tr><td><code>package.json</code></td><td>File</td><td>npm tooling manifest for JavaScript-based development tools such as Allure.</td></tr>
           <tr><td><code>README.md</code></td><td>File</td><td>Main GitHub-facing project overview and quick-start entry point.</td></tr>
           <tr><td><code>TCRBAC.code-workspace</code></td><td>File</td><td>VS Code workspace file for opening the repository with the intended workspace name and settings.</td></tr>
           <tr><td><code>TCRBAC.NET.sln</code></td><td>File</td><td>Visual Studio/.NET solution containing the library, tests, and example project.</td></tr>
@@ -332,20 +332,53 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><code>.playwright-mcp</code></td><td>Browser/MCP tooling</td><td>Stores local browser automation cache and state. It is machine-local and ignored by Git.</td></tr>
-          <tr><td><code>build</code></td><td><code>dotnet build</code></td><td>Contains compiled library, example, and test binaries under the repository-owned output layout.</td></tr>
-          <tr><td><code>docs/site</code></td><td><code>docfx docs\docfx.json</code></td><td>Standalone generated documentation site for the <code>docs</code> area.</td></tr>
-          <tr><td><code>examples/site</code></td><td><code>docfx examples\docfx.json</code></td><td>Standalone generated documentation site for the examples area.</td></tr>
-          <tr><td><code>node_modules</code></td><td><code>npm install</code></td><td>Contains restored npm packages, including the repo-local Allure CLI.</td></tr>
-          <tr><td><code>obj</code></td><td><code>dotnet restore</code> and <code>dotnet build</code></td><td>Contains MSBuild intermediate files, generated project assets, and temporary compilation state.</td></tr>
-          <tr><td><code>site</code></td><td><code>docfx build docfx.json</code></td><td>Full generated documentation site served with <code>docfx serve site --port 8080</code>.</td></tr>
-          <tr><td><code>tests/AllureReport</code></td><td><code>tests\run-tests.ps1</code></td><td>Generated Allure HTML report for test results.</td></tr>
-          <tr><td><code>tests/AllureResults</code></td><td><code>tests\run-tests.ps1</code></td><td>Intermediate Allure result files converted from TRX test output.</td></tr>
-          <tr><td><code>tests/CoverageReport</code></td><td><code>tests\run-tests.ps1</code></td><td>Generated HTML coverage report from ReportGenerator.</td></tr>
-          <tr><td><code>tests/TestResults</code></td><td><code>tests\run-tests.ps1</code> and <code>dotnet test</code></td><td>Raw test outputs, including TRX files and coverage collector output.</td></tr>
+          <tr><td><code>\build</code></td><td><code>dotnet build</code> and repository tooling</td><td>Repository-owned generated-output root for compiled binaries, reports, generated sites, and build-local tools.</td></tr>
+          <tr><td><code>\build\.playwright-mcp</code></td><td>Browser/MCP tooling</td><td>Local browser automation cache and state when browser validation is used for this repository.</td></tr>
+          <tr><td><code>\build\docs-site</code></td><td><code>docfx docs\docfx.json</code></td><td>Standalone generated documentation site for the <code>docs</code> area.</td></tr>
+          <tr><td><code>\build\examples</code></td><td><code>dotnet build</code></td><td>Compiled example binaries under the repository-owned output layout.</td></tr>
+          <tr><td><code>\build\examples-site</code></td><td><code>docfx examples\docfx.json</code></td><td>Standalone generated documentation site for the examples area.</td></tr>
+          <tr><td><code>\build\obj</code></td><td><code>dotnet restore</code> and <code>dotnet build</code></td><td>MSBuild intermediate files, generated project assets, and temporary compilation state.</td></tr>
+          <tr><td><code>\build\site</code></td><td><code>docfx build docfx.json</code></td><td>Full generated documentation site served with <code>docfx serve build\site --port 8080</code>.</td></tr>
+          <tr><td><code>\build\tests\AllureReport</code></td><td><code>tests\run-tests.ps1</code></td><td>Generated Allure HTML report for test results.</td></tr>
+          <tr><td><code>\build\tests\AllureResults</code></td><td><code>tests\run-tests.ps1</code></td><td>Intermediate Allure result files converted from TRX test output.</td></tr>
+          <tr><td><code>\build\tests\CoverageReport</code></td><td><code>tests\run-tests.ps1</code></td><td>Generated HTML coverage report from ReportGenerator.</td></tr>
+          <tr><td><code>\build\tests\TestResults</code></td><td><code>tests\run-tests.ps1</code> and <code>dotnet test</code></td><td>Raw test outputs, including TRX files and coverage collector output.</td></tr>
+          <tr><td><code>\build\tools</code></td><td>Tool setup scripts such as <code>tests\run-tests.ps1</code></td><td>Build-local tool installation root used when a required tool is not available globally.</td></tr>
+          <tr><td><code>\build\tools\allure</code></td><td><code>tests\run-tests.ps1</code></td><td>Build-local Allure CLI installation used only when no global <code>allure</code> command is found.</td></tr>
+          <tr><td><code>\build\tools\npm-cache</code></td><td><code>tests\run-tests.ps1</code></td><td>Build-local npm cache used by the Allure fallback install so npm cache files stay under <code>\build</code>.</td></tr>
+          <tr><td><code>\build\TomcatUserRbacPort</code></td><td><code>dotnet build</code></td><td>Compiled library binaries under the repository-owned output layout.</td></tr>
+          <tr><td><code>\build\TomcatUserRbacPort.Tests</code></td><td><code>dotnet build</code></td><td>Compiled test binaries under the repository-owned output layout.</td></tr>
+          <tr><td><code>\build\TomcatUserValidator</code></td><td><code>dotnet build</code></td><td>Compiled example executable binaries under the repository-owned output layout.</td></tr>
         </tbody>
       </table>
+      <p>No generated project directory should be created outside <code>\build</code>. If an external tool creates a cache folder in the repository root, move or remove it and use the supported <code>\build</code> paths above.</p>
     </section>
+
+    <section>
+      <h2>Hercules environment setup</h2>
+      <!-- environment-setup:start -->
+      <p>This section is updated by repository setup/test scripts when they install or discover tool dependencies for this machine.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Scope</th>
+            <th>Installed/Resolved Path</th>
+            <th>Command</th>
+            <th>Version</th>
+            <th>Managed By</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Allure CLI</td><td>Build-local</td><td><code>D:\TCRBAC.NET\build\tools\allure</code></td><td><code>D:\TCRBAC.NET\build\tools\allure\node_modules\.bin\allure.cmd</code></td><td>3.7.0</td><td>tests\run-tests.ps1</td><td>Installed under build because no global allure command was found.</td></tr>
+          <tr><td>npm package cache</td><td>Build-local</td><td><code>D:\TCRBAC.NET\build\tools\npm-cache</code></td><td><code>npm install --cache D:\TCRBAC.NET\build\tools\npm-cache</code></td><td></td><td>tests\run-tests.ps1</td><td>Used by build-local tool installation so npm cache files stay under build.</td></tr>
+          <tr><td>Playwright MCP cache</td><td>Build-local</td><td><code>D:\TCRBAC.NET\build\.playwright-mcp</code></td><td><code>browser/MCP tooling cache</code></td><td></td><td>manual repo cleanup</td><td>Moved under build so browser automation state is not created in the repository root.</td></tr>
+        </tbody>
+      </table>
+      <!-- environment-setup:end -->
+    </section>
+
 
     <section>
       <h2>Main Source Directories</h2>
@@ -354,9 +387,22 @@
         <li><code>tests</code> contains test code and test/report scripts.</li>
         <li><code>examples</code> contains runnable example code and sample Tomcat files.</li>
         <li><code>mdvault</code> contains authored Markdown documentation.</li>
-        <li><code>docs</code> contains documentation assets, generated API metadata, static documentation pages, and documentation scripts.</li>
+        <li><code>docs</code> contains documentation assets, static documentation pages, and DocFX configuration.</li>
       </ul>
     </section>
   </main>
+  <script>
+    (function loadTomcatIcons(index) {
+      var paths = ["../public/tcrbac-tomcat-icons.js", "public/tcrbac-tomcat-icons.js"];
+      if (index >= paths.length) {
+        return;
+      }
+
+      var script = document.createElement("script");
+      script.src = paths[index];
+      script.onerror = function () { loadTomcatIcons(index + 1); };
+      document.body.appendChild(script);
+    })(0);
+  </script>
 </body>
 </html>

@@ -23,9 +23,10 @@ dotnet test
 Generate the full documentation site:
 
 ```powershell
-docfx build
+docfx metadata docfx.json
+docfx build docfx.json
 ```
 
-This updates the generated `site` folder only. It does not start a server.
+This updates API metadata under `docs\api` and the generated site under `build\site`. It does not start a server.
 
 ![pygount summary for the project](../docs/assets/pygount-summary.svg)

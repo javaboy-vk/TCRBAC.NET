@@ -293,7 +293,7 @@
         <li>Git for cloning the repository.</li>
         <li>.NET SDK 8.x. This is the simplest path because it matches <code>global.json</code>.</li>
         <li>.NET Framework 4.8 Developer Pack or targeting pack, required because the projects target <code>net48</code>.</li>
-        <li>Node.js and npm, required by the Allure report workflow.</li>
+        <li>Node.js and npm, required only when the test runner has to install the build-local Allure CLI fallback under <code>build\tools\allure</code>.</li>
         <li>DocFX, installed as a global .NET tool.</li>
         <li>Repo-local .NET tools, restored from <code>.config\dotnet-tools.json</code>.</li>
       </ul>
@@ -333,10 +333,17 @@ cd TCRBAC.NET
 
 dotnet --list-sdks
 dotnet nuget list source
-npm install
 dotnet tool restore
 dotnet restore TCRBAC.NET.sln</code></pre>
       <p><code>dotnet restore</code> downloads all NuGet dependencies, including log4net, xUnit, coverlet, ReportGenerator support packages, and the .NET Framework 4.8 reference assemblies package used by CLI builds.</p>
+    </section>
+
+    <section>
+      <h2>Allure Setup</h2>
+      <p>The test runner first looks for a global <code>allure</code> command on <code>PATH</code>. If it exists, the repository uses that installation and records it in the Project Structure environment setup section.</p>
+      <p>If no global command is found, <code>tests\run-tests.ps1</code> installs Allure <code>3.7.0</code> under <code>build\tools\allure</code> and uses <code>build\tools\npm-cache</code> for npm cache files. The command line prints those paths, and the Project Structure page is updated with the machine-specific setup section, such as <code>Hercules environment setup</code>.</p>
+      <pre><code>powershell -NoProfile -ExecutionPolicy Bypass -File tests\run-tests.ps1 -Reset</code></pre>
+      <p class="note">This keeps generated JavaScript tooling under <code>build</code>. The repository does not use root <code>node_modules</code>, <code>package.json</code>, or <code>package-lock.json</code>.</p>
     </section>
 
     <section>
@@ -353,11 +360,11 @@ dotnet build TCRBAC.NET.sln</code></pre>
       <pre><code>powershell -NoProfile -ExecutionPolicy Bypass -File tests\run-tests.ps1 -Reset</code></pre>
       <p>Generated outputs:</p>
       <ul>
-        <li><code>tests\TestResults\unit-tests.trx</code></li>
-        <li><code>tests\AllureReport\index.html</code></li>
-        <li><code>tests\CoverageReport\index.html</code></li>
-        <li><code>site\tests\allure-report\index.html</code></li>
-        <li><code>site\tests\coverage-report\index.html</code></li>
+        <li><code>build\tests\TestResults\unit-tests.trx</code></li>
+        <li><code>build\tests\AllureReport\index.html</code></li>
+        <li><code>build\tests\CoverageReport\index.html</code></li>
+        <li><code>build\site\tests\allure-report\index.html</code></li>
+        <li><code>build\site\tests\coverage-report\index.html</code></li>
       </ul>
     </section>
 
@@ -372,22 +379,20 @@ dotnet run --project examples\TomcatUserValidator -- both both</code></pre>
 
     <section>
       <h2>Build And Deploy The Site</h2>
-      <p>Run these commands in this order. The Tomcat<img class="tomcat-inline-icon" src="https://tomcat.apache.org/res/images/tomcat.png" alt="Apache Tomcat" title="Apache Tomcat" style="height: 16px; vertical-align: text-bottom; margin-left: 4px; margin-right: 2px;"> icon script must run after every DocFX build because DocFX rewrites the generated HTML.</p>
+      <p>Run these commands in this order. The Tomcat icon is part of the DocFX template and is included automatically during every documentation build.</p>
       <pre><code>docfx metadata docfx.json
 docfx build docfx.json
 
 docfx docs\docfx.json
-docfx examples\docfx.json
-
-powershell -NoProfile -ExecutionPolicy Bypass -File docs\add-tomcat-icons.ps1</code></pre>
-      <p>The deployed local site folder is <code>site</code>. The standalone documentation outputs are <code>docs\site</code> and <code>examples\site</code>.</p>
-      <p class="note">If the standalone <code>docs</code> or <code>examples</code> build reports access denied while overwriting <code>api\toc.yml</code>, close programs that may have the file open and rerun the same command from a normal PowerShell prompt.</p>
+docfx examples\docfx.json</code></pre>
+      <p>The deployed local site folder is <code>build\site</code>. The standalone documentation outputs are <code>build\docs-site</code> and <code>build\examples-site</code>.</p>
+      <p class="note">If the standalone <code>docs</code> or <code>examples</code> build reports access denied while writing API metadata, close programs that may have the file open and rerun the same command from a normal PowerShell prompt.</p>
     </section>
 
     <section>
       <h2>Serve The Site</h2>
       <p>Start a local DocFX web server after the build and icon pass complete.</p>
-      <pre><code>docfx serve site --port 8080</code></pre>
+      <pre><code>docfx serve build\site --port 8080</code></pre>
       <p>Open <code>http://localhost:8080</code>. Refresh the browser after rebuilding the site.</p>
       <p>Use these pages to verify the full deployment:</p>
       <ul>
@@ -401,8 +406,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File docs\add-tomcat-icons.ps1</c
     <section>
       <h2>One Paste Command Sequence</h2>
       <p>Run this from an already cloned repository root when all prerequisites are installed.</p>
-      <pre><code>npm install
-dotnet tool restore
+      <pre><code>dotnet tool restore
 dotnet restore TCRBAC.NET.sln
 dotnet clean TCRBAC.NET.sln
 dotnet build TCRBAC.NET.sln
@@ -413,8 +417,7 @@ docfx metadata docfx.json
 docfx build docfx.json
 docfx docs\docfx.json
 docfx examples\docfx.json
-powershell -NoProfile -ExecutionPolicy Bypass -File docs\add-tomcat-icons.ps1
-docfx serve site --port 8080</code></pre>
+docfx serve build\site --port 8080</code></pre>
     </section>
 
     <section>
@@ -470,13 +473,23 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tests\run-tests.ps1 -Configu
 dotnet --info</code></pre>
       <p class="note">This override is for the current PowerShell session. Installing SDK 8.x is still the cleanest setup for this repository.</p>
 
-      <h3>Tomcat<img class="tomcat-inline-icon" src="https://tomcat.apache.org/res/images/tomcat.png" alt="Apache Tomcat" title="Apache Tomcat" style="height: 16px; vertical-align: text-bottom; margin-left: 4px; margin-right: 2px;"> icons disappeared</h3>
-      <pre><code>powershell -NoProfile -ExecutionPolicy Bypass -File docs\add-tomcat-icons.ps1</code></pre>
-
       <h3>VS Code still shows stale C# errors</h3>
       <pre><code>Developer: Reload Window
 C#: Restart Language Server</code></pre>
     </section>
   </main>
+  <script>
+    (function loadTomcatIcons(index) {
+      var paths = ["../public/tcrbac-tomcat-icons.js", "public/tcrbac-tomcat-icons.js"];
+      if (index >= paths.length) {
+        return;
+      }
+
+      var script = document.createElement("script");
+      script.src = paths[index];
+      script.onerror = function () { loadTomcatIcons(index + 1); };
+      document.body.appendChild(script);
+    })(0);
+  </script>
 </body>
 </html>

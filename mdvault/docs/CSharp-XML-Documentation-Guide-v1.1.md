@@ -50,6 +50,6 @@ Typical commands:
 
 ```powershell
 dotnet tool install -g docfx
-docfx metadata
-docfx build
+docfx metadata docfx.json
+docfx build docfx.json
 ```

@@ -35,23 +35,24 @@ The C# compiler emits these comments into an XML documentation file. DocFX then 
 Generate the full documentation site from the repository root:
 
 ```powershell
-docfx build
+docfx metadata docfx.json
+docfx build docfx.json
 ```
 
-This updates the generated `site` folder only. It does not start a server.
+This updates API metadata under `docs\api` and the generated site under `build\site`. It does not start a server.
 
 Generate only the standalone docs site:
 
 ```powershell
 docfx docs\docfx.json
-docfx serve docs\site
+docfx serve build\docs-site
 ```
 
 Generate only the standalone examples site:
 
 ```powershell
 docfx examples\docfx.json
-docfx serve examples\site
+docfx serve build\examples-site
 ```
 
 ## Current Diagram Assets

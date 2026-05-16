@@ -1,5 +1,6 @@
 # Build output
-build/
+build/*
+!build/.gitkeep
 bin/
 obj/
 
@@ -9,9 +10,9 @@ tests/TestResults/
 tests/AllureResults/
 tests/AllureReport/
 tests/CoverageReport/
-site/tests/results/
-site/tests/allure-report/
-site/tests/coverage-report/
+build/site/tests/results/
+build/site/tests/allure-report/
+build/site/tests/coverage-report/
 *.trx
 *.coverage
 coverage/
@@ -21,6 +22,11 @@ coverage.*
 site/
 docs/site/
 examples/site/
+build/site/
+build/docs-site/
+build/examples-site/
+build/tools/
+build/.playwright-mcp/
 
 
 # Visual Studio / VS Code local files

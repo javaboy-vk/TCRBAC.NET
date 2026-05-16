@@ -78,13 +78,13 @@ Tasks: Run Task -> Build Docs
 The generated HTML site is written to:
 
 ```text
-docs\site
+build\docs-site
 ```
 
 Preview it locally:
 
 ```powershell
-docfx serve docs\site
+docfx serve build\docs-site
 ```
 
 Then open the local URL printed by DocFX.

@@ -59,7 +59,7 @@
       "default",
       "../templates/tcrbac-vscode"
     ],
-    "dest": "site",
+    "dest": "../build/examples-site",
     "globalMetadata": {
       "_appTitle": "TCRBAC Examples Documentation",
       "_appName": "TCRBAC Examples",

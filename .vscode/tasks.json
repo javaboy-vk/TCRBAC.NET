@@ -60,10 +60,10 @@
       "type": "shell",
       "command": "docfx",
       "args": [
-        "docfx.json"
+        "${workspaceFolder}/docs/docfx.json"
       ],
       "options": {
-        "cwd": "${workspaceFolder}/docs"
+        "cwd": "${workspaceFolder}"
       },
       "group": "build",
       "problemMatcher": []
@@ -73,10 +73,10 @@
       "type": "shell",
       "command": "docfx",
       "args": [
-        "docfx.json"
+        "${workspaceFolder}/examples/docfx.json"
       ],
       "options": {
-        "cwd": "${workspaceFolder}/examples"
+        "cwd": "${workspaceFolder}"
       },
       "group": "build",
       "problemMatcher": []
@@ -109,27 +109,10 @@
       "problemMatcher": []
     },
     {
-      "label": "Add Tomcat Icons",
-      "type": "shell",
-      "command": "powershell",
-      "args": [
-        "-NoProfile",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        "${workspaceFolder}/docs/add-tomcat-icons.ps1"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": []
-    },
-    {
       "label": "Build Docs",
       "dependsOrder": "sequence",
       "dependsOn": [
-        "DocFX Build Docs",
-        "Add Tomcat Icons"
+        "DocFX Build Docs"
       ],
       "group": "build",
       "problemMatcher": []
@@ -138,8 +121,7 @@
       "label": "Build Examples Docs",
       "dependsOrder": "sequence",
       "dependsOn": [
-        "DocFX Build Examples Docs",
-        "Add Tomcat Icons"
+        "DocFX Build Examples Docs"
       ],
       "group": "build",
       "problemMatcher": []
@@ -149,8 +131,7 @@
       "dependsOrder": "sequence",
       "dependsOn": [
         "DocFX Metadata Root Site",
-        "DocFX Build Root Site",
-        "Add Tomcat Icons"
+        "DocFX Build Root Site"
       ],
       "group": "build",
       "problemMatcher": []

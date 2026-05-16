@@ -2,14 +2,17 @@
 
   <PropertyGroup>
     <BaseOutputPath>$(MSBuildThisFileDirectory)build\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="$([System.String]::Copy('$(MSBuildProjectDirectory)').StartsWith($([System.IO.Path]::Combine('$(MSBuildThisFileDirectory)', 'examples')), System.StringComparison.OrdinalIgnoreCase))">
     <BaseOutputPath>$(MSBuildThisFileDirectory)build\examples\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build\obj\examples\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="$([System.String]::Copy('$(MSBuildProjectDirectory)').StartsWith($([System.IO.Path]::Combine('$(MSBuildThisFileDirectory)', 'tests')), System.StringComparison.OrdinalIgnoreCase))">
     <BaseOutputPath>$(MSBuildThisFileDirectory)build\tests\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build\obj\tests\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(MSBuildProjectDirectory)\' == '$(MSBuildThisFileDirectory)'">

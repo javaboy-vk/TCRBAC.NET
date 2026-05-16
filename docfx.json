@@ -21,6 +21,7 @@
           "**/*.yml"
         ],
         "exclude": [
+          "build/**",
           "site/**",
           "docs/site/**",
           "examples/site/**",
@@ -101,28 +102,28 @@
         "dest": "tests"
       },
       {
-        "src": "mdvault/tests/results",
+        "src": "build/tests/results",
         "files": [
           "unit-tests.trx"
         ],
         "dest": "tests/results"
       },
       {
-        "src": "tests/AllureReport",
+        "src": "build/tests/AllureReport",
         "files": [
           "**/*"
         ],
         "dest": "tests/allure-report"
       },
       {
-        "src": "tests/CoverageReport",
+        "src": "build/tests/CoverageReport",
         "files": [
           "**/*"
         ],
         "dest": "tests/coverage-report"
       }
     ],
-    "output": "site",
+    "output": "build/site",
     "template": [
       "default",
       "modern",
